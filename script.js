@@ -12,7 +12,7 @@ if (navToggle) {
   });
 }
 
-// ===== Theme toggle (persist) =====
+// ===== Theme toggle =====
 const themeToggle = $('#themeToggle');
 const storedTheme = localStorage.getItem('theme');
 if (storedTheme === 'dark') document.documentElement.classList.add('dark');
@@ -23,12 +23,17 @@ if (themeToggle) {
   });
 }
 
-// ===== Reveal on scroll =====
+// ===== Reveal on scroll (with fallback) =====
 const revealTargets = $$('.observe');
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
-},{ threshold: 0.15 });
-revealTargets.forEach(el => io.observe(el));
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+  }, { threshold: 0.15 });
+  revealTargets.forEach(el => io.observe(el));
+} else {
+  // Fallback: show immediately
+  revealTargets.forEach(el => el.classList.add('is-visible'));
+}
 
 // ===== Skills filter =====
 const chips = $$('.chip');
@@ -53,7 +58,7 @@ $$('a[href^="#"]').forEach(a=>{
 });
 
 // ===== Dynamic year =====
-$('#year').textContent = new Date().getFullYear();
+const y = $('#year'); if (y) y.textContent = new Date().getFullYear();
 
 // ===== Scroll progress + compact header + scroll spy =====
 const scrollbar = $('#scrollbar');
@@ -65,9 +70,9 @@ function onScroll() {
   const y = window.scrollY || document.documentElement.scrollTop;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const progress = docHeight > 0 ? (y / docHeight) * 100 : 0;
-  scrollbar.style.width = progress + '%';
+  if (scrollbar) scrollbar.style.width = progress + '%';
 
-  header.classList.toggle('compact', y > 10);
+  if (header) header.classList.toggle('compact', y > 10);
 
   let current = null;
   for (const sec of sections) {
@@ -92,10 +97,10 @@ function parallaxUpdate() {
 }
 window.addEventListener('scroll', () => {
   if (!ticking) { window.requestAnimationFrame(parallaxUpdate); ticking = true; }
-},{ passive: true });
+}, { passive: true });
 parallaxUpdate();
 
-// ===== Subtle 3D tilt on hover =====
+// ===== 3D tilt =====
 const tilts = $$('.tilt');
 tilts.forEach(el => {
   let rect;
@@ -106,13 +111,10 @@ tilts.forEach(el => {
   el.addEventListener('mousemove', (e) => {
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
-    const rx = (0.5 - y) * 6;   // up to 6deg
-    const ry = (x - 0.5) * 6;
+    const rx = (0.5 - y) * 6, ry = (x - 0.5) * 6;
     el.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
   });
-  el.addEventListener('mouseleave', () => {
-    el.style.transform = '';
-  });
+  el.addEventListener('mouseleave', () => { el.style.transform = ''; });
 });
 
 // ===== Respect reduced motion =====
