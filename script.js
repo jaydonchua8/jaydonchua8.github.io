@@ -23,7 +23,7 @@ if (themeToggle) {
   });
 }
 
-// ===== Reveal on scroll (with fallback) =====
+// ===== Reveal on scroll =====
 const revealTargets = $$('.observe');
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver(entries => {
@@ -31,7 +31,6 @@ if ('IntersectionObserver' in window) {
   }, { threshold: 0.15 });
   revealTargets.forEach(el => io.observe(el));
 } else {
-  // Fallback: show immediately
   revealTargets.forEach(el => el.classList.add('is-visible'));
 }
 
@@ -100,8 +99,8 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 parallaxUpdate();
 
-// ===== 3D tilt =====
-const tilts = $$('.tilt');
+// ===== Subtle 3D tilt on hover (cards) =====
+const tilts = $$('.tilt, .tilt-small');
 tilts.forEach(el => {
   let rect;
   function updateRect(){ rect = el.getBoundingClientRect(); }
@@ -111,13 +110,8 @@ tilts.forEach(el => {
   el.addEventListener('mousemove', (e) => {
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
-    const rx = (0.5 - y) * 6, ry = (x - 0.5) * 6;
+    const rx = (0.5 - y) * 6;   // up to 6deg
+    const ry = (x - 0.5) * 6;
     el.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
   });
-  el.addEventListener('mouseleave', () => { el.style.transform = ''; });
-});
-
-// ===== Respect reduced motion =====
-if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  tilts.forEach(el => { el.onmousemove = null; el.onmouseleave = null; });
-}
+  el.addEventListener('mousel
