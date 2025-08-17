@@ -119,3 +119,60 @@ a{color:var(--text)} a:hover{opacity:.9}
 
 /* Reduced motion */
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ===== Cursor Glow (warm) ===== */
+#cursorGlow{
+  position: fixed;
+  left: 0; top: 0;
+  width: 240px; height: 240px;            /* small but noticeable */
+  pointer-events: none; border-radius: 50%;
+  /* Warm gradient: red -> orange -> magenta */
+  background: radial-gradient(circle at 50% 50%,
+      rgba(255, 88, 110, .55) 0%,
+      rgba(255, 158, 100, .45) 35%,
+      rgba(189, 0, 255, .30) 60%,
+      transparent 70%);
+  filter: blur(50px);
+  mix-blend-mode: screen;
+  opacity: .25;
+  transform: translate3d(-1000px, -1000px, 0); /* off-screen until JS moves it */
+  transition: opacity .2s ease, scale .2s ease;
+  z-index: 9998;
+  will-change: transform, opacity;
+}
+#cursorGlow.active{ opacity: .42; }
+
+/* Elements that can “warm highlight” on hover */
+.glowable{
+  position: relative;
+  /* keep original styles; we only add a lightweight overlay when hovering */
+  transition: transform .2s var(--easing), box-shadow .2s var(--easing), border-color .2s var(--easing);
+  overflow: clip; /* hides the overlay edges cleanly without changing layout */
+}
+
+/* Warm highlight overlay that follows local cursor position */
+.glowable::after{
+  content: "";
+  position: absolute; inset: -2px; pointer-events: none; border-radius: inherit;
+  background: radial-gradient(200px circle at var(--gx, -1000px) var(--gy, -1000px),
+      rgba(255, 96, 96, .18) 0%,
+      rgba(255, 170, 110, .16) 40%,
+      rgba(180, 70, 255, .12) 65%,
+      transparent 70%);
+  opacity: 0;
+  mix-blend-mode: screen;
+  transition: opacity .25s var(--easing);
+}
+
+/* When hovered, show the warm overlay and give a tiny lift */
+.glowable.is-hovering{
+  box-shadow: 0 18px 36px rgba(255, 120, 120, .08), 0 8px 20px rgba(189, 0, 255, .06);
+  border-color: rgba(255, 150, 120, .35);
+  transform: translateY(-3px);
+}
+.glowable.is-hovering::after{ opacity: 1; }
+
+/* Don’t show the effect on coarse pointers (touch) */
+@media (pointer: coarse){
+  #cursorGlow{ display: none; }
+}
