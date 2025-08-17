@@ -122,3 +122,49 @@ if (copyEmail && navigator.clipboard) {
     setTimeout(()=> copyEmail.textContent = 'Copy Email', 1200);
   });
 }
+
+/* ===== Cursor Glow logic (warm) ===== */
+const cursorGlow = document.getElementById('cursorGlow');
+
+// Move glow (smooth & centered) — lightweight, runs on pointer devices
+let glowRAF = null, targetX = -1000, targetY = -1000, gx = -1000, gy = -1000;
+function animateGlow(){
+  gx += (targetX - gx) * 0.2;
+  gy += (targetY - gy) * 0.2;
+  cursorGlow.style.transform = `translate3d(${gx - 120}px, ${gy - 120}px, 0)`; // center (240/2 = 120)
+  if (Math.abs(targetX - gx) > 0.1 || Math.abs(targetY - gy) > 0.1){
+    glowRAF = requestAnimationFrame(animateGlow);
+  } else {
+    glowRAF = null;
+  }
+}
+window.addEventListener('pointermove', (e) => {
+  if (e.pointerType !== 'mouse') return;      // ignore touch/pen
+  targetX = e.clientX; targetY = e.clientY;
+  if (!glowRAF) glowRAF = requestAnimationFrame(animateGlow);
+});
+
+// Add “glowable” to interactive elements and drive local overlay position
+const glowables = Array.from(document.querySelectorAll(
+  'a, button, .btn, .card, .skill, .project, .chip, .stat, .nav-list a'
+));
+glowables.forEach(el => {
+  el.classList.add('glowable');
+  el.addEventListener('pointerenter', (e) => {
+    if (e.pointerType !== 'mouse') return;
+    cursorGlow?.classList.add('active');
+    el.classList.add('is-hovering');
+  });
+  el.addEventListener('pointerleave', () => {
+    cursorGlow?.classList.remove('active');
+    el.classList.remove('is-hovering');
+  });
+  el.addEventListener('pointermove', (e) => {
+    const r = el.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    el.style.setProperty('--gx', `${x}px`);
+    el.style.setProperty('--gy', `${y}px`);
+  });
+});
+
