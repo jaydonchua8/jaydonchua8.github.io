@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jaydon Chua — Portfolio</title>
+  <meta name="description" content="Jaydon Chua — AI/ML + web dev. Building tools that teams rely on." />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="color-scheme" content="dark light" />
+</head>
+<body>
+  <!-- Scroll progress -->
+  <div id="scrollbar" aria-hidden="true"></div>
+
+  <!-- Decorative parallax orbs -->
+  <div class="orbs" aria-hidden="true">
+    <span class="orb o1" data-parallax data-speed="0.06"></span>
+    <span class="orb o2" data-parallax data-speed="0.10"></span>
+    <span class="orb o3" data-parallax data-speed="0.14"></span>
+  </div>
+
+  <!-- Sticky header -->
+  <header class="site-header" id="header">
+    <a class="logo" href="#home" aria-label="Jaydon Chua home">JC</a>
+    <nav class="nav" aria-label="Primary">
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+      <ul id="navMenu" class="nav-list">
+        <li><a href="#home" class="navlink">Home</a></li>
+        <li><a href="#about" class="navlink">About</a></li>
+        <li><a href="#highlights" class="navlink">Highlights</a></li>
+        <li><a href="#skills" class="navlink">Skills</a></li>
+        <li><a href="#projects" class="navlink">Projects</a></li>
+        <li><a href="#experience" class="navlink">Experience</a></li>
+        <li><a href="#leadership" class="navlink">Leadership</a></li>
+        <li><a href="#contact" class="navlink">Contact</a></li>
+        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌓</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+    <!-- HERO -->
+    <section class="hero section observe" id="home">
+      <div class="hero-content tilt">
+        <h1 class="title">Hi, I’m <span class="grad">Jaydon Chua</span>.</h1>
+        <p class="subtitle">
+          I build useful things with <strong>AI/ML</strong> and clean code.
+          I love turning scrappy ideas into tools teams rely on.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">See Projects</a>
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+        <div class="hero-tags">
+          <span>AI/ML</span><span>Developer Productivity</span><span>Sustainability</span><span>Sports Analytics</span>
+        </div>
+      </div>
+      <div class="hero-stats card glass tilt">
+        <div class="stat"><span>GPA</span><strong>3.889 UW</strong> / 4.433 W</div>
+        <div class="stat"><span>SAT</span><strong>1550</strong> (1570 SS)</div>
+        <div class="stat"><span>ACT</span><strong>34</strong></div>
+        <div class="stat"><span>Roles</span>CS Club Co-President</div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section observe">
+      <h2>About</h2>
+      <p>
+        I’m a senior at Vernon Hills High School. I like projects where a small
+        system tweak unlocks outsized results—whether that’s a route optimizer
+        that halves drive time or a model that spots patterns I missed. Long-term,
+        I’m focused on AI for developer productivity: automated tests, smarter tooling,
+        and feedback loops that make reliable software the default.
+      </p>
+      <ul class="inline-list">
+        <li><strong>Coursework:</strong> AP Physics C (Mech & E&M), AP Calc BC, AP Statistics, Chinese II</li>
+        <li><strong>Tools:</strong> Python, PyTorch, pandas, scikit-learn, XGBoost, Git/GitHub, Jupyter, VS Code</li>
+      </ul>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section id="highlights" class="section observe">
+      <h2>Impact Highlights</h2>
+      <div class="grid cards">
+        <article class="card glass tilt hover-detail">
+          <h3>Thrive2Gethr Ops</h3>
+          <p>Designed a route optimizer & ops dashboard.</p>
+          <ul class="ticks">
+            <li>Drive time <strong>−60%</strong></li>
+            <li>Weekly pounds rescued <strong>+101%</strong></li>
+            <li>Spoilage <strong>39% → 8%</strong></li>
+            <li><strong>7</strong> donor sites, <strong>50</strong> volunteers, raised <strong>$12K</strong></li>
+          </ul>
+          <div class="hover-detail__body">
+            Systems: mapping, batching, volunteer scheduling, pickup windows, live KPIs.
+          </div>
+        </article>
+
+        <article class="card glass tilt hover-detail">
+          <h3>XPerience Coding LLC</h3>
+          <p>Built and debugged web features end-to-end; shipped production fixes fast.</p>
+          <div class="hover-detail__body">Refactors, QA triage, PR reviews, perf checks.</div>
+        </article>
+
+        <article class="card glass tilt hover-detail">
+          <h3>Sports</h3>
+          <p>Varsity swimming & water polo — endurance + teamwork over perfect conditions.</p>
+          <div class="hover-detail__body">Pacing, discipline, iteration, team comms.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section observe">
+      <h2>Skills</h2>
+      <div class="chips">
+        <button class="chip" data-filter="ml">ML</button>
+        <button class="chip" data-filter="web">Web</button>
+        <button class="chip" data-filter="data">Data</button>
+        <button class="chip" data-filter="all" aria-pressed="true">All</button>
+      </div>
+      <div class="grid skills">
+        <div class="skill tilt" data-tags="ml data">Python</div>
+        <div class="skill tilt" data-tags="ml">PyTorch</div>
+        <div class="skill tilt" data-tags="ml data">pandas</div>
+        <div class="skill tilt" data-tags="ml data">scikit-learn</div>
+        <div class="skill tilt" data-tags="ml data">XGBoost</div>
+        <div class="skill tilt" data-tags="web">HTML</div>
+        <div class="skill tilt" data-tags="web">CSS</div>
+        <div class="skill tilt" data-tags="web">JavaScript</div>
+        <div class="skill tilt" data-tags="data">Git/GitHub</div>
+        <div class="skill tilt" data-tags="data">Jupyter</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section observe">
+      <h2>Projects</h2>
+      <div class="grid cards">
+        <article class="card project tilt hover-detail" data-tags="ml">
+          <h3>Recyclable Classifier</h3>
+          <p>Neural net to classify recyclable materials; faster sorting, lower contamination.</p>
+          <div class="tags"><span>PyTorch</span><span>CV</span></div>
+          <div class="hover-detail__body">Augmentation, confusion matrix, threshold tuning.</div>
+        </article>
+
+        <article class="card project tilt hover-detail" data-tags="ml data">
+          <h3>Tennis Match Predictor</h3>
+          <p>XGBoost with Elo & match stats to estimate win probabilities.</p>
+          <div class="tags"><span>XGBoost</span><span>pandas</span></div>
+          <div class="hover-detail__body">Features, CV, calibration, error analysis.</div>
+        </article>
+
+        <article class="card project tilt hover-detail" data-tags="web data">
+          <h3>Thrive2Gethr Dashboard</h3>
+          <p>Live ops dashboard + route optimizer that cut drive time & spoilage.</p>
+          <div class="tags"><span>Web</span><span>Optimization</span></div>
+          <div class="hover-detail__body">Map overlays, batching heuristics, metrics stream.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section observe">
+      <h2>Experience</h2>
+      <div class="timeline tilt">
+        <div class="tl-item">
+          <time>2025</time>
+          <div>
+            <h3>XPerience Coding LLC — SWE Intern</h3>
+            <p>Implemented features, fixed bugs, wrote tests; collaborated via PRs.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <time>2024–2025</time>
+          <div>
+            <h3>Swim Instructor & Lifeguard</h3>
+            <p>Coached ages 5–12; emphasized safety, fundamentals, and confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section id="leadership" class="section observe">
+      <h2>Leadership</h2>
+      <div class="grid cards">
+        <article class="card tilt">
+          <h3>CS Club — Co-President</h3>
+          <p>Lead workshops and mentor newer coders; run competitive programming practice.</p>
+        </article>
+        <article class="card tilt">
+          <h3>Thrive2Gethr — Chapter President</h3>
+          <p>Ops systems + community partnerships; measurable impact every week.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section observe">
+      <h2>Let’s Connect</h2>
+      <div class="contact-grid">
+        <div class="card tilt">
+          <p><strong>Email:</strong> <a href="mailto:jaydonchua2026@gmail.com">jaydonchua2026@gmail.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+12245047294">+1 (224) 504-7294</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/jaydonchua8" target="_blank" rel="noreferrer">github.com/jaydonchua8</a></p>
+        </div>
+        <form class="card contact-form tilt" method="GET" action="mailto:jaydonchua2026@gmail.com">
+          <label>
+            Your email
+            <input name="email" type="email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" placeholder="How can I help?" required></textarea>
+          </label>
+          <button class="btn primary" type="submit">Send</button>
+          <p class="muted">Want a real backend? Swap action to Formspree later.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Jaydon Chua • Built with vanilla HTML/CSS/JS</p>
+    <a href="#home" class="back-to-top" aria-label="Back to top">↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
