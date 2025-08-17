@@ -176,3 +176,67 @@ a{color:var(--text)} a:hover{opacity:.9}
 @media (pointer: coarse){
   #cursorGlow{ display: none; }
 }
+
+
+/* ==== HERO FIT & WRAP TWEAKS (drop-in) ==== */
+
+/* Let columns shrink sanely and reduce gap a bit */
+.hero{
+  grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+  gap: 1.4rem;
+}
+
+/* Smaller, more compact hero title & subtitle */
+.title{
+  /* was clamp(2rem, 5vw, 3rem) */
+  font-size: clamp(1.7rem, 3.8vw, 2.35rem);
+  line-height: 1.12;
+  letter-spacing: 0.2px;
+  margin-bottom: .4rem;
+}
+.subtitle{
+  font-size: clamp(.95rem, 1.2vw, 1rem);
+  max-width: 60ch;
+}
+
+/* Buttons and tags a touch smaller */
+.hero-actions .btn{
+  padding: .6rem .85rem;
+  font-size: .95rem;
+}
+.hero-tags span{
+  font-size: .83rem;
+  padding: .22rem .45rem;
+}
+
+/* Stats card: cap width and shrink text */
+.hero-stats{
+  max-width: 520px;                 /* keep this card from stretching too wide */
+  justify-self: end;
+  font-size: .92rem;                /* overall shrink */
+}
+.hero-stats .stat{
+  padding: .65rem .85rem;
+}
+.hero-stats .stat span{ font-size: .82rem; opacity: .9; }
+.hero-stats .stat strong{ font-size: 1rem; }
+
+/* Medium screens: nudge sizes down a bit more */
+@media (max-width: 1280px){
+  .title{ font-size: clamp(1.6rem, 3.6vw, 2.1rem); }
+  .subtitle{ font-size: .93rem; }
+  .hero{ grid-template-columns: minmax(0,1.05fr) minmax(0,0.95fr); gap: 1.2rem; }
+  .hero-stats{ max-width: 480px; font-size: .9rem; }
+  .hero-stats .stat strong{ font-size: .95rem; }
+}
+
+/* Stack cleanly on narrower screens */
+@media (max-width: 1040px){
+  .hero{ grid-template-columns: 1fr; }
+  .hero-stats{
+    justify-self: start;
+    max-width: 640px;
+    margin-top: .75rem;
+  }
+}
+
