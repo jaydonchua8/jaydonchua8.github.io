@@ -10,7 +10,7 @@
   <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
 <body>
-  <!-- Scroll progress (now at bottom via CSS) -->
+  <!-- Scroll progress (bottom) -->
   <div id="scrollbar" aria-hidden="true"></div>
 
   <!-- Decorative parallax orbs -->
@@ -42,7 +42,7 @@
   <main id="top">
     <!-- HERO -->
     <section class="hero section observe" id="home">
-      <div class="hero-content tilt">
+      <div class="hero-content">
         <h1 class="title">Hi, I’m <span class="grad">Jaydon Chua</span>.</h1>
         <p class="subtitle">
           I build useful things with <strong>AI/ML</strong> and clean code.
@@ -56,12 +56,13 @@
           <span>AI/ML</span><span>Developer Productivity</span><span>Sustainability</span><span>Sports Analytics</span>
         </div>
       </div>
-      <div class="hero-stats card glass tilt">
+
+      <aside class="hero-stats card glass">
         <div class="stat"><span>GPA</span><strong>3.889 UW</strong> / 4.433 W</div>
         <div class="stat"><span>SAT</span><strong>1550</strong> (1570 SS)</div>
         <div class="stat"><span>ACT</span><strong>34</strong></div>
-        <div class="stat"><span>Roles</span>CS Team President</div>
-      </div>
+        <div class="stat"><span>Role</span>CS Team President</div>
+      </aside>
     </section>
 
     <!-- ABOUT -->
@@ -84,7 +85,7 @@
     <section id="highlights" class="section observe">
       <h2>Impact Highlights</h2>
       <div class="grid cards">
-        <article class="card glass tilt hover-detail">
+        <article class="card hover-detail">
           <h3>Thrive2Gethr Ops</h3>
           <p>Designed a route optimizer & ops dashboard.</p>
           <ul class="ticks">
@@ -98,15 +99,15 @@
           </div>
         </article>
 
-        <article class="card glass tilt hover-detail">
+        <article class="card hover-detail">
           <h3>XPerience Coding LLC</h3>
           <p>Built and debugged web features end-to-end; shipped production fixes fast.</p>
           <div class="hover-detail__body">Refactors, QA triage, PR reviews, perf checks.</div>
         </article>
 
-        <article class="card glass tilt hover-detail">
+        <article class="card hover-detail">
           <h3>Sports</h3>
-          <p>Varsity swimming & water polo — endurance + teamwork over perfect conditions.</p>
+          <p>Varsity swimming & water polo — endurance + teamwork.</p>
           <div class="hover-detail__body">Pacing, discipline, iteration, team comms.</div>
         </article>
       </div>
@@ -122,7 +123,7 @@
         <button class="chip" data-filter="all" aria-pressed="true">All</button>
       </div>
       <div class="grid skills">
-        <!-- removed .tilt here to avoid transform conflicts so hover works -->
+        <!-- no .tilt here so hover glow isn't overridden -->
         <div class="skill" data-tags="ml data">Python</div>
         <div class="skill" data-tags="ml">PyTorch</div>
         <div class="skill" data-tags="ml data">pandas</div>
@@ -140,61 +141,59 @@
     <section id="projects" class="section observe">
       <h2>Projects</h2>
       <div class="grid cards">
-        <!-- Click-to-expand instead of aggressive hover -->
-        <article class="card project tilt" data-tags="ml">
+        <!-- click to expand small details -->
+        <article class="card project" data-tags="ml">
           <h3>Recyclable Classifier</h3>
           <p>Neural net to classify recyclable materials; faster sorting, lower contamination.</p>
           <div class="tags"><span>PyTorch</span><span>CV</span></div>
-          <div class="project-details">
-            Augmentation pipeline, confusion matrix, threshold tuning.
-          </div>
+          <div class="project-details">Augmentation pipeline, confusion matrix, threshold tuning.</div>
         </article>
 
-        <article class="card project tilt" data-tags="ml data">
+        <article class="card project" data-tags="ml data">
           <h3>Tennis Match Predictor</h3>
           <p>XGBoost with Elo & match stats to estimate win probabilities.</p>
           <div class="tags"><span>XGBoost</span><span>pandas</span></div>
-          <div class="project-details">
-            Features, CV, calibration, error analysis.
-          </div>
+          <div class="project-details">Features, CV, calibration, error analysis.</div>
         </article>
 
-        <article class="card project tilt" data-tags="web data">
+        <article class="card project" data-tags="web data">
           <h3>Thrive2Gethr Dashboard</h3>
           <p>Live ops dashboard + route optimizer that cut drive time & spoilage.</p>
           <div class="tags"><span>Web</span><span>Optimization</span></div>
-          <div class="project-details">
-            Map overlays, batching heuristics, metrics stream.
-          </div>
+          <div class="project-details">Map overlays, batching heuristics, metrics stream.</div>
         </article>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- EXPERIENCE (cards, accurate dates) -->
     <section id="experience" class="section observe">
       <h2>Experience</h2>
-      <div class="timeline tilt">
-        <div class="tl-item">
-          <time>2024–2025</time>
-          <div>
-            <h3>XPerience Coding LLC — Instructor & SWE Intern</h3>
-            <p>Instructor & curriculum (taught 100+ students); shipped UI fixes/features via PRs.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <time>2022–Present</time>
-          <div>
-            <h3>Swim Instructor & Lifeguard — Vernon Hills High School</h3>
-            <p>Taught water safety and fundamentals; enforced protocols; managed equipment.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <time>2022–Present</time>
-          <div>
-            <h3>Varsity Swimming — Vernon Hills High School</h3>
-            <p>Rigorous training, teamwork, and competition; focus on discipline and consistency.</p>
-          </div>
-        </div>
+      <div class="grid cards">
+        <article class="card">
+          <h3>Instructor & SWE Intern — XPerience Coding LLC</h3>
+          <p class="muted">2024–2025</p>
+          <ul class="inline-list">
+            <li>Taught 100+ students; designed project-based curriculum.</li>
+            <li>Shipped UI fixes/features via PRs; refactors & quick tests.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Swim Instructor & Lifeguard — Vernon Hills HS</h3>
+          <p class="muted">2022–Present</p>
+          <ul class="inline-list">
+            <li>Taught water safety and fundamentals; enforced protocols.</li>
+            <li>Equipment setup & pool management for practices & meets.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Varsity Swimming — Vernon Hills HS</h3>
+          <p class="muted">2022–Present</p>
+          <ul class="inline-list">
+            <li>Rigorous training, teamwork, and consistent performance.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -202,11 +201,11 @@
     <section id="leadership" class="section observe">
       <h2>Leadership</h2>
       <div class="grid cards">
-        <article class="card hover-lift tilt-small">
+        <article class="card hover-lift">
           <h3>Computer Science Team — President</h3>
           <p>Run practices, organize competition lineups, mentor members on problem-solving.</p>
         </article>
-        <article class="card hover-lift tilt-small">
+        <article class="card hover-lift">
           <h3>Thrive2Gethr — Chapter President</h3>
           <p>Ops systems + partnerships; measurable weekly impact.</p>
         </article>
@@ -226,7 +225,6 @@
           </div>
         </div>
 
-        <!-- JS composes a mailto: so this works reliably -->
         <form class="card contact-form" id="contactForm">
           <label>
             Your email
@@ -242,16 +240,6 @@
       </div>
     </section>
   </main>
-
-  <!-- Bottom dock that pops in on scroll -->
-  <nav class="dock" id="dock" aria-label="Quick navigation">
-    <button class="dock-btn" data-target="#about" title="About">About</button>
-    <button class="dock-btn" data-target="#skills" title="Skills">Skills</button>
-    <button class="dock-btn" data-target="#projects" title="Projects">Projects</button>
-    <button class="dock-btn" data-target="#experience" title="Experience">Experience</button>
-    <button class="dock-btn" data-target="#leadership" title="Leadership">Leadership</button>
-    <button class="dock-btn" data-target="#contact" title="Contact">Contact</button>
-  </nav>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> Jaydon Chua • Built with vanilla HTML/CSS/JS</p>
