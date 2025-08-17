@@ -17,7 +17,7 @@ a{color:var(--text)} a:hover{opacity:.9}
 .o2{width:32vmax;height:32vmax;right:-8vmax;top:10vmax;background:radial-gradient(circle at 70% 40%,#0ea5e9,transparent 55%)}
 .o3{width:36vmax;height:36vmax;left:20vmax;bottom:-12vmax;background:radial-gradient(circle at 50% 50%,#22d3ee,transparent 60%)}
 
-/* Progress – now at the bottom */
+/* Progress – bottom */
 #scrollbar{position:fixed;bottom:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999}
 
 /* Header */
@@ -46,11 +46,6 @@ a{color:var(--text)} a:hover{opacity:.9}
 .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.55)}
 .glass{backdrop-filter:blur(6px) saturate(120%)}
 
-/* Hover details (used in highlights only) */
-.hover-detail{position:relative;overflow:hidden}
-.hover-detail__body{max-height:0;opacity:0;transform:translateY(8px);transition:max-height .45s var(--easing),opacity .35s var(--easing),transform .35s var(--easing)}
-.hover-detail:hover .hover-detail__body{max-height:110px;opacity:1;transform:none}
-
 /* Hero */
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
 @media (max-width:900px){.hero{grid-template-columns:1fr}}
@@ -64,6 +59,9 @@ a{color:var(--text)} a:hover{opacity:.9}
 .btn.primary:hover{background-position:100% 0}
 .hero-tags{display:flex;flex-wrap:wrap;gap:.5rem}
 .hero-tags span{padding:.25rem .5rem;border:1px dashed var(--stroke);border-radius:.6rem;font-size:.85rem}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.stat{display:flex;align-items:center;justify-content:space-between;background:#0b0d12;border:1px solid var(--stroke);border-radius:.75rem;padding:.75rem 1rem}
+.stat span{color:var(--muted)}
 
 /* Chips & skills */
 .chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0 1rem}
@@ -86,22 +84,12 @@ a{color:var(--text)} a:hover{opacity:.9}
 
 /* Projects (click to expand) */
 .project{cursor:pointer}
-.project-details{
-  max-height:0; overflow:hidden; opacity:0; transform:translateY(6px);
-  transition:max-height .35s var(--easing), opacity .3s var(--easing), transform .3s var(--easing);
-}
-.project.open .project-details{ max-height:90px; opacity:1; transform:none }
-
-/* Timeline */
-.timeline{position:relative;margin-left:1rem}
-.timeline:before{content:"";position:absolute;left:.35rem;top:.2rem;bottom:.2rem;width:2px;background:linear-gradient(var(--accent),var(--accent2))}
-.tl-item{position:relative;padding-left:1.3rem;margin:1rem 0;transition:transform .35s var(--easing)}
-.tl-item time{position:absolute;left:-1rem;transform:translateX(-100%);background:var(--card);border:1px solid var(--stroke);padding:.2rem .5rem;border-radius:.4rem;font-size:.8rem}
-.tl-item:hover{transform:translateX(4px)}
+.project-details{max-height:0;overflow:hidden;opacity:0;transform:translateY(6px);transition:max-height .35s var(--easing),opacity .3s var(--easing),transform .3s var(--easing)}
+.project.open .project-details{max-height:90px;opacity:1;transform:none}
 
 /* Leadership lift */
-.hover-lift{ transition:transform .25s var(--easing), box-shadow .25s var(--easing), border-color .25s var(--easing) }
-.hover-lift:hover{ transform:translateY(-6px) scale(1.01); box-shadow:0 24px 50px rgba(0,0,0,.48); border-color:rgba(167,139,250,.45) }
+.hover-lift{transition:transform .25s var(--easing),box-shadow .25s var(--easing),border-color .25s var(--easing)}
+.hover-lift:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 24px 50px rgba(0,0,0,.48);border-color:rgba(167,139,250,.45)}
 
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
@@ -117,28 +105,10 @@ a{color:var(--text)} a:hover{opacity:.9}
 .back-to-top{text-decoration:none;padding:.5rem .7rem;border:1px solid var(--stroke);border-radius:.6rem;transition:transform .3s var(--easing)}
 .back-to-top:hover{transform:translateY(-3px)}
 
-/* Reveal on scroll — visible by default unless JS adds .js */
+/* Reveal on scroll */
 .observe{opacity:1;transform:none;filter:none}
 .js .observe{opacity:0;transform:translateY(16px) scale(.98);filter:blur(6px)}
 .js .observe.is-visible{opacity:1;transform:none;filter:none;transition:opacity .6s var(--easing),transform .6s var(--easing),filter .6s var(--easing)}
-
-/* Bottom Dock (pop-in + light tilt) */
-.dock{
-  position:fixed; left:50%; bottom:18px; transform:translateX(-50%) translateY(16px);
-  display:flex; gap:.6rem; padding:.5rem .6rem; border-radius:22px;
-  background: rgba(255,255,255,.06); border:1px solid var(--stroke);
-  box-shadow: 0 10px 30px rgba(0,0,0,.5); z-index:9998; backdrop-filter: blur(10px) saturate(120%);
-  opacity:0; pointer-events:none; transition: opacity .45s var(--easing), transform .45s var(--easing);
-}
-.dock.show{ opacity:1; transform:translateX(-50%) translateY(0); pointer-events:auto }
-.dock-btn{
-  min-width:74px; padding:.55rem .8rem; border-radius:14px; border:1px solid var(--stroke);
-  background:#0b0d12; color:var(--text); cursor:pointer; font-weight:600;
-  transition: transform .2s var(--easing), background .2s, box-shadow .2s, border-color .2s;
-  transform-style:preserve-3d;
-}
-.dock-btn:hover{ transform:translateY(-3px) }
-.dock-btn.active{ border-color:rgba(110,231,255,.45) }
 
 /* Mobile nav */
 @media (max-width:840px){
@@ -146,11 +116,6 @@ a{color:var(--text)} a:hover{opacity:.9}
   .nav-list{position:absolute;right:1rem;top:3.2rem;flex-direction:column;background:rgba(255,255,255,.06);padding:.5rem;border-radius:.8rem;display:none;box-shadow:0 10px 30px rgba(0,0,0,.45)}
   .nav-list.show{display:flex}
 }
-
-/* 3D tilt */
-.tilt,.tilt-small{transform-style:preserve-3d}
-.tilt:hover{box-shadow:0 24px 50px rgba(0,0,0,.38)}
-.tilt-small:hover{box-shadow:0 18px 40px rgba(0,0,0,.35)}
 
 /* Reduced motion */
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
