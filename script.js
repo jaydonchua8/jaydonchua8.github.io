@@ -47,21 +47,9 @@ function setFilter(tag){
 chips.forEach(c => c.addEventListener('click', () => setFilter(c.dataset.filter)));
 setFilter('all');
 
-// ===== Smooth anchor focus =====
-$$('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', e=>{
-    const id = a.getAttribute('href').slice(1);
-    const target = document.getElementById(id);
-    if (target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); target.setAttribute('tabindex','-1'); target.focus({preventScroll:true}); }
-  });
-});
-
-// ===== Dynamic year =====
-const y = $('#year'); if (y) y.textContent = new Date().getFullYear();
-
-// ===== Scroll progress + compact header + scroll spy =====
-const scrollbar = $('#scrollbar');
+// ===== Smooth anchor focus & scroll spy =====
 const header = $('#header');
+const scrollbar = $('#scrollbar');
 const navlinks = $$('.navlink');
 const sections = navlinks.map(a => $(a.getAttribute('href'))).filter(Boolean);
 
@@ -70,7 +58,6 @@ function onScroll() {
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const progress = docHeight > 0 ? (y / docHeight) * 100 : 0;
   if (scrollbar) scrollbar.style.width = progress + '%';
-
   if (header) header.classList.toggle('compact', y > 10);
 
   let current = null;
@@ -82,6 +69,14 @@ function onScroll() {
 }
 document.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
+
+$$('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const id = a.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); target.setAttribute('tabindex','-1'); target.focus({preventScroll:true}); }
+  });
+});
 
 // ===== Parallax orbs (rAF) =====
 const parallaxEls = $$('[data-parallax]');
@@ -99,19 +94,31 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 parallaxUpdate();
 
-// ===== Subtle 3D tilt on hover (cards) =====
-const tilts = $$('.tilt, .tilt-small');
-tilts.forEach(el => {
-  let rect;
-  function updateRect(){ rect = el.getBoundingClientRect(); }
-  updateRect();
-  window.addEventListener('resize', updateRect);
-
-  el.addEventListener('mousemove', (e) => {
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = (e.clientY - rect.top) / rect.height;
-    const rx = (0.5 - y) * 6;   // up to 6deg
-    const ry = (x - 0.5) * 6;
-    el.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+// ===== Projects: click to expand =====
+const projects = $$('.project');
+projects.forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('open');
   });
-  el.addEventListener('mousel
+});
+
+// ===== Contact: compose mailto + copy email =====
+const form = $('#contactForm');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const from = $('#fromEmail').value.trim();
+    const msg = $('#message').value.trim();
+    const subject = encodeURIComponent('Website Contact');
+    const body = encodeURIComponent(`From: ${from}\n\n${msg}`);
+    window.location.href = `mailto:jaydonchua2026@gmail.com?subject=${subject}&body=${body}`;
+  });
+}
+const copyEmail = $('#copyEmail');
+if (copyEmail && navigator.clipboard) {
+  copyEmail.addEventListener('click', async () => {
+    await navigator.clipboard.writeText('jaydonchua2026@gmail.com');
+    copyEmail.textContent = 'Copied!';
+    setTimeout(()=> copyEmail.textContent = 'Copy Email', 1200);
+  });
+}
