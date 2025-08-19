@@ -239,4 +239,19 @@ a{color:var(--text)} a:hover{opacity:.9}
     margin-top: .75rem;
   }
 }
+/* ===== Fluid cursor glow (canvas) ===== */
+#glowCanvas{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;      /* blends light into dark background */
+  opacity: .28;                /* base intensity */
+  z-index: 9990;               /* under the progress bar */
+}
+
+/* keep the warm per-element highlight from before (glowable...) */
+/* hide the glow on touch devices */
+@media (pointer: coarse){
+  #glowCanvas{ display:none }
+}
 
