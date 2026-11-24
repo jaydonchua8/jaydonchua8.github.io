@@ -1,270 +1,1323 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jaydon Chua — Portfolio</title>
-  <meta name="description" content="Jaydon Chua — AI/ML + web dev. Building tools that teams rely on." />
-  <link rel="stylesheet" href="styles.css" />
-  <meta name="color-scheme" content="dark light" />
-  <script>document.documentElement.classList.replace('no-js','js');</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jaydon Chua — Portfolio</title>
+<meta name="description" content="Jaydon Chua, computer science at UIUC. An interactive chessboard: drag the pieces, or click one to open its section.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2013%2013%22%20shape-rendering%3D%22crispEdges%22%3E%3Crect%20width%3D%2213%22%20height%3D%2213%22%20rx%3D%222%22%20fill%3D%22%230c0c0e%22/%3E%3Cg%20fill%3D%22%23d3fde9%22%3E%3Crect%20x%3D%223%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%226%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%229%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%223%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%224%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%226%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%229%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%223%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%224%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%225%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%226%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%227%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%229%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%222%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2210%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%221%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2211%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%221%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%224%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2211%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%221%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%224%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2211%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%221%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2211%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%221%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%224%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2211%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%222%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%225%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%226%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%227%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%223%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%224%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%225%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%226%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%227%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%229%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root { --bg: #0c0c0e; --mint: #d3fde9; --mint-dim: #7fb79c; --p: 3px; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; }
+  body { font-family: Lora, Georgia, "Times New Roman", serif; color: var(--mint); -webkit-tap-highlight-color: transparent; }
+  #world {
+    position: fixed; left: 0; top: 0; display: block; touch-action: none; cursor: grab;
+    image-rendering: pixelated; image-rendering: crisp-edges;
+  }
+  #world.panning, #world.dragging { cursor: grabbing; }
+  #world.over-piece { cursor: pointer; }
+  #world.still { cursor: default; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+  nav.sections button { font: inherit; }
+  nav.sections button:focus { outline: none; }
+
+  /* Section text column (the heading and the fallen piece are drawn on the canvas) */
+  .sec {
+    position: fixed; z-index: 5; color: var(--mint); overflow-y: auto;
+    font-size: clamp(16px, 1.45vw, 21px); line-height: 1.75;
+    text-shadow: 0 0 4px var(--bg), 0 0 8px var(--bg);
+    scrollbar-width: thin; scrollbar-color: var(--mint-dim) transparent;
+  }
+  .sec[hidden] { display: none; }
+  .sec.reveal { animation: secIn 0.45s steps(9) both; }
+  @keyframes secIn { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+  .sec p { margin: 0 0 0.9em; }
+  .sec ul { list-style: none; margin: 0; padding: 0; }
+  .sec li { margin: 0 0 1.05em; }
+  #sec-body > :last-child, .sec li:last-child { margin-bottom: 0; }
+  .sec li .t { display: block; font-weight: 700; margin: 0 0 2px; }
+  .sec canvas.pxname { display: block; image-rendering: pixelated; image-rendering: crisp-edges; }
+  .sec li .d { display: block; }
+  .sec a { color: var(--mint); text-decoration: none; border-bottom: 2px solid rgba(211, 253, 233, 0.45); word-break: break-word; }
+  .sec a:hover, .sec a:focus-visible { border-bottom-color: var(--mint); background: rgba(211, 253, 233, 0.12); outline: none; }
+  .sec .ph { color: var(--mint-dim); font-style: italic; }
+  .back {
+    position: fixed; left: 10px; top: 10px; z-index: 6; padding: 8px 12px; cursor: pointer;
+    background: var(--bg); color: var(--mint); border: 2px solid var(--mint); font: 700 15px Lora, Georgia, serif;
+    transform: translateY(-200%);
+  }
+  .back:focus-visible { transform: none; outline: none; }
+  @media (prefers-reduced-motion: reduce) { .sec.reveal { animation: none; } }
+</style>
 </head>
 <body>
-  <!-- Scroll progress (bottom) -->
-  <div id="scrollbar" aria-hidden="true"></div>
-  
-  <!-- Fluid cursor glow (canvas) -->
-  <canvas id="glowCanvas" aria-hidden="true"></canvas>
+<h1 class="sr-only">Jaydon Chua</h1>
+<canvas id="world" aria-hidden="true"></canvas>
+<nav class="sections sr-only" aria-label="Portfolio sections" id="nav"></nav>
+<section class="sec" id="sec" aria-labelledby="sec-title" hidden>
+  <h2 id="sec-title" class="sr-only"></h2>
+  <div id="sec-body"></div>
+</section>
+<button class="back" id="back" type="button">Back to the board</button>
 
+<script>
+(() => {
+  'use strict';
 
-  <!-- Decorative parallax orbs -->
-  <div class="orbs" aria-hidden="true">
-    <span class="orb o1" data-parallax data-speed="0.06"></span>
-    <span class="orb o2" data-parallax data-speed="0.10"></span>
-    <span class="orb o3" data-parallax data-speed="0.14"></span>
-  </div>
-
-  <!-- Sticky header -->
-  <header class="site-header" id="header">
-    <a class="logo" href="#top" aria-label="Jaydon Chua home">JC</a>
-    <nav class="nav" aria-label="Primary">
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
-      <ul id="navMenu" class="nav-list">
-        <li><a href="#home" class="navlink">Home</a></li>
-        <li><a href="#about" class="navlink">About</a></li>
-        <li><a href="#highlights" class="navlink">Highlights</a></li>
-        <li><a href="#skills" class="navlink">Skills</a></li>
-        <li><a href="#projects" class="navlink">Projects</a></li>
-        <li><a href="#experience" class="navlink">Experience</a></li>
-        <li><a href="#leadership" class="navlink">Leadership</a></li>
-        <li><a href="https://www.linkedin.com/in/jaydon-chua-9431462ba/" class="navlink" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
-    LinkedIn
-  </a>
-</li>
-
-        <li><a href="#contact" class="navlink">Contact</a></li>
-        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌓</button></li>
+  // ------------------------------------------------------------ content
+  const SECTIONS = {
+    about: { label: 'About me', body: `
+      <p>Hi, I'm Jaydon. I'm studying computer science at the University of Illinois Urbana-Champaign in the Grainger College of Engineering, and I expect to graduate in May 2029. I like building small tools that fix one specific annoyance.</p>
+      <p class="ph">[PLACEHOLDER: a sentence or two on what you enjoy building, what you're into outside of code, and what you're working toward]</p>
+      <ul>
+        <li><span class="t">Honors</span><span class="d">National Merit Finalist. Exelon $4k scholarship.</span></li>
+      </ul>` },
+    orderbook: { label: 'CME order book', body: `
+      <p>A Java limit order book fed by a zero-allocation decoder for CME's MDP 3.0 market data, tested against packets built from CME's real production schema.</p>
+      <ul>
+        <li><span class="t">Speed</span><span class="d">About 9 ns per market data entry, measured with JMH.</span></li>
+        <li><span class="t">Zero allocation</span><span class="d">Tests read the JVM's allocation counter over 200,000 decodes and require exactly 0 bytes.</span></li>
+        <li><span class="t">Gap recovery</span><span class="d">It detects dropped packets and rebuilds from snapshots, so the book never silently drifts.</span></li>
       </ul>
-    </nav>
-  </header>
-
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero section observe" id="home">
-      <div class="hero-content">
-        <h1 class="title">Hi, I’m <span class="grad">Jaydon Chua</span>.</h1>
-        <p class="subtitle">
-          I build useful things with <strong>AI/ML</strong> and clean code.
-          I love turning scrappy ideas into tools teams rely on.
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#projects">See Projects</a>
-          <a class="btn" href="assets/Jaydon_Chua_Resume.pdf" target="_blank" rel="noreferrer" download>Resume (PDF)</a>
-          <a class="btn" href="https://www.linkedin.com/in/jaydon-chua-9431462ba/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" href="#contact">Contact Me</a>
-        </div>
-        <div class="hero-tags">
-          <span>AI/ML</span><span>Developer Productivity</span><span>Sustainability</span><span>Sports Analytics</span>
-        </div>
-      </div>
-
-      <aside class="hero-stats card glass">
-        <div class="stat"><span>GPA</span><strong>3.889 UW</strong> / 4.433 W</div>
-        <div class="stat"><span>SAT</span><strong>1550</strong> (1570 SS)</div>
-        <div class="stat"><span>ACT</span><strong>34</strong></div>
-        <div class="stat"><span>Role</span>CS Team President</div>
-      </aside>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section observe">
-      <h2>About</h2>
-      <p>
-        I’m a senior at Vernon Hills High School. I like projects where a small
-        system tweak unlocks outsized results—whether that’s a route optimizer
-        that halves drive time or a model that spots patterns I missed. Long-term,
-        I’m focused on AI for developer productivity: automated tests, smarter tooling,
-        and feedback loops that make reliable software the default.
-      </p>
-      <ul class="inline-list">
-        <li><strong>Coursework:</strong> AP Physics C, DC Calculus III, AP Chemistry, Chinese II</li>
-        <li><strong>Tools:</strong> Python, PyTorch, pandas, scikit-learn, XGBoost, Git/GitHub, Jupyter, VS Code</li>
+      <p><a href="https://github.com/jaydonchua8/cme-orderbook" target="_blank" rel="noopener">github.com/jaydonchua8/cme-orderbook</a></p>` },
+    x402: { label: 'x402-conform', body: `
+      <p>A conformance test suite for x402, Coinbase's open protocol for payments over HTTP. It is written in TypeScript, covers protocol v1 and v2, and has zero runtime dependencies.</p>
+      <ul>
+        <li><span class="t">Proven checks</span><span class="d">Fault injection against a reference server shows that every check catches the bug it claims to.</span></li>
+        <li><span class="t">Live crawl</span><span class="d">I ran it on 200 listings in Coinbase's Bazaar index. 22% failed a check, and 2 served paid content for free.</span></li>
       </ul>
-    </section>
+      <p><a href="https://github.com/jaydonchua8/x402-conform" target="_blank" rel="noopener">github.com/jaydonchua8/x402-conform</a></p>` },
+    marketmaker: { label: 'Market maker', body: `
+      <p>A price-time priority matching engine and a market-making backtester with models for queue position and latency, written in pure Python.</p>
+      <ul>
+        <li><span class="t">Queue and latency</span><span class="d">My orders wait behind the size ahead of them, and quote changes take time to reach the book.</span></li>
+        <li><span class="t">Results</span><span class="d">Over 100 seeds per setting, 10 steps of latency cut mean PnL by about 22%.</span></li>
+      </ul>
+      <p><a href="https://github.com/jaydonchua8/quant-mm" target="_blank" rel="noopener">github.com/jaydonchua8/quant-mm</a></p>` },
+    more: { label: 'More projects', body: `
+      <ul>
+        <li><span class="t">trajlint</span><span class="d">Sorts agent traces into keep, repair or drop.</span>
+          <a href="https://github.com/jaydonchua8/trajlint" target="_blank" rel="noopener">github.com/jaydonchua8/trajlint</a></li>
+        <li><span class="t">snapcal</span><span class="d">Turns a schedule screenshot into a calendar event.</span>
+          <a href="https://github.com/jaydonchua8/snapcal" target="_blank" rel="noopener">github.com/jaydonchua8/snapcal</a></li>
+        <li><span class="t">LeetStrat</span><span class="d">Practice choosing an approach before writing code.</span>
+          <a href="https://github.com/jaydonchua8/leetstrat" target="_blank" rel="noopener">github.com/jaydonchua8/leetstrat</a></li>
+        <li><span class="t">layerblame</span><span class="d">Finds which Dockerfile line broke the build cache.</span>
+          <a href="https://github.com/jaydonchua8/layerblame" target="_blank" rel="noopener">github.com/jaydonchua8/layerblame</a></li>
+      </ul>` },
+    experience: { label: 'Experience', body: `
+      <ul>
+        <li><span class="t">Tether</span><span class="d">Cofounder and engineer, 2026 to present. A proximity-based app for meeting people nearby, built through Y Combinator Startup School, where we got $25K in startup credits.</span></li>
+        <li><span class="t">XPerience Coding</span><span class="d">Web Development &amp; Curriculum Intern, since May 2024</span></li>
+        <li><span class="t">VHHS Computer Science Team &amp; D128 STEAM Showcase</span><span class="d">President, Aug 2024 to May 2026</span></li>
+        <li><span class="t">classCalendar</span><span class="d">Software Engineer, 2024</span></li>
+      </ul>` },
+    contact: { label: 'Contact', body: `
+      <p>The fastest way to reach me is by phone.</p>
+      <ul>
+        <li><span class="t" data-icon="phone">Phone</span><a href="tel:+17738499142">773-849-9142</a></li>
+        <li><span class="t" data-icon="mail">Email</span><a href="mailto:jaydonc2@illinois.edu">jaydonc2@illinois.edu</a></li>
+        <li><span class="t" data-icon="code">GitHub</span><a href="https://github.com/jaydonchua8" target="_blank" rel="noopener">github.com/jaydonchua8</a></li>
+        <li><span class="t" data-icon="card">LinkedIn</span><a href="https://www.linkedin.com/in/jaydon-chua/" target="_blank" rel="noopener">linkedin.com/in/jaydon-chua</a></li>
+      </ul>` }
+  };
 
-    <!-- HIGHLIGHTS -->
-    <section id="highlights" class="section observe">
-      <h2>Impact Highlights</h2>
-      <div class="grid cards">
-        <article class="card hover-detail">
-          <h3>Thrive2Gethr Ops</h3>
-          <p>Designed a route optimizer & ops dashboard.</p>
-          <ul class="ticks">
-            <li>Drive time <strong>−60%</strong></li>
-            <li>Weekly pounds rescued <strong>+101%</strong></li>
-            <li>Spoilage <strong>39% → 8%</strong></li>
-            <li><strong>7</strong> donor sites, <strong>50</strong> volunteers, raised <strong>$12K</strong></li>
-          </ul>
-          <div class="hover-detail__body">
-            Systems: mapping, batching, volunteer scheduling, pickup windows, live KPIs.
-          </div>
-        </article>
+  // Pieces live on an 8x8 board, tile (c, r).
+  const PIECES = [
+    { key: 'about',       kind: 'king',   sprite: 'king',   dark: false },
+    { key: 'x402',        kind: 'bishop', sprite: 'bishop', dark: false },
+    { key: 'marketmaker', kind: 'knight', sprite: 'knight', dark: true },
+    { key: 'orderbook',   kind: 'rook',   sprite: 'rook',   dark: true },
+    { key: 'more',        kind: 'rook',   sprite: 'rook_w', dark: false },
+    { key: 'contact',     kind: 'pawn',   sprite: 'pawn',   dark: true },
+    { key: 'experience',  kind: 'queen',  sprite: 'queen',  dark: false }
+  ];
+  const DECOR = [{ sprite: 'books' }];
+  // Starting squares. 'wide' follows the reference composition; 'tall' fits a phone in portrait.
+  const LAYOUTS = {
+    wide: {
+      tiles: { about: [4, 3], x402: [1, 3], marketmaker: [4, 0], orderbook: [2, 6], more: [5, 7], contact: [6, 4], experience: [7, 1] },
+      books: [3, 4], bunny: [5, 5],
+      anchor: () => ({ x: 38, y: 133, sx: AW / 2, sy: AH / 2 + 17 }),   // king square at the reference spot
+      light: [-22, -23], radius: [248, 160]
+    },
+    tall: {
+      tiles: { marketmaker: [1, 1], experience: [0, 3], x402: [3, 0], about: [4, 4], orderbook: [4, 7], contact: [7, 4], more: [7, 7] },
+      books: [2, 4], bunny: [4, 2],
+      anchor: () => ({ x: 0, y: 92, sx: AW / 2, sy: AH / 2 }),
+      light: [0, 40], radius: [310, 200]
+    }
+  };
+  let layoutName = 'wide';
 
-        <article class="card hover-detail">
-          <h3>XPerience Coding LLC</h3>
-          <p>Built and debugged web features end-to-end; shipped production fixes fast.</p>
-          <div class="hover-detail__body">Refactors, QA triage, PR reviews, perf checks.</div>
-        </article>
+  const ATLAS = {"rects":{"king":[0,0,46,103,22.96,91.22],"king_r0":[47,0,46,102,22.68,91.23],"king_r1":[94,0,46,102,22.59,91.77],"king_r2":[141,0,49,102,22.45,92.2],"king_r3":[191,0,52,102,22.25,92.51],"king_r6":[244,0,46,102,22.72,91.25],"king_r7":[291,0,47,102,23.88,91.81],"king_r8":[339,0,50,102,26.86,92.26],"king_r9":[390,0,52,102,29.84,92.59],"king_r10":[443,0,55,102,32.82,92.81],"king_r4":[499,0,54,101,22.0,92.72],"king_r5":[554,0,57,101,21.7,92.81],"king_r11":[612,0,58,101,35.78,92.93],"king_r12":[671,0,60,101,38.73,92.93],"king_r13":[732,0,63,100,41.66,92.81],"king_r14":[796,0,65,100,44.57,92.59],"king_r15":[862,0,68,99,47.45,92.25],"king_r16":[931,0,72,97,53.13,91.25],"king_r17":[0,104,76,96,58.66,89.81],"king_r18":[77,104,80,93,64.02,87.93],"queen":[158,104,45,92,22.72,80.43],"king_r19":[204,104,83,91,69.19,85.63],"queen_r0":[288,104,44,91,21.98,80.92],"queen_r1":[333,104,44,91,21.89,81.45],"queen_r2":[378,104,46,91,21.76,81.89],"queen_r3":[425,104,48,91,21.56,82.24],"queen_r4":[474,104,51,91,21.32,82.5],"queen_r5":[526,104,54,91,21.03,82.77],"queen_r6":[581,104,44,91,22.02,80.94],"queen_r7":[626,104,44,91,22.03,81.49],"queen_r8":[671,104,46,91,23.68,81.95],"queen_r9":[718,104,48,91,26.6,82.32],"queen_r10":[767,104,51,91,29.51,82.59],"queen_r11":[819,104,54,91,32.42,82.88],"queen_r12":[874,104,56,91,35.31,83.2],"queen_r13":[931,104,59,91,38.19,83.43],"queen_r14":[0,201,61,90,41.05,83.56],"queen_r15":[62,201,63,90,43.88,83.6],"queen_r16":[126,201,68,89,49.46,83.4],"king_r20":[195,201,86,88,73.85,82.92],"queen_r17":[282,201,72,88,54.91,82.82],"queen_r18":[355,201,76,87,60.2,81.86],"king_r21":[432,201,90,85,79.8,80.31],"queen_r19":[523,201,79,85,65.31,80.55],"queen_r20":[603,201,82,83,70.2,78.89],"king_r22":[686,201,94,82,85.76,78.06],"bishop_r0":[781,201,42,82,20.64,71.67],"bishop_r6":[824,201,42,82,20.68,71.67],"queen_r21":[867,201,85,81,74.86,76.88],"bishop":[953,201,41,81,20.49,70.87],"bishop_r1":[0,292,41,81,20.56,72.17],"bishop_r2":[42,292,41,81,20.43,72.57],"bishop_r3":[84,292,41,81,20.25,72.9],"bishop_r4":[126,292,43,81,20.02,73.13],"bishop_r5":[170,292,45,81,19.74,73.28],"bishop_r7":[216,292,41,81,20.69,72.17],"bishop_r8":[258,292,41,81,20.69,72.57],"bishop_r9":[300,292,41,81,20.7,72.9],"bishop_r10":[342,292,43,81,22.38,73.13],"bishop_r11":[386,292,45,81,24.66,73.28],"king_r23":[432,292,97,80,91.5,75.49],"bishop_r12":[530,292,47,80,26.94,73.33],"bishop_r13":[578,292,48,80,29.21,73.3],"bishop_r14":[627,292,50,80,31.47,73.19],"queen_r22":[678,292,87,79,79.31,74.53],"bishop_r15":[766,292,52,79,33.77,72.98],"knight":[819,292,43,79,21.2,68.35],"bishop_r16":[863,292,56,78,38.35,72.31],"knight_r0":[920,292,42,78,20.8,67.93],"knight_r1":[963,292,42,78,20.72,68.35],"knight_r2":[0,374,42,78,20.58,68.69],"knight_r6":[43,374,43,78,21.82,68.1],"knight_r7":[87,374,45,78,23.44,68.7],"knight_r8":[133,374,46,78,25.07,69.22],"knight_r9":[180,374,48,78,26.69,69.65],"knight_r10":[229,374,49,78,28.3,70.01],"knight_r11":[279,374,50,78,29.9,70.27],"knight_r12":[330,374,51,78,31.49,70.46],"king_r24":[382,374,100,77,96.91,72.63],"knight_r3":[483,374,42,77,20.4,68.95],"knight_r4":[526,374,43,77,20.17,69.13],"knight_r5":[570,374,44,77,19.89,69.23],"knight_r13":[615,374,53,77,33.07,70.56],"knight_r14":[669,374,54,77,34.64,70.57],"knight_r15":[724,374,55,77,36.18,70.5],"queen_r23":[780,374,89,76,83.49,71.84],"bishop_r17":[870,374,59,76,42.96,71.29],"knight_r16":[930,374,57,76,39.22,70.11],"bishop_r18":[0,453,62,75,47.65,69.92],"knight_r17":[63,453,59,75,42.31,69.39],"king_r25":[123,453,102,73,101.95,69.43],"queen_r24":[226,453,90,73,87.38,69.0],"bishop_r19":[317,453,66,73,52.68,68.24],"knight_r18":[384,453,61,73,45.96,68.33],"knight_r19":[446,453,63,72,50.0,66.94],"queen_r25":[510,453,91,70,90.95,65.88],"bishop_r20":[602,453,69,70,57.89,66.27],"knight_r20":[672,453,65,70,54.03,65.24],"king_r26":[738,453,105,68,108.79,64.05],"bishop_r21":[844,453,72,68,62.92,63.99],"knight_r21":[917,453,68,67,58.56,63.23],"rook":[0,529,43,66,21.72,54.64],"rook_w":[44,529,43,66,21.72,54.64],"bishop_r22":[88,529,75,65,67.8,61.39],"knight_r22":[164,529,71,65,63.26,60.95],"rook_r0":[236,529,43,65,21.34,54.72],"rook_r1":[280,529,43,65,21.25,55.34],"rook_r2":[324,529,43,65,21.12,55.9],"rook_r3":[368,529,44,65,20.93,56.4],"rook_r4":[413,529,45,65,20.7,56.9],"rook_r5":[459,529,47,65,20.41,57.36],"rook_r6":[507,529,43,65,21.38,54.72],"rook_r7":[551,529,43,65,21.38,55.34],"rook_r8":[595,529,43,65,21.39,55.9],"rook_r9":[639,529,44,65,22.46,56.4],"rook_r10":[684,529,45,65,24.35,56.9],"rook_r11":[730,529,47,65,26.24,57.36],"rook_r12":[778,529,48,65,28.11,57.75],"rook_r13":[827,529,50,65,29.99,58.08],"rook_r14":[878,529,51,65,31.85,58.38],"rook_r15":[930,529,53,65,33.69,58.62],"rook_r16":[0,596,55,65,37.34,58.92],"rook_r17":[56,596,58,65,40.91,59.19],"rook_w_r0":[115,596,43,65,21.34,54.72],"rook_w_r1":[159,596,43,65,21.25,55.34],"rook_w_r2":[203,596,43,65,21.12,55.9],"rook_w_r3":[247,596,44,65,20.93,56.4],"rook_w_r4":[292,596,45,65,20.7,56.84],"rook_w_r5":[338,596,47,65,20.41,57.22],"rook_w_r6":[386,596,43,65,21.38,54.72],"rook_w_r7":[430,596,43,65,21.38,55.34],"rook_w_r8":[474,596,43,65,21.39,55.9],"rook_w_r9":[518,596,44,65,22.46,56.4],"rook_w_r10":[563,596,45,65,24.35,56.9],"rook_w_r11":[609,596,47,65,26.24,57.36],"rook_w_r12":[657,596,48,65,28.11,57.75],"rook_w_r13":[706,596,50,65,29.99,58.08],"rook_w_r14":[757,596,51,65,31.85,58.42],"rook_w_r15":[809,596,53,65,33.69,58.74],"rook_w_r16":[863,596,55,65,37.34,59.19],"rook_w_r17":[919,596,58,65,40.91,59.38],"queen_r26":[0,662,92,64,96.31,60.63],"rook_r18":[93,662,59,64,44.38,59.22],"rook_r19":[153,662,61,64,47.75,59.0],"rook_w_r18":[215,662,59,64,44.38,59.3],"rook_w_r19":[275,662,61,64,47.75,59.0],"rook_r20":[337,662,63,63,50.98,58.57],"rook_w_r20":[401,662,63,63,50.98,58.57],"king_r27":[465,662,106,62,114.69,58.02],"bishop_r23":[572,662,77,62,72.46,58.76],"knight_r23":[650,662,73,62,67.76,58.4],"rook_r21":[724,662,64,62,54.07,57.87],"rook_w_r21":[789,662,64,62,54.07,57.87],"rook_r22":[854,662,65,61,57.0,56.92],"rook_w_r22":[920,662,65,61,57.0,56.92],"bishop_r24":[0,727,80,60,76.87,56.31],"rook_r23":[81,727,65,60,59.75,55.71],"rook_w_r23":[147,727,65,60,59.75,55.71],"knight_r24":[213,727,75,59,72.03,55.57],"pawn":[289,727,40,59,20.25,48.91],"pawn_r0":[330,727,40,59,20.3,49.27],"pawn_r1":[371,727,40,59,20.22,49.77],"pawn_r2":[412,727,40,59,20.1,50.21],"pawn_r3":[453,727,40,59,19.93,50.59],"pawn_r6":[494,727,40,59,20.34,49.27],"pawn_r7":[535,727,40,59,20.34,49.77],"pawn_r8":[576,727,40,59,20.35,50.21],"pawn_r9":[617,727,40,59,20.36,50.59],"queen_r27":[658,727,94,58,101.72,54.74],"rook_r24":[753,727,65,58,62.32,54.25],"pawn_r4":[819,727,40,58,19.71,50.92],"pawn_r5":[860,727,39,58,19.45,51.21],"pawn_r10":[900,727,40,58,20.36,50.92],"pawn_r11":[941,727,39,58,20.37,51.21],"pawn_r12":[981,727,39,58,20.44,51.48],"pawn_r13":[0,788,41,58,22.18,51.69],"pawn_r14":[42,788,42,58,23.91,51.83],"pawn_r15":[85,788,43,58,25.64,51.92],"rook_w_r24":[129,788,65,58,62.32,54.25],"bishop_r25":[195,788,81,57,81.01,53.68],"pawn_r16":[277,788,46,57,29.07,51.95],"pawn_r17":[324,788,48,57,32.53,51.75],"knight_r25":[373,788,76,56,76.05,52.47],"rook_r25":[450,788,65,56,64.69,52.55],"pawn_r18":[516,788,50,56,36.05,51.31],"rook_w_r25":[567,788,65,56,64.69,52.55],"king_r28":[633,788,107,55,119.58,51.42],"pawn_r19":[741,788,52,55,39.49,50.72],"pawn_r20":[794,788,54,54,42.83,49.95],"bishop_r26":[849,788,83,53,86.65,49.36],"rook_r26":[933,788,64,53,67.91,49.56],"pawn_r21":[0,847,55,53,46.06,48.95],"rook_w_r26":[56,847,64,53,67.91,49.56],"queen_r28":[121,847,94,52,106.26,48.28],"pawn_r22":[216,847,56,52,49.3,47.77],"knight_r26":[273,847,78,51,81.64,47.63],"rook_r27":[352,847,63,50,70.71,46.08],"pawn_r23":[416,847,57,50,52.44,46.38],"rook_w_r27":[474,847,63,50,70.71,46.08],"king_r29":[538,847,106,48,123.4,44.37],"bishop_r27":[645,847,84,48,91.58,44.66],"pawn_r24":[730,847,58,48,55.42,44.78],"knight_r27":[789,847,79,47,86.65,43.37],"pawn_r25":[869,847,59,47,58.22,43.07],"king_r30":[0,901,104,46,126.13,42.26],"king_r31":[105,901,105,46,126.9,42.24],"king_r32":[211,901,105,46,127.54,42.3],"rook_r28":[317,901,61,46,72.97,42.15],"rook_w_r28":[379,901,61,46,72.97,42.14],"queen_r29":[441,901,93,45,109.88,41.33],"queen_r30":[535,901,91,44,112.53,40.84],"queen_r31":[627,901,92,44,113.59,40.8],"queen_r32":[720,901,93,44,114.15,40.87],"pawn_r26":[814,901,59,44,62.13,40.15],"bishop_r28":[874,901,85,43,96.72,39.7],"knight_r28":[0,948,79,43,90.93,39.27],"rook_r29":[80,948,58,43,74.66,39.56],"rook_r30":[139,948,55,43,75.77,39.73],"rook_r31":[195,948,58,43,78.54,39.6],"rook_r32":[254,948,59,43,79.53,39.58],"rook_w_r29":[314,948,58,43,74.66,39.56],"rook_w_r30":[373,948,55,43,75.77,39.73],"rook_w_r31":[429,948,58,43,78.54,39.6],"rook_w_r32":[488,948,59,43,79.53,39.58],"bishop_r30":[548,948,83,42,102.51,38.31],"knight_r29":[632,948,79,42,94.45,38.63],"knight_r30":[712,948,77,42,96.76,38.79],"knight_r31":[790,948,77,42,97.56,38.93],"bishop_r29":[868,948,84,41,100.05,38.16],"bishop_r31":[0,992,84,41,104.53,38.09],"bishop_r32":[85,992,85,41,104.91,38.15],"pawn_r27":[171,992,59,40,65.68,36.82],"books":[231,992,68,40,34.56,22.32],"pawn_r28":[300,992,58,39,68.91,35.49],"pawn_r29":[359,992,57,39,71.6,35.96],"pawn_r30":[417,992,55,39,73.72,36.11],"pawn_r31":[473,992,57,39,75.58,35.94],"pawn_r32":[531,992,58,39,76.62,35.58],"pawn_r33":[590,992,58,39,76.94,35.38],"bunny_sit":[649,992,21,29,10.32,26.39],"bunny_leap":[671,992,28,26,13.32,22.39],"bunny_crouch":[700,992,22,24,11.32,21.39]},"frames":{"king":[["king_r0",-2.0],["king_r1",-4.0],["king_r2",-6.0],["king_r3",-8.0],["king_r4",-10.0],["king_r5",-12.0],["king_r6",2.0],["king_r7",4.0],["king_r8",6.0],["king_r9",8.0],["king_r10",10.0],["king_r11",12.0],["king_r12",14.0],["king_r13",16.0],["king_r14",18.0],["king_r15",20.0],["king_r16",24.0],["king_r17",28.0],["king_r18",32.0],["king_r19",36.0],["king_r20",40.0],["king_r21",44.0],["king_r22",48.0],["king_r23",52.0],["king_r24",56.0],["king_r25",60.0],["king_r26",66.0],["king_r27",72.0],["king_r28",78.0],["king_r29",84.0],["king_r30",90.0],["king_r31",92.0],["king_r32",94.0]],"queen":[["queen_r0",-2.0],["queen_r1",-4.0],["queen_r2",-6.0],["queen_r3",-8.0],["queen_r4",-10.0],["queen_r5",-12.0],["queen_r6",2.0],["queen_r7",4.0],["queen_r8",6.0],["queen_r9",8.0],["queen_r10",10.0],["queen_r11",12.0],["queen_r12",14.0],["queen_r13",16.0],["queen_r14",18.0],["queen_r15",20.0],["queen_r16",24.0],["queen_r17",28.0],["queen_r18",32.0],["queen_r19",36.0],["queen_r20",40.0],["queen_r21",44.0],["queen_r22",48.0],["queen_r23",52.0],["queen_r24",56.0],["queen_r25",60.0],["queen_r26",66.0],["queen_r27",72.0],["queen_r28",78.0],["queen_r29",84.0],["queen_r30",90.0],["queen_r31",93.0],["queen_r32",95.0]],"bishop":[["bishop_r0",-2.0],["bishop_r1",-4.0],["bishop_r2",-6.0],["bishop_r3",-8.0],["bishop_r4",-10.0],["bishop_r5",-12.0],["bishop_r6",2.0],["bishop_r7",4.0],["bishop_r8",6.0],["bishop_r9",8.0],["bishop_r10",10.0],["bishop_r11",12.0],["bishop_r12",14.0],["bishop_r13",16.0],["bishop_r14",18.0],["bishop_r15",20.0],["bishop_r16",24.0],["bishop_r17",28.0],["bishop_r18",32.0],["bishop_r19",36.0],["bishop_r20",40.0],["bishop_r21",44.0],["bishop_r22",48.0],["bishop_r23",52.0],["bishop_r24",56.0],["bishop_r25",60.0],["bishop_r26",66.0],["bishop_r27",72.0],["bishop_r28",78.0],["bishop_r29",84.0],["bishop_r30",90.0],["bishop_r31",96.75],["bishop_r32",98.75]],"knight":[["knight_r0",-2.0],["knight_r1",-4.0],["knight_r2",-6.0],["knight_r3",-8.0],["knight_r4",-10.0],["knight_r5",-12.0],["knight_r6",2.0],["knight_r7",4.0],["knight_r8",6.0],["knight_r9",8.0],["knight_r10",10.0],["knight_r11",12.0],["knight_r12",14.0],["knight_r13",16.0],["knight_r14",18.0],["knight_r15",20.0],["knight_r16",24.0],["knight_r17",28.0],["knight_r18",32.0],["knight_r19",36.0],["knight_r20",40.0],["knight_r21",44.0],["knight_r22",48.0],["knight_r23",52.0],["knight_r24",56.0],["knight_r25",60.0],["knight_r26",66.0],["knight_r27",72.0],["knight_r28",78.0],["knight_r29",84.0],["knight_r30",89.0],["knight_r31",91.0]],"rook":[["rook_r0",-2.0],["rook_r1",-4.0],["rook_r2",-6.0],["rook_r3",-8.0],["rook_r4",-10.0],["rook_r5",-12.0],["rook_r6",2.0],["rook_r7",4.0],["rook_r8",6.0],["rook_r9",8.0],["rook_r10",10.0],["rook_r11",12.0],["rook_r12",14.0],["rook_r13",16.0],["rook_r14",18.0],["rook_r15",20.0],["rook_r16",24.0],["rook_r17",28.0],["rook_r18",32.0],["rook_r19",36.0],["rook_r20",40.0],["rook_r21",44.0],["rook_r22",48.0],["rook_r23",52.0],["rook_r24",56.0],["rook_r25",60.0],["rook_r26",66.0],["rook_r27",72.0],["rook_r28",78.0],["rook_r29",84.0],["rook_r30",90.0],["rook_r31",95.0],["rook_r32",97.0]],"pawn":[["pawn_r0",-2.0],["pawn_r1",-4.0],["pawn_r2",-6.0],["pawn_r3",-8.0],["pawn_r4",-10.0],["pawn_r5",-12.0],["pawn_r6",2.0],["pawn_r7",4.0],["pawn_r8",6.0],["pawn_r9",8.0],["pawn_r10",10.0],["pawn_r11",12.0],["pawn_r12",14.0],["pawn_r13",16.0],["pawn_r14",18.0],["pawn_r15",20.0],["pawn_r16",24.0],["pawn_r17",28.0],["pawn_r18",32.0],["pawn_r19",36.0],["pawn_r20",40.0],["pawn_r21",44.0],["pawn_r22",48.0],["pawn_r23",52.0],["pawn_r24",56.0],["pawn_r25",60.0],["pawn_r26",66.0],["pawn_r27",72.0],["pawn_r28",78.0],["pawn_r29",84.0],["pawn_r30",90.0],["pawn_r31",96.0],["pawn_r32",100.75],["pawn_r33",102.75]],"rook_w":[["rook_w_r0",-2.0],["rook_w_r1",-4.0],["rook_w_r2",-6.0],["rook_w_r3",-8.0],["rook_w_r4",-10.0],["rook_w_r5",-12.0],["rook_w_r6",2.0],["rook_w_r7",4.0],["rook_w_r8",6.0],["rook_w_r9",8.0],["rook_w_r10",10.0],["rook_w_r11",12.0],["rook_w_r12",14.0],["rook_w_r13",16.0],["rook_w_r14",18.0],["rook_w_r15",20.0],["rook_w_r16",24.0],["rook_w_r17",28.0],["rook_w_r18",32.0],["rook_w_r19",36.0],["rook_w_r20",40.0],["rook_w_r21",44.0],["rook_w_r22",48.0],["rook_w_r23",52.0],["rook_w_r24",56.0],["rook_w_r25",60.0],["rook_w_r26",66.0],["rook_w_r27",72.0],["rook_w_r28",78.0],["rook_w_r29",84.0],["rook_w_r30",90.0],["rook_w_r31",95.0],["rook_w_r32",97.0]]},"phys":{"king":{"rest":94.0,"critL":29.73,"critR":29.37},"queen":{"rest":95.0,"critL":31.67,"critR":31.42},"bishop":{"rest":98.75,"critL":36.86,"critR":36.89},"knight":{"rest":91.0,"critL":38.51,"critR":37.84},"rook":{"rest":97.0,"critL":43.23,"critR":42.94},"pawn":{"rest":102.75,"critL":48.92,"critR":48.92},"rook_w":{"rest":97.0,"critL":43.23,"critR":42.94}}};
 
-        <article class="card hover-detail">
-          <h3>Sports</h3>
-          <p>Varsity swimming & water polo — endurance + teamwork.</p>
-          <div class="hover-detail__body">Pacing, discipline, iteration, team comms.</div>
-        </article>
-      </div>
-    </section>
+  // ------------------------------------------------------------ constants
+  const MINT = 0xffe9fdd3 >>> 0;              // RGBA bytes d3 fd e9 ff (little endian)
+  const BG = 0xff0e0c0c >>> 0;                // 0c 0c 0e ff
+  const BAYER = [0, 32, 8, 40, 2, 34, 10, 42, 48, 16, 56, 24, 50, 18, 58, 26, 12, 44, 4, 36, 14, 46, 6, 38,
+    60, 28, 52, 20, 62, 30, 54, 22, 3, 35, 11, 43, 1, 33, 9, 41, 51, 19, 59, 27, 49, 17, 57, 25,
+    15, 47, 7, 39, 13, 45, 5, 37, 63, 31, 55, 23, 61, 29, 53, 21];
+  const TH = new Float32Array(64);
+  for (let i = 0; i < 64; i++) TH[i] = (BAYER[i] + 0.5) / 64;
+  const NOISE = new Float32Array(4096);      // fixed noise for pixel dissolves
+  { let s = 1234567; for (let i = 0; i < 4096; i++) { s = (Math.imul(s, 1103515245) + 12345) >>> 0; NOISE[i] = ((s >>> 9) & 0xffff) / 65536; } }
+  const noiseAt = (x, y) => NOISE[((y & 63) << 6) | (x & 63)];
+  const TW = 38, TH2 = 19;                    // tile half width / half height, art px
+  const LTOP = 0.95;                          // light on lit squares at the centre of the pool
+  const SEC = { LR: 88, LS: 72, TOP: 0.16 };  // the small pool of light under a fallen piece
+  const T_IN = 780, T_OUT = 660, T_RISE = 720;
+  // Rigid-body motion: each piece pivots on its base rim around its own centre of mass.
+  const GRAV = 26;                            // gravity / moment of inertia about the rim, rad/s^2
+  const E_FALL = 0.2;                         // restitution when a toppling piece strikes the board
+  const DEG = Math.PI / 180;
+  const WOB_R = 0.87;                         // hover wobble: share of rocking speed kept each time the base lands flat
+  const WOB_MIN = 3 * DEG;                    // the gentlest push still rocks it visibly
+  const WOB_MAX = 11 * DEG;                   // the furthest a wobbling piece tips
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    <!-- SKILLS -->
-    <section id="skills" class="section observe">
-      <h2>Skills</h2>
-      <div class="chips">
-        <button class="chip" data-filter="ml">ML</button>
-        <button class="chip" data-filter="web">Web</button>
-        <button class="chip" data-filter="data">Data</button>
-        <button class="chip" data-filter="all" aria-pressed="true">All</button>
-      </div>
-      <div class="grid skills">
-        <!-- no .tilt here so hover glow isn't overridden -->
-        <div class="skill" data-tags="ml data">Python</div>
-        <div class="skill" data-tags="ml">PyTorch</div>
-        <div class="skill" data-tags="ml data">pandas</div>
-        <div class="skill" data-tags="ml data">scikit-learn</div>
-        <div class="skill" data-tags="ml data">XGBoost</div>
-        <div class="skill" data-tags="web">HTML</div>
-        <div class="skill" data-tags="web">CSS</div>
-        <div class="skill" data-tags="web">JavaScript</div>
-        <div class="skill" data-tags="data">Git/GitHub</div>
-        <div class="skill" data-tags="data">Jupyter</div>
-      </div>
-    </section>
+  const canvas = document.getElementById('world');
+  const ctx = canvas.getContext('2d');
+  const secEl = document.getElementById('sec');
+  const secTitle = document.getElementById('sec-title');
+  const secBody = document.getElementById('sec-body');
+  const backBtn = document.getElementById('back');
+  const nav = document.getElementById('nav');
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section observe">
-      <h2>Projects</h2>
-      <div class="grid cards">
-        <!-- click to expand small details -->
-        <article class="card project" data-tags="ml">
-          <h3>Recyclable Classifier</h3>
-          <p>Neural net to classify recyclable materials; faster sorting, lower contamination.</p>
-          <div class="tags"><span>PyTorch</span><span>CV</span></div>
-          <div class="project-details">Augmentation pipeline, confusion matrix, threshold tuning.</div>
-        </article>
+  let P = 3, AW = 0, AH = 0, image = null, buf = null, fbuf = null;
+  let camX = 0, camY = 0, boardCamX = 0, boardCamY = 0, panX = 0, panY = 0;
+  let LR = 248, LS = 160;
+  const light = { x: 0, y: 0 }, lightTarget = { x: 0, y: 0 };
+  let lightFollows = false;
+  let lightOn = 1, lightAmt = 1;              // the board light fades out while the cursor is off the page
+  let dirty = true;
+  const SPR = {}, FR = {};
+  const LABELS = {};
+  let hoverKey = null, secHover = false;
+  let lastRipple = -1, secLift = 0, lastNow = 0;
+  let PHYS = {};
+  const view = { mode: 'board', key: null, t0: 0, dur: 0, from: null, to: null, kb: false };
 
-        <article class="card project" data-tags="ml data">
-          <h3>Tennis Match Predictor</h3>
-          <p>XGBoost with Elo & match stats to estimate win probabilities.</p>
-          <div class="tags"><span>XGBoost</span><span>pandas</span></div>
-          <div class="project-details">Features, CV, calibration, error analysis.</div>
-        </article>
+  // ------------------------------------------------------------ helpers
+  const tileX = (c, r) => (c - r) * TW;
+  const tileY = (c, r) => (c + r) * TH2;
+  const onBoard = (c, r) => c >= 0 && c < 8 && r >= 0 && r < 8;
+  const clamp01 = v => v < 0 ? 0 : v > 1 ? 1 : v;
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  const easeInOut = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const smoother = t => t * t * t * (t * (t * 6 - 15) + 10);   // zero velocity and acceleration at both ends
+  function tileAtScreen(sx, sy) {
+    const wx = sx + camX, wy = sy + camY;
+    return { c: Math.floor((wx + 2 * wy + TW) / (2 * TW)), r: Math.floor((2 * wy - wx + TW) / (2 * TW)) };
+  }
+  function lightAt(d, lr, ls) {
+    let t = (lr - d) / ls;
+    if (t <= 0) return 0;
+    if (t > 1) t = 1;
+    return Math.pow(t * t * (3 - 2 * t), 1.25);
+  }
 
-        <article class="card project" data-tags="web data">
-          <h3>Thrive2Gethr Dashboard</h3>
-          <p>Live ops dashboard + route optimizer that cut drive time & spoilage.</p>
-          <div class="tags"><span>Web</span><span>Optimization</span></div>
-          <div class="project-details">Map overlays, batching heuristics, metrics stream.</div>
-        </article>
-      </div>
-    </section>
+  function lightPx(prm, x, y) {
+    const dx = x - prm.lx, dy = 2 * (y - prm.ly), d2 = dx * dx + dy * dy;
+    const L = d2 >= prm.LR * prm.LR ? 0 : lightAt(Math.sqrt(d2), prm.LR, prm.LS) * prm.SL;
+    return glows.length ? Math.max(L, glowAt(x, y)) : L;
+  }
 
-    <!-- EXPERIENCE (cards, accurate dates) -->
-    <section id="experience" class="section observe">
-      <h2>Experience</h2>
-      <div class="grid cards">
-        <article class="card">
-          <h3>Instructor & SWE Intern — XPerience Coding LLC</h3>
-          <p class="muted">2024–2025</p>
-          <ul class="inline-list">
-            <li>Taught 100+ students; designed project-based curriculum.</li>
-            <li>Shipped UI fixes/features via PRs; refactors & quick tests.</li>
-          </ul>
-        </article>
+  // ------------------------------------------------------------ world state
+  const pieces = PIECES.map(p => ({ ...p, c: 0, r: 0, moved: false, anim: null, drag: null, rock: null }));
+  const decor = DECOR.map(d => ({ ...d }));
+  const bunny = { c: 0, r: 0, face: -1, state: 'sit', t0: 0, from: null, to: null, next: 0, x: 0, y: 0, h: 0, frame: 'bunny_sit', zapT0: 0, bolt: null };
+  const pieceByKey = k => pieces.find(p => p.key === k);
 
-        <article class="card">
-          <h3>Swim Instructor & Lifeguard — Vernon Hills HS</h3>
-          <p class="muted">2022–Present</p>
-          <ul class="inline-list">
-            <li>Taught water safety and fundamentals; enforced protocols.</li>
-            <li>Equipment setup & pool management for practices & meets.</li>
-          </ul>
-        </article>
+  // ------------------------------------------------------------ sizing / camera
+  function resize() {
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const dpr = window.devicePixelRatio || 1;
+    const tallScreen = vh > vw * 1.1;
+    const ideal = tallScreen ? Math.min(vw / 330, vh / 480) : Math.min(vw / 450, vh / 270);
+    // keep P x dpr whole so every art pixel covers whole device pixels
+    P = Math.max(1, Math.floor(ideal * dpr + 1e-6) / dpr);
+    AW = Math.ceil(vw / P); AH = Math.ceil(vh / P);
+    const want = tallScreen ? 'tall' : 'wide';
+    if (want !== layoutName && !pieces.some(p => p.moved) && view.mode === 'board') applyLayout(want);
+    canvas.width = AW; canvas.height = AH;
+    canvas.style.width = AW * P + 'px'; canvas.style.height = AH * P + 'px';
+    document.documentElement.style.setProperty('--p', P + 'px');
+    image = ctx.createImageData(AW, AH);
+    buf = new Uint32Array(image.data.buffer);
+    fbuf = new Float32Array(AW * AH);
+    placeCamera();
+    if (!lightFollows) { setDefaultLight(); light.x = lightTarget.x; light.y = lightTarget.y; }
+    if (view.mode === 'section') layoutSectionText();
+    dirty = true;
+  }
+  function placeCamera() {
+    const a = LAYOUTS[layoutName].anchor();
+    boardCamX = Math.round(a.x - a.sx + panX);
+    boardCamY = Math.round(a.y - a.sy + panY);
+    if (view.mode === 'board') { camX = boardCamX; camY = boardCamY; }
+  }
+  function setDefaultLight() {
+    const a = LAYOUTS[layoutName].anchor(), o = LAYOUTS[layoutName].light;
+    lightTarget.x = a.x - boardCamX + o[0]; lightTarget.y = a.y - boardCamY + o[1];
+  }
+  function applyLayout(name) {
+    layoutName = name;
+    const L = LAYOUTS[name];
+    [LR, LS] = L.radius;
+    for (const p of pieces) { [p.c, p.r] = L.tiles[p.key]; p.anim = null; p.drag = null; }
+    [decor[0].c, decor[0].r] = L.books;
+    [bunny.c, bunny.r] = L.bunny; bunny.state = 'sit';
+    panX = 0; panY = 0;
+  }
 
-        <article class="card">
-          <h3>Varsity Swimming — Vernon Hills HS</h3>
-          <p class="muted">2022–Present</p>
-          <ul class="inline-list">
-            <li>Rigorous training, teamwork, and consistent performance.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+  // ------------------------------------------------------------ assets
+  function loadAtlas() {
+    return new Promise((resolve, reject) => {
+      const im = new Image();
+      im.onload = () => {
+        const c = document.createElement('canvas');
+        c.width = im.width; c.height = im.height;
+        const x = c.getContext('2d');
+        x.drawImage(im, 0, 0);
+        const d = x.getImageData(0, 0, im.width, im.height).data;
+        for (const name in ATLAS.rects) {
+          const [rx, ry, w, h, ax, ay] = ATLAS.rects[name];
+          const shade = new Float32Array(w * h), cov = new Uint8Array(w * h);
+          for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) {
+            const v = d[((ry + j) * im.width + rx + i) * 4];
+            if (v) { cov[j * w + i] = 1; shade[j * w + i] = (v - 1) / 254; }
+          }
+          SPR[name] = { w, h, ax: Math.round(ax), ay: Math.round(ay), shade, cov };
+          if (name.startsWith('bunny')) {   // outlined, plus a mirrored copy for hopping right
+            SPR[name].outline = true;
+            const s2 = new Float32Array(w * h), c2 = new Uint8Array(w * h);
+            for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) { s2[j * w + i] = shade[j * w + (w - 1 - i)]; c2[j * w + i] = cov[j * w + (w - 1 - i)]; }
+            SPR[name + '_r'] = { w, h, ax: Math.round(w - ax), ay: Math.round(ay), shade: s2, cov: c2, outline: true };
+          }
+        }
+        for (const p of PIECES) FR[p.sprite] = [{ name: p.sprite, a: 0 }].concat(ATLAS.frames[p.sprite].map(([n, a]) => ({ name: n, a }))).sort((u, v) => u.a - v.a);
+        PHYS = ATLAS.phys;
+        resolve();
+      };
+      im.onerror = reject;
+      im.src = 'atlas.png';
+    });
+  }
+  const restFrame = sprite => FR[sprite][FR[sprite].length - 1];
+  function frameAt(sprite, deg) {
+    let best = FR[sprite][0], bd = 1e9;
+    for (const f of FR[sprite]) { const d = Math.abs(f.a - deg); if (d < bd) { bd = d; best = f; } }
+    return best.name;
+  }
 
-    <!-- LEADERSHIP -->
-    <section id="leadership" class="section observe">
-      <h2>Leadership</h2>
-      <div class="grid cards">
-        <article class="card hover-lift">
-          <h3>Computer Science Team — President</h3>
-          <p>Run practices, organize competition lineups, mentor members on problem-solving.</p>
-        </article>
-        <article class="card hover-lift">
-          <h3>Thrive2Gethr — Chapter President</h3>
-          <p>Ops systems + partnerships; measurable weekly impact.</p>
-        </article>
-      </div>
-    </section>
+  // 1-bit text: Lora Bold rasterised at art scale, thresholded. Box metrics follow the reference labels.
+  // Little 1-bit icons, one per section (and a few for contact rows). '#' is a lit pixel.
+  const ICONS = {
+    about: ['..#..#..#..', '..##.#.##..', '..#######..', '.#.......#.', '#.........#', '#..#...#..#', '#..#...#..#', '#.........#', '#..#...#..#', '.#..###..#.', '..#######..'],
+    orderbook: ['.#.........', '.#.......#.', '###......#.', '###.....###', '###..#..#.#', '###..#..#.#', '.#..###.###', '.#..###..#.', '....###..#.', '.....#.....', '.....#.....'],
+    x402: ['###########', '#.........#', '#.......#.#', '#......##.#', '#.#...##..#', '#.##.##...#', '#..###....#', '.#..#....#.', '..#.....#..', '...#...#...', '....###....'],
+    marketmaker: ['.....#.....', '....###....', '.#########.', '.#.......#.', '##.##.##.##', '##.##.##.##', '.#.......#.', '.#.#...#.#.', '.#..###..#.', '.#.......#.', '.#########.'],
+    more: ['.....#.....', '....###....', '...##.##...', '...#...#...', '...#.#.#...', '...#...#...', '..##...##..', '.#.#...#.#.', '.#.#####.#.', '...#.#.#...', '....#.#....'],
+    experience: ['...#####...', '...#...#...', '###########', '#.........#', '#..#...#..#', '#..#...#..#', '#.........#', '#..#...#..#', '#...###...#', '#.........#', '###########'],
+    contact: ['.#########.', '.#..###..#.', '.#.......#.', '.#..#.#..#.', '.#.......#.', '.#.#...#.#.', '.#..###..#.', '.#.......#.', '.#.......#.', '.#...#...#.', '.#########.'],
+    phone: ['.##........', '####.......', '####.......', '.##........', '..##.......', '...##......', '....##..##.', '.....######', '......#####', '.......###.', '...........'],
+    mail: ['...........', '###########', '##.......##', '#.#.....#.#', '#..#...#..#', '#...#.#...#', '#....#....#', '#.........#', '###########', '...........', '...........'],
+    code: ['...........', '.......#...', '..#...#..#.', '.#....#...#', '#....#.....', '#....#.....', '.#..#.....#', '..#.#....#.', '...#.......', '...........', '...........'],
+    card: ['###########', '#.........#', '#..##.....#', '#.####.##.#', '#.####....#', '#..##..##.#', '#.####....#', '#.####.##.#', '#.........#', '###########', '...........'],
+  };
+  // Put an icon in front of a label's text. scale 2 doubles every icon pixel (for headings).
+  function withIcon(lbl, rows, size, scale = 1, gap = 4) {
+    if (!lbl || !rows) return lbl;
+    const iw = rows[0].length * scale, ih = rows.length * scale;
+    const padL = lbl.padL, shift = iw + gap, w = lbl.w + shift, h = Math.max(lbl.h, ih), mask = new Uint8Array(w * h);
+    for (let j = 0; j < lbl.h; j++) for (let i = 0; i < lbl.w; i++) if (lbl.mask[j * lbl.w + i]) mask[j * w + i + (i >= padL ? shift : 0)] = 1;
+    const base = Math.round(size * 1.08), capTop = base - Math.round(size * 0.7);
+    const top = Math.max(0, Math.min(h - ih, Math.round((capTop + base) / 2 - ih / 2)));
+    rows.forEach((row, j) => { for (let i = 0; i < row.length; i++) if (row[i] === '#')
+      for (let v = 0; v < scale; v++) for (let u = 0; u < scale; u++) mask[(top + j * scale + v) * w + padL + i * scale + u] = 1; });
+    return { w, h, mask, padL };
+  }
+  function makeLabel(text, size, padL = 6, padR = 7) {
+    const c = document.createElement('canvas');
+    const x = c.getContext('2d');
+    const font = `700 ${size}px Lora, Georgia, "Times New Roman", serif`;
+    x.font = font;
+    const w = Math.ceil(x.measureText(text).width) + 6;
+    const h = Math.ceil(size * 1.7);
+    c.width = w; c.height = h;
+    x.font = font; x.fillStyle = '#fff'; x.textBaseline = 'alphabetic';
+    const base = Math.round(size * 1.2);
+    x.fillText(text, 3, base);
+    const d = x.getImageData(0, 0, w, h).data;
+    let minX = w, maxX = -1;
+    for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) if (d[(j * w + i) * 4 + 3] >= 128) { if (i < minX) minX = i; if (i > maxX) maxX = i; }
+    if (maxX < 0) { minX = 0; maxX = 0; }
+    const top = base - Math.round(size * 1.08), bottom = base + Math.round(size * 0.46);
+    const inkW = maxX - minX + 1;
+    const bw = inkW + padL + padR, bh = bottom - top + 1;
+    const mask = new Uint8Array(bw * bh);
+    for (let j = 0; j < bh; j++) for (let i = 0; i < inkW; i++) {
+      const sy = top + j, sx = minX + i;
+      if (sy >= 0 && sy < h && d[(sy * w + sx) * 4 + 3] >= 128) mask[j * bw + padL + i] = 1;
+    }
+    return { w: bw, h: bh, mask, padL };
+  }
+  // Item names in the section column, drawn in the same 1-bit Lora as the labels, wrapped to the column width.
+  const DIM = 0xff9cb77f >>> 0;
+  function wrapWords(text, size, maxW) {
+    const x = document.createElement('canvas').getContext('2d');
+    x.font = `700 ${size}px Lora, Georgia, "Times New Roman", serif`;
+    const words = text.split(/\s+/), lines = [];
+    let line = '';
+    for (const w of words) {
+      const next = line ? line + ' ' + w : w;
+      if (line && x.measureText(next).width > maxW) { lines.push(line); line = w; } else line = next;
+    }
+    if (line) lines.push(line);
+    return lines;
+  }
+  function paintNames(widthCss, root = secBody) {
+    const size = Math.max(12, Math.min(16, Math.round(30 / P)));
+    const maxW = Math.max(60, Math.floor(widthCss / P) - 4);
+    for (const el of root.querySelectorAll('.t')) {
+      const text = el.dataset.text || el.textContent.trim();
+      el.dataset.text = text;
+      const icon = ICONS[el.dataset.icon];
+      const parts = wrapWords(text, size, icon ? maxW - 16 : maxW).map(l => makeLabel(l, size, 0, 1));
+      if (icon) parts[0] = withIcon(parts[0], icon, size, 1, 5);
+      const lh = parts[0].h - 3;
+      const w = Math.max(...parts.map(q => q.w)), h = lh * (parts.length - 1) + parts[parts.length - 1].h;
+      const c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      const g = c.getContext('2d'), id = g.createImageData(w, h), d32 = new Uint32Array(id.data.buffer);
+      const col = el.classList.contains('ph') ? DIM : MINT;
+      parts.forEach((q, k) => { for (let j = 0; j < q.h; j++) for (let i = 0; i < q.w; i++) if (q.mask[j * q.w + i]) d32[(k * lh + j) * w + i] = col; });
+      g.putImageData(id, 0, 0);
+      c.className = 'pxname'; c.setAttribute('aria-hidden', 'true');
+      c.style.width = w * P + 'px'; c.style.height = h * P + 'px';
+      const sr = document.createElement('span'); sr.className = 'sr-only'; sr.textContent = text;
+      el.replaceChildren(sr, c);
+    }
+  }
+  // Height (CSS px) a section's text needs at a column width, measured once off screen.
+  const measEl = document.createElement('div');
+  measEl.className = 'sec'; measEl.setAttribute('aria-hidden', 'true');
+  measEl.style.cssText = 'visibility:hidden;left:-10000px;top:0;max-height:none;overflow:visible;pointer-events:none';
+  document.body.appendChild(measEl);
+  const measCache = {};
+  function sectionHeight(key, widthCss) {
+    const id = key + '|' + Math.round(widthCss) + '|' + P;
+    if (measCache[id] === undefined) {
+      measEl.style.width = widthCss + 'px';
+      measEl.innerHTML = SECTIONS[key].body;
+      paintNames(widthCss, measEl);
+      measCache[id] = measEl.scrollHeight;
+      measEl.innerHTML = '';
+    }
+    return measCache[id];
+  }
+  function buildLabels() {
+    for (const k in measCache) delete measCache[k];
+    for (const p of PIECES) {
+      LABELS[p.key] = withIcon(makeLabel(SECTIONS[p.key].label, 13), ICONS[p.key], 13);
+      LABELS['h_' + p.key] = withIcon(makeLabel(SECTIONS[p.key].label, 19), ICONS[p.key], 19, 2, 6);
+      LABELS['ht_' + p.key] = withIcon(makeLabel(SECTIONS[p.key].label, 22), ICONS[p.key], 22, 2, 6);
+    }
+    LABELS.__hint = makeLabel('Drag to move around', 13);
+    LABELS.__name = makeLabel('Jaydon Chua', 13);
+    LABELS.__lift = makeLabel('Lift it to go back', 13);
+    if (view.mode === 'section') layoutSectionText();
+    dirty = true;
+  }
 
-    <!-- CONTACT -->
-    <section id="contact" class="section observe">
-      <h2>Let’s Connect</h2>
-      <div class="contact-grid">
-        <div class="card">
-          <p><strong>Email:</strong> <a id="emailLink" href="mailto:jaydonchua2026@gmail.com">jaydonchua2026@gmail.com</a></p>
-          <p><strong>Phone:</strong> <a href="tel:+12245047294">+1 (224) 504-7294</a></p>
-          <p><strong>GitHub:</strong> <a href="https://github.com/jaydonchua8" target="_blank" rel="noreferrer">github.com/jaydonchua8</a></p>
-          <p><strong>Resume:</strong> <a href="assets/Jaydon_Chua_Resume.pdf" target="_blank" rel="noreferrer">View / Download</a></p>
-          <p><strong>LinkedIn:</strong> 
-  <a href="https://www.linkedin.com/in/jaydon-chua-9431462ba/" target="_blank" rel="noreferrer">
-    linkedin.com/in/jaydon-chua-9431462ba
-  </a>
-</p>
+  function restFoot(o) { return { x: tileX(o.c, o.r) - camX, y: tileY(o.c, o.r) - camY }; }
+  function pieceFoot(p, now) {
+    const f = restFoot(p);
+    let lift = 0;
+    if (p.drag) { f.x = p.drag.footX; f.y = p.drag.footY; lift = dragLift(p, now); }
+    else if (p.anim) {
+      const t = Math.min(1, (now - p.anim.t0) / p.anim.dur);
+      const e = easeOut(t);
+      f.x += p.anim.dx * (1 - e); f.y += p.anim.dy * (1 - e);
+      lift = p.anim.lift * (1 - e);              // lowered onto the square, touching down at zero speed
+    }
+    return { x: f.x, y: f.y, lift };
+  }
+  const dragLift = (p, now) => 5 * easeOut(Math.min(1, (now - p.drag.t0) / 140));
+  const occupied = (c, r, except) => pieces.some(q => q !== except && q.c === c && q.r === r) || decor.some(d => d.c === c && d.r === r);
 
-          <div class="contact-actions">
-            <button class="btn" id="copyEmail">Copy Email</button>
-          </div>
-        </div>
+  // ------------------------------------------------------------ hover wobble: rigid rocking pushed by the cursor
+  // The cursor pushes the piece as it passes: the faster it moves, the harder the push. The piece then
+  // rocks back and forth on its base, losing a little energy each swing, until it comes to rest.
+  // Every angle is a separately rendered 3D pose, so the piece keeps its exact shape.
+  // Energy (per unit inertia) of a piece tipped by angle a onto its base rim, zero when upright.
+  function rockPE(ph, a) {
+    const c = (a >= 0 ? ph.critL : ph.critR) * DEG;
+    return GRAV * (Math.cos(c - Math.abs(a)) - Math.cos(c));
+  }
+  // spin that carries a resting piece out to a swing of amp (signed, radians)
+  const kickFor = (ph, amp) => Math.sign(amp) * Math.sqrt(2 * rockPE(ph, amp));
+  function nudge(p, dw) {
+    const ph = PHYS[p.sprite];
+    if (reduceMotion || p.drag || p.anim || view.mode !== 'board' || !ph) return;
+    if (!p.rock) p.rock = { a: 0, w: 0 };
+    const r = p.rock;
+    r.w += dw;
+    // cap the energy rather than the angle, so even the hardest push turns around naturally at WOB_MAX
+    const room = Math.min(rockPE(ph, WOB_MAX), rockPE(ph, -WOB_MAX)) - rockPE(ph, r.a);
+    if (room <= 0) r.w = 0; else if (r.w * r.w > 2 * room) r.w = Math.sign(r.w) * Math.sqrt(2 * room);
+    dirty = true;
+  }
+  // Rocking on the rim: gravity pulls the centre of mass back over the base; each time the base lands flat
+  // the piece rolls onto the opposite rim and loses some speed. Smaller swings come back faster, so it
+  // settles with a quickening little rattle, the way a real piece does.
+  function stepRock(p, dt) {
+    const r = p.rock, ph = PHYS[p.sprite];
+    const side = r.a !== 0 ? Math.sign(r.a) : Math.sign(r.w);
+    if (!side) { p.rock = null; return; }
+    const c = (side > 0 ? ph.critL : ph.critR) * DEG;
+    r.w -= side * GRAV * Math.sin(c - Math.abs(r.a)) * dt;
+    const a = r.a + r.w * dt;
+    if (a * side < 0) {                                        // base lands flat; pivot switches rims
+      r.w *= WOB_R;
+      if (r.w * r.w < 2 * rockPE(ph, -side * 0.4 * DEG)) { p.rock = null; return; }
+    }
+    r.a = a;
+  }
+  // cursor velocity in CSS px/s, measured over the last 80 ms of movement (steady even when events arrive unevenly)
+  const mouse = { t: 0, vx: 0, vy: 0, hist: [] };
+  function trackMouse(e) {
+    const t = e.timeStamp || performance.now(), dt = mouse.t ? (t - mouse.t) / 1000 : 0;
+    mouse.t = t;
+    const h = mouse.hist;
+    h.push({ x: e.clientX, y: e.clientY, t });
+    while (h.length > 2 && t - h[0].t > 80) h.shift();
+    const a = h[0], span = (t - a.t) / 1000;
+    if (span >= 0.012) { mouse.vx = (e.clientX - a.x) / span; mouse.vy = (e.clientY - a.y) / span; }
+    else if (dt > 0.1) { mouse.vx = 0; mouse.vy = 0; }
+    return Math.min(Math.max(dt, 0), 0.05);
+  }
+  // signed push: moving right tips the piece right (negative angle); vertical motion adds a little
+  const push = () => -(mouse.vx + 0.35 * Math.abs(mouse.vy) * (mouse.vx < 0 ? -1 : 1));
+  function setHover(k, kick) {
+    if (k === hoverKey) return;
+    hoverKey = k;
+    const q = k && pieceByKey(k);
+    const now = performance.now();
+    if (q && (!q.kickT || now - q.kickT > 400)) {
+      q.kickT = now;
+      // the swing grows with cursor speed: about 3° for a slow pass, 5° for a normal one, 9-10° for a fast swipe
+      const v = push();
+      let amp = kick !== undefined ? kick : Math.sign(v) * Math.min(WOB_MAX, Math.max(WOB_MIN, 0.108 * DEG * Math.pow(Math.abs(v), 0.61)));
+      if (!amp) amp = (Math.random() < 0.5 ? -1 : 1) * WOB_MIN;
+      if (PHYS[q.sprite]) nudge(q, kickFor(PHYS[q.sprite], amp));
+    }
+    dirty = true;
+  }
 
-        <form class="card contact-form" id="contactForm">
-          <label>
-            Your email
-            <input id="fromEmail" name="email" type="email" placeholder="you@example.com" required>
-          </label>
-          <label>
-            Message
-            <textarea id="message" name="message" rows="5" placeholder="How can I help?" required></textarea>
-          </label>
-          <button class="btn primary" type="submit">Open Email App</button>
-          <p class="muted">This opens your mail client with the fields filled in.</p>
-        </form>
-      </div>
-    </section>
-  </main>
+  // ------------------------------------------------------------ chess movement
+  function clearPath(p, dc, dr, steps) {
+    const sc = Math.sign(dc), sr = Math.sign(dr);
+    for (let i = 1; i < steps; i++) if (occupied(p.c + sc * i, p.r + sr * i, p)) return false;
+    return true;
+  }
+  function legal(p, c, r) {
+    if (!onBoard(c, r) || occupied(c, r, p)) return false;
+    const dc = c - p.c, dr = r - p.r, adc = Math.abs(dc), adr = Math.abs(dr);
+    if (!adc && !adr) return false;
+    const straight = dc === 0 || dr === 0, diag = adc === adr;
+    switch (p.kind) {
+      case 'king': return Math.max(adc, adr) === 1;
+      case 'knight': return adc * adr === 2;
+      case 'rook': return straight && clearPath(p, dc, dr, Math.max(adc, adr));
+      case 'bishop': return diag && clearPath(p, dc, dr, adc);
+      case 'queen': return (straight || diag) && clearPath(p, dc, dr, Math.max(adc, adr));
+      case 'pawn':                       // forward = toward the back of the board
+        if (dc !== 0) return false;
+        if (dr === -1) return true;
+        if (dr === -2 && !p.moved) return !occupied(p.c, p.r - 1, p);
+        return false;
+    }
+    return false;
+  }
+  function legalTiles(p) {
+    const out = [];
+    for (let c = 0; c < 8; c++) for (let r = 0; r < 8; r++) if (legal(p, c, r)) out.push({ c, r });
+    return out;
+  }
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Jaydon Chua • Built with vanilla HTML/CSS/JS</p>
-    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
-  </footer>
+  // ------------------------------------------------------------ bunny
+  // Click the bunny to zap it: a bolt comes down, its fur stands on end, and for a few seconds it glows,
+  // crackles and zips around the board, lighting up the dark squares around it.
+  const ZAP_LIFE = 6000, ZAP_FADE = 700;
+  const glows = [];                                   // extra lights {x, y, LR, LS, R2, k} in screen art px
+  function glowAt(x, y) {
+    let g = 0;
+    for (let n = 0; n < glows.length; n++) {
+      const q = glows[n], dx = x - q.x, dy = 2 * (y - q.y), d2 = dx * dx + dy * dy;
+      if (d2 < q.R2) { const v = q.k * lightAt(Math.sqrt(d2), q.LR, q.LS); if (v > g) g = v; }
+    }
+    return g;
+  }
+  function hash01(n) {
+    n = Math.imul((n ^ 61) ^ (n >>> 16), 9); n ^= n >>> 4; n = Math.imul(n, 0x27d4eb2d); n ^= n >>> 15;
+    return (n >>> 0) / 4294967296;
+  }
+  const zapAge = now => bunny.zapT0 ? now - bunny.zapT0 : Infinity;
+  const zapped = now => { const a = zapAge(now); return a >= 0 && a < ZAP_LIFE; };
+  function zapBunny(now) {
+    if (view.mode !== 'board') return;
+    bunny.zapT0 = now;
+    bunny.bolt = reduceMotion ? null : makeBolt();
+    bunny.next = now + 420;
+    dirty = true;
+  }
+  function makeBolt() {                               // jagged path from above the screen down to the bunny
+    const ex = bunny.x + camX, ey = bunny.y - bunny.h - 12 + camY;
+    let pts = [{ x: ex + (Math.random() - 0.5) * 80, y: camY - 6 }, { x: ex, y: ey }];
+    for (let lvl = 0; lvl < 6; lvl++) {
+      const out = [pts[0]];
+      for (let i = 1; i < pts.length; i++) {
+        const a = pts[i - 1], b = pts[i], len = Math.hypot(b.x - a.x, b.y - a.y);
+        out.push({ x: (a.x + b.x) / 2 + (Math.random() - 0.5) * len * 0.45, y: (a.y + b.y) / 2 + (Math.random() - 0.5) * len * 0.08 }, b);
+      }
+      pts = out;
+    }
+    const s = pts[10 + Math.floor(Math.random() * 18)], dir = Math.random() < 0.5 ? -1 : 1, fork = [s];
+    let fx = s.x, fy = s.y;
+    for (let i = 0; i < 6; i++) { fx += dir * (3 + Math.random() * 5); fy += 4 + Math.random() * 6; fork.push({ x: fx, y: fy }); }
+    return { pts, fork };
+  }
+  function stroke(pts, w, col) {
+    for (let i = 1; i < pts.length; i++) {
+      const x0 = Math.round(pts[i - 1].x - camX), y0 = Math.round(pts[i - 1].y - camY);
+      const x1 = Math.round(pts[i].x - camX), y1 = Math.round(pts[i].y - camY);
+      const n = Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0), 1);
+      for (let k = 0; k <= n; k++) {
+        const x = Math.round(x0 + (x1 - x0) * k / n), y = Math.round(y0 + (y1 - y0) * k / n);
+        for (let v = 0; v < w; v++) for (let u = 0; u < w; u++) px(x + u - (w >> 1), y + v - (w >> 1), col);
+      }
+    }
+  }
+  function drawBolt(now) {
+    const t = zapAge(now);
+    if (!bunny.bolt || t > 220 || (t > 85 && t < 125)) return;      // two quick flickers, then gone
+    stroke(bunny.bolt.pts, 4, BG); stroke(bunny.bolt.fork, 3, BG);
+    stroke(bunny.bolt.pts, 2, MINT); stroke(bunny.bolt.fork, 1, MINT);
+  }
+  function updateGlows(now, fade) {
+    glows.length = 0;
+    const za = zapAge(now);
+    if (za >= ZAP_LIFE + ZAP_FADE || fade <= 0.02) return;
+    const x = bunny.x, y = bunny.y - bunny.h - 8;
+    let k = za < ZAP_LIFE ? 1 : 1 - (za - ZAP_LIFE) / ZAP_FADE;
+    if (!reduceMotion) k *= 0.88 + 0.12 * hash01(Math.floor(now / 85));     // a gentle crackle, never a strobe
+    glows.push({ x, y, LR: 66, LS: 52, R2: 66 * 66, k: 0.72 * k * fade });   // dimmer than the puff, so it stands out
+    if (!reduceMotion && za < 320) { const f = 1 - za / 320; glows.push({ x, y, LR: 170, LS: 140, R2: 170 * 170, k: f * f * fade }); }
+  }
+  const SPARKS = [[[0, 0], [1, 1], [0, 2], [1, 3]], [[0, 0], [-1, 1], [0, 2], [1, 2], [0, 3]], [[0, -1], [-1, 0], [0, 0], [1, 0], [0, 1]]];
+  function spark(x, y, kind) {
+    const pts = SPARKS[kind];
+    for (const [u, v] of pts) { px(x + u + 1, y + v, BG); px(x + u - 1, y + v, BG); px(x + u, y + v + 1, BG); px(x + u, y + v - 1, BG); }
+    for (const [u, v] of pts) px(x + u, y + v, MINT);
+  }
+  // While charged the bunny is a glowing puffball: round, fur standing straight out, ears up, two dot eyes.
+  function drawPuff(o, now) {
+    const step = reduceMotion ? 1 : Math.floor(now / 90), face = bunny.face;
+    const R = 8, cx = Math.round(o.sx), cy = Math.round(o.fy) - R - 2;
+    const W = 40, H = 44, ox = cx - 20, oy = cy - 30, m = new Uint8Array(W * H);
+    const set = (x, y) => { const i = x - ox, j = y - oy; if (i >= 0 && j >= 0 && i < W && j < H) m[j * W + i] = 1; };
+    for (let y = -R; y <= R; y++) for (let x = -R; x <= R; x++) if (x * x + y * y <= R * R + R) set(cx + x, cy + y);
+    for (let k = 0; k < 30; k++) {                     // fur standing straight out, crackling
+      const a = (k + hash01(step * 31 + k) * 0.6) / 30 * Math.PI * 2;
+      if (Math.sin(a) > 0.8) continue;                  // feet stay on the ground
+      const L = 1 + Math.floor(hash01(step * 17 + k * 7 + 3) * 4);
+      for (let q = 0; q <= L; q++) set(Math.round(cx + Math.cos(a) * (R + q)), Math.round(cy + Math.sin(a) * (R + q)));
+    }
+    for (const sgn of [-1, 1]) {                       // ears pointing straight up, a little splayed
+      const ex = cx + sgn * 3 + face;
+      for (let y = 0; y < 11; y++) {
+        const x = Math.round(ex + sgn * 0.22 * y), w = y > 8 ? 0 : 1;
+        for (let u = -w; u <= w; u++) set(x + u, cy - R + 1 - y);
+      }
+      if (hash01(step * 5 + sgn + 9) < 0.6) set(Math.round(ex + sgn * 2.6) + sgn, cy - R - 10);
+    }
+    for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) {          // dark rim, then the glowing body
+      if (m[j * W + i]) continue;
+      if ((i > 0 && m[j * W + i - 1]) || (i < W - 1 && m[j * W + i + 1]) || (j > 0 && m[(j - 1) * W + i]) || (j < H - 1 && m[(j + 1) * W + i])) px(ox + i, oy + j, BG);
+    }
+    for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) if (m[j * W + i]) px(ox + i, oy + j, MINT);
+    const fx = cx + face;                              // eyes look where it is headed
+    for (const d of [-3, 3]) { px(fx + d, cy - 2, BG); px(fx + d, cy - 1, BG); }
+    px(fx, cy + 2, BG); px(fx - 1, cy + 1, BG); px(fx + 1, cy + 1, BG);
+  }
+  function drawZapFx(o, now) {
+    const za = zapAge(now);
+    if (za >= ZAP_LIFE + ZAP_FADE || o.fade <= 0.5) return;
+    const step = reduceMotion ? 1 : Math.floor(now / 90), out = za > ZAP_LIFE;
+    const live = out ? 1 - (za - ZAP_LIFE) / ZAP_FADE : 1;
+    const cx = o.sx, cy = o.fy - 10, n = out ? 8 : 3;     // sparks jump around it, then burst outward when it pops back
+    for (let k = 0; k < n; k++) {
+      const ang = hash01(step * 7 + k * 131 + 1) * Math.PI * 2;
+      const rad = out ? 12 + 28 * (1 - live) : 15 + hash01(step * 13 + k * 71 + 5) * 7;
+      spark(Math.round(cx + Math.cos(ang) * rad), Math.round(cy + Math.sin(ang) * rad * 0.7), (k + step) % 3);
+    }
+  }
 
-  <script src="script.js"></script>
+  function bunnyFoot() { return { x: tileX(bunny.c, bunny.r) - camX, y: tileY(bunny.c, bunny.r) - camY }; }
+  function bunnyFree(c, r) {
+    if (!onBoard(c, r) || occupied(c, r, null)) return false;
+    const x = tileX(c, r) - camX, y = tileY(c, r) - camY;
+    return x > 18 && x < AW - 18 && y > 40 && y < AH - 34;
+  }
+  function bunnyHop(to, now, fast) {
+    const a = bunnyFoot();
+    const b = { x: tileX(to.c, to.r) - camX, y: tileY(to.c, to.r) - camY };
+    if (b.x !== a.x) bunny.face = b.x < a.x ? -1 : 1;
+    bunny.state = 'hop'; bunny.t0 = now; bunny.dur = zapped(now) ? 320 : fast ? 380 : 540;
+    bunny.from = { c: bunny.c, r: bunny.r }; bunny.to = to;
+  }
+  function bunnyWander(now) {
+    const opts = [];
+    for (let dc = -1; dc <= 1; dc++) for (let dr = -1; dr <= 1; dr++) {
+      if (!dc && !dr) continue;
+      if (bunnyFree(bunny.c + dc, bunny.r + dr)) opts.push({ c: bunny.c + dc, r: bunny.r + dr });
+    }
+    if (!opts.length) { bunny.next = now + 1200; return; }
+    if (!zapped(now) && Math.random() < 0.18) { bunny.face *= -1; bunny.next = now + 700 + Math.random() * 900; dirty = true; return; }
+    bunnyHop(opts[Math.floor(Math.random() * opts.length)], now, false);
+  }
+  function bunnyFlee(fromC, fromR, now) {
+    if (bunny.state === 'hop') return;
+    let best = null, bd = -1;
+    for (let dc = -1; dc <= 1; dc++) for (let dr = -1; dr <= 1; dr++) {
+      const c = bunny.c + dc, r = bunny.r + dr;
+      if ((dc || dr) && bunnyFree(c, r)) {
+        const d = Math.max(Math.abs(c - fromC), Math.abs(r - fromR));
+        if (d > bd) { bd = d; best = { c, r }; }
+      }
+    }
+    if (best) bunnyHop(best, now, true);
+  }
+  function updateBunny(now) {
+    if (zapAge(now) < ZAP_LIFE + ZAP_FADE) dirty = true;
+    if (bunny.state === 'hop') {
+      const t = (now - bunny.t0) / bunny.dur;
+      const a = bunny.from, b = bunny.to;
+      const ax = tileX(a.c, a.r) - camX, ay = tileY(a.c, a.r) - camY;
+      const bx = tileX(b.c, b.r) - camX, by = tileY(b.c, b.r) - camY;
+      if (t < 0.17) { bunny.frame = 'bunny_crouch'; bunny.x = ax; bunny.y = ay; bunny.h = 0; }
+      else if (t < 0.83) {
+        const u = (t - 0.17) / 0.66;
+        bunny.frame = 'bunny_leap';
+        bunny.x = ax + (bx - ax) * u; bunny.y = ay + (by - ay) * u; bunny.h = (zapped(bunny.t0) ? 92 : 60) * u * (1 - u);
+      } else if (t < 1) { bunny.frame = 'bunny_crouch'; bunny.x = bx; bunny.y = by; bunny.h = 0; }
+      else {
+        bunny.c = b.c; bunny.r = b.r; bunny.state = 'sit'; bunny.frame = 'bunny_sit'; bunny.h = 0;
+        bunny.next = now + (zapped(now) ? 120 + Math.random() * 260 : Math.random() < 0.15 ? 3200 + Math.random() * 2400 : 900 + Math.random() * 1700);
+      }
+      return true;
+    }
+    const f = bunnyFoot();
+    bunny.x = f.x; bunny.y = f.y; bunny.frame = 'bunny_sit'; bunny.h = 0;
+    if (view.mode === 'board' && !reduceMotion && now >= bunny.next) bunnyWander(now);
+    if (view.mode === 'board' && occupied(bunny.c, bunny.r, null)) bunnyFlee(bunny.c, bunny.r, now);
+    return false;
+  }
+
+  // ------------------------------------------------------------ view states
+  // board -> topple -> zoomIn -> section -> zoomOut -> rise -> board
+  function boardParams(useDefaultLight) {
+    return {
+      camX: boardCamX, camY: boardCamY,
+      lx: useDefaultLight ? lightTarget.x : light.x, ly: useDefaultLight ? lightTarget.y : light.y,
+      LR, LS, TOP: LTOP * lightAmt, AMB: 0, SL: lightAmt, others: 1, boardUI: 1, secUI: 0, gainK: 0, tiles: 1, rip: 0
+    };
+  }
+  function secLayout(key) {
+    const p = pieceByKey(key);
+    const s = SPR[restFrame(p.sprite).name];
+    const tall = layoutName === 'tall';
+    const hd = LABELS[(tall ? 'ht_' : 'h_') + key];
+    const hh = hd ? hd.h : 24;
+    const tx = Math.round(tall ? AW * 0.27 : AW * 0.21);
+    let ty, hx, hy, textTop, textLeft, textW;
+    // When the text is long, the heading (and a little of the piece) moves up so the text fits on screen.
+    if (tall) {
+      hx = Math.min(Math.round(AW * 0.52), AW - 3 - (hd ? hd.w : 0));
+      textLeft = Math.round(AW * 0.08); textW = AW - 2 * textLeft;
+      const need = sectionHeight(key, textW * P - 6) / P, room = AH - 24 / P;
+      const topFor = y => Math.max(Math.round(y + s.h / 2 + 44), Math.round(y - hh / 2) + hh + 10);
+      ty = Math.round(AH * 0.2);
+      const over = topFor(ty) + need - room;
+      if (over > 0) ty = Math.max(Math.round(AH * 0.12), ty - Math.ceil(over));
+      hy = Math.round(ty - hh / 2);
+      textTop = topFor(ty);
+    } else {
+      hx = Math.round(AW * 0.47);
+      textLeft = hx; textW = Math.min(560 / P, AW * 0.92 - hx);
+      const need = sectionHeight(key, textW * P - 6) / P;
+      const base = Math.round(AH * 0.41) - 5;
+      hy = Math.max(Math.round(AH * 0.06), Math.min(base, Math.floor(AH * 0.9 - need - hh - 6) - 4));
+      textTop = hy + hh + 6;
+      ty = Math.round(AH * 0.44 - Math.min((base - hy) * 0.6, AH * 0.12));
+    }
+    const camx = Math.round(tileX(p.c, p.r) + (s.w / 2 - s.ax) - tx);
+    const camy = Math.round(tileY(p.c, p.r) + (s.h / 2 - s.ay) - ty);
+    return { camx, camy, lx: tx + 8, ly: ty + s.h / 2 - 6, hx, hy, textTop, textLeft, textW, hd };
+  }
+  function secParams(key) {
+    const L = secLayout(key);
+    return { camX: L.camx, camY: L.camy, lx: L.lx, ly: L.ly, LR: SEC.LR, LS: SEC.LS, TOP: SEC.TOP, AMB: 0, SL: 1, others: 0, boardUI: 0, secUI: 1, gainK: 1, tiles: 0.6, rip: 1 };
+  }
+  function lerpParams(a, b, e) {
+    const o = {};
+    for (const k in a) o[k] = a[k] + (b[k] - a[k]) * e;
+    return o;
+  }
+  function currentParams(now) {
+    switch (view.mode) {
+      case 'section': return secParams(view.key);
+      case 'zoomIn': case 'zoomOut': return lerpParams(view.from, view.to, easeInOut(clamp01((now - view.t0) / view.dur)));
+      default: return boardParams(false);
+    }
+  }
+  function selectedAngle(p, now) {
+    const rest = restFrame(p.sprite).a;
+    switch (view.mode) {
+      case 'topple': return view.th / DEG;
+      case 'rise': return rest * (1 - smoother(clamp01((now - view.t0) / T_RISE)));
+      default: return rest;
+    }
+  }
+  // Tipping over: a flick carries the centre of mass past the balance point, then gravity takes over.
+  function stepTopple(dt) {
+    const ph = PHYS[pieceByKey(view.key).sprite];
+    const crit = ph.critL * DEG, rest = ph.rest * DEG;
+    view.w += GRAV * Math.sin(view.th - crit) * dt;
+    view.th += view.w * dt;
+    if (view.th >= rest) {
+      view.th = rest;
+      if (view.w * E_FALL < 0.5) { view.w = 0; view.settled = true; view.tSettle = performance.now(); }
+      else view.w = -view.w * E_FALL;                      // one small rebound off the crown, then rest
+    }
+  }
+
+  function openSection(key, fromKeyboard) {
+    if (view.mode !== 'board' || !SPR.king) return;
+    const p = pieceByKey(key);
+    const now = performance.now();
+    p.anim = null; p.drag = null; p.rock = null;
+    hoverKey = null; lightFollows = false;
+    view.th = 0; view.settled = false;
+    view.w = 1.3 * Math.sqrt(2 * GRAV * (1 - Math.cos(PHYS[p.sprite].critL * DEG)));
+    lightTarget.x = light.x; lightTarget.y = light.y;
+    view.mode = 'topple'; view.key = key; view.t0 = now; view.kb = !!fromKeyboard;
+    canvas.classList.remove('over-piece', 'dragging', 'panning');
+    canvas.classList.add('still');
+    // make room: the bunny hops away if it is where the piece will land
+    if (Math.abs(bunny.r - p.r) <= 2 && Math.abs(bunny.c - p.c) <= 2) bunnyFlee(p.c, p.r, now);
+    if (reduceMotion) { startZoomIn(now); view.t0 -= T_IN; }
+    dirty = true;
+  }
+  function startZoomIn(now) {
+    view.from = boardParams(false); view.to = secParams(view.key);
+    view.mode = 'zoomIn'; view.t0 = now; view.dur = T_IN;
+  }
+  function enterSection() {
+    view.mode = 'section';
+    const s = SECTIONS[view.key];
+    secTitle.textContent = s.label;
+    secBody.innerHTML = s.body;
+    layoutSectionText();
+    secEl.hidden = false;
+    secEl.classList.remove('reveal'); void secEl.offsetWidth; secEl.classList.add('reveal');
+    secEl.scrollTop = 0;
+    if (view.kb) backBtn.focus();
+    dirty = true;
+  }
+  function layoutSectionText() {
+    if (!view.key) return;
+    const L = secLayout(view.key);
+    const tall = layoutName === 'tall';
+    const top = L.textTop * P, left = L.textLeft * P + 6, width = L.textW * P - 6;
+    secEl.style.left = left + 'px'; secEl.style.top = top + 'px';
+    secEl.style.width = width + 'px';
+    secEl.style.maxHeight = Math.max(120, window.innerHeight - top - (tall ? 24 : window.innerHeight * 0.1)) + 'px';
+    paintNames(width);
+  }
+  function goBack() {
+    if (view.mode !== 'section') return;
+    const now = performance.now();
+    secEl.hidden = true;
+    secHover = false;
+    placeCamera(); lightOnPiece(pieceByKey(view.key)); lightAmt = 1;
+    view.from = secParams(view.key); view.to = boardParams(true);
+    view.mode = 'zoomOut'; view.t0 = now; view.dur = T_OUT;
+    if (reduceMotion) view.t0 -= T_OUT;
+    dirty = true;
+  }
+  function advanceView(now) {
+    const t = now - view.t0;
+    if (view.mode === 'topple' && view.settled && now - view.tSettle >= 160) startZoomIn(now);
+    else if (view.mode === 'zoomIn' && t >= view.dur) enterSection();
+    else if (view.mode === 'zoomOut' && t >= view.dur) {
+      light.x = view.to.lx; light.y = view.to.ly;
+      camX = boardCamX; camY = boardCamY;
+      view.mode = 'rise'; view.t0 = reduceMotion ? now - T_RISE : now;
+    } else if (view.mode === 'rise' && t >= T_RISE) {
+      const k = view.key;
+      view.mode = 'board'; view.key = null;
+      canvas.classList.remove('still');
+      if (view.kb) { const b = [...nav.children].find(x => x.dataset.key === k); if (b) b.focus(); }
+    }
+    return view.mode !== 'board' && view.mode !== 'section';
+  }
+
+  // ------------------------------------------------------------ drawing
+  function shadow(cx, cy, rx, strength) {
+    const ry = rx / 2;
+    const x0 = Math.max(0, Math.floor(cx - rx)), x1 = Math.min(AW - 1, Math.ceil(cx + rx));
+    const y0 = Math.max(0, Math.floor(cy - ry)), y1 = Math.min(AH - 1, Math.ceil(cy + ry));
+    for (let y = y0; y <= y1; y++) {
+      const dy = (y - cy) / ry;
+      for (let x = x0; x <= x1; x++) {
+        const dx = (x - cx) / rx, f = dx * dx + dy * dy;
+        if (f < 1) fbuf[y * AW + x] *= 1 - strength * (1 - f);
+      }
+    }
+  }
+  function drawFloor(prm, objs, now) {
+    const lx = prm.lx, ly = prm.ly, lr = prm.LR, ls = prm.LS, amb = prm.AMB, R2 = lr * lr, dark = 1 - prm.tiles;
+    const rip = reduceMotion ? 0 : prm.rip;
+    // time stepped at 15 fps so the rings move like sprite animation rather than video
+    const tq = Math.floor(now / 66.7) * 0.0667;
+    const top = prm.TOP * (rip > 0 ? 1 + 0.35 * rip * Math.sin(tq * 1.9) : 1);
+    const RR = layoutName === 'tall' ? 120 : 150, RR2 = RR * RR, WAVE = 30, SPEED = 24, G = glows.length > 0;
+    for (let sy = 0; sy < AH; sy++) {
+      const wy = sy + camY, dy = 2 * (sy - ly), dy2 = dy * dy, row = sy * AW;
+      for (let sx = 0; sx < AW; sx++) {
+        const wx = sx + camX;
+        const c = Math.floor((wx + 2 * wy + TW) / 76), r = Math.floor((2 * wy - wx + TW) / 76);
+        const lit = (c + r) & 1;
+        const dx = sx - lx, d2 = dx * dx + dy2;
+        let I = 0;
+        if (lit || dark > 0) {
+          I = d2 >= R2 ? amb : amb + (top - amb) * lightAt(Math.sqrt(d2), lr, ls);
+          if (G) { const g = glowAt(sx, sy) * LTOP; if (g > I) I = g; }
+          if (!lit) I *= dark;
+        }
+        if (rip > 0 && d2 < RR2) {
+          const d = Math.sqrt(d2);
+          let ph = (d - tq * SPEED) / WAVE; ph -= Math.floor(ph);
+          let ring = 1 - Math.abs(ph - 0.5) * 2;               // 0..1, peak mid-wave
+          ring *= ring; ring *= ring;                           // thin bright rings
+          const env = Math.pow(1 - d / RR, 1.6) * Math.min(1, d / 18);
+          I += rip * 0.9 * ring * env * (lit ? 1 : 0.42);
+        }
+        fbuf[row + sx] = I;
+      }
+    }
+    for (const o of objs) {
+      if (!o.shadow) continue;
+      const dx = o.sx - lx, dy = (o.sy - ly) * 2, d = Math.hypot(dx, dy) || 1;
+      const k = Math.min(7, d / 22);
+      shadow(o.sx + dx / d * k, o.sy + dy / d * k * 0.5 + 1, o.shadow, o.shadowK);
+    }
+    for (let sy = 0; sy < AH; sy++) {
+      const by = ((sy + camY) & 7) << 3, row = sy * AW;
+      for (let sx = 0; sx < AW; sx++) buf[row + sx] = fbuf[row + sx] > TH[by | ((sx + camX) & 7)] ? MINT : BG;
+    }
+  }
+  function px(x, y, col) { if (x >= 0 && y >= 0 && x < AW && y < AH) buf[y * AW + x] = col; }
+  function rect(x, y, w, h, col, fade) {
+    const x0 = Math.max(0, x), y0 = Math.max(0, y), x1 = Math.min(AW, x + w), y1 = Math.min(AH, y + h);
+    if (fade >= 1) { for (let j = y0; j < y1; j++) buf.fill(col, j * AW + x0, j * AW + x1); return; }
+    for (let j = y0; j < y1; j++) for (let i = x0; i < x1; i++) if (noiseAt(i, j) < fade) buf[j * AW + i] = col;
+  }
+  // Draw a dithered sprite. fade dissolves it pixel by pixel. With lit, every pixel is lit by the pool of
+  // light (never below lit.min), so whatever the light does not reach stays black.
+  function sprite(name, fx, fy, gain, fade, lit) {
+    const s = SPR[name]; if (!s || fade <= 0) return;
+    const lx = lit ? lit.lx : 0, ly = lit ? lit.ly : 0, lr = lit ? lit.LR : 0, ls = lit ? lit.LS : 1;
+    const R2 = lr * lr, lk = lit ? lit.SL : 1, lmin = lit ? lit.min : 1;
+    const x0 = Math.round(fx) - s.ax, y0 = Math.round(fy) - s.ay;
+    if (s.outline) {              // 1px dark rim so a small character separates from the dithered floor
+      for (let j = -1; j <= s.h; j++) for (let i = -1; i <= s.w; i++) {
+        if (i >= 0 && j >= 0 && i < s.w && j < s.h && s.cov[j * s.w + i]) continue;
+        let near = false;
+        for (let k = 0; k < 4 && !near; k++) {
+          const ii = i + (k === 0 ? 1 : k === 1 ? -1 : 0), jj = j + (k === 2 ? 1 : k === 3 ? -1 : 0);
+          near = ii >= 0 && jj >= 0 && ii < s.w && jj < s.h && s.cov[jj * s.w + ii] === 1;
+        }
+        if (near && (fade >= 1 || noiseAt(x0 + i, y0 + j) < fade)) px(x0 + i, y0 + j, BG);
+      }
+    }
+    for (let j = 0; j < s.h; j++) {
+      const y = y0 + j; if (y < 0 || y >= AH) continue;
+      const by = (j & 7) << 3;
+      for (let i = 0; i < s.w; i++) {
+        const k = j * s.w + i; if (!s.cov[k]) continue;
+        const x = x0 + i; if (x < 0 || x >= AW) continue;
+        if (fade < 1 && noiseAt(x, y) >= fade) continue;
+        let g = gain;
+        if (lit && lmin < 1) {
+          const dx = x - lx, dy = 2 * (y - ly), d2 = dx * dx + dy * dy;
+          let L = d2 >= R2 ? 0 : lightAt(Math.sqrt(d2), lr, ls) * lk;
+          if (glows.length) { const gl = glowAt(x, y); if (gl > L) L = gl; }
+          g *= L > lmin ? L : lmin;
+        }
+        buf[y * AW + x] = s.shade[k] * g > TH[by | (i & 7)] ? MINT : BG;
+      }
+    }
+  }
+  // Dim dithered reflection below a sprite (section view floor)
+  function reflection(name, fx, fy, gain) {
+    const s = SPR[name]; if (!s || gain <= 0) return;
+    const x0 = Math.round(fx) - s.ax, y0 = Math.round(fy) - s.ay, base = y0 + s.h, reach = s.h * 0.7;
+    for (let j = 0; j < s.h; j++) {
+      const y = base + (s.h - 1 - j); if (y < 0 || y >= AH) continue;
+      if ((y - base) & 1) continue;                       // every other row: a rippled, striped reflection
+      const fall = 1 - (y - base) / reach; if (fall <= 0) continue;
+      const by = ((y + 3) & 7) << 3;
+      for (let i = 0; i < s.w; i++) {
+        const k = j * s.w + i; if (!s.cov[k]) continue;
+        const x = x0 + i; if (x < 0 || x >= AW) continue;
+        if (s.shade[k] * gain * fall > TH[by | ((x + 5) & 7)]) buf[y * AW + x] = MINT;
+      }
+    }
+  }
+  function label(lbl, x, y, inverted, fade) {
+    if (!lbl || fade <= 0) return;
+    rect(x, y, lbl.w, lbl.h, inverted ? MINT : BG, fade);
+    const col = inverted ? BG : MINT;
+    for (let j = 0; j < lbl.h; j++) for (let i = 0; i < lbl.w; i++) {
+      if (!lbl.mask[j * lbl.w + i]) continue;
+      if (fade < 1 && noiseAt(x + i, y + j) >= fade) continue;
+      px(x + i, y + j, col);
+    }
+  }
+  function tileShape(c, r, inset, col, filled) {
+    const cx = tileX(c, r) - camX, cy = tileY(c, r) - camY;
+    const hh = TH2 - inset;
+    for (let dy = -hh; dy <= hh; dy++) {
+      const hw = 2 * (hh - Math.abs(dy));
+      if (filled) { for (let dx = -hw; dx <= hw; dx++) px(cx + dx, cy + dy, col); }
+      else { px(cx - hw, cy + dy, col); px(cx - hw + 1, cy + dy, col); px(cx + hw, cy + dy, col); px(cx + hw - 1, cy + dy, col); }
+    }
+  }
+  function contrast(c, r) {
+    const x = Math.round(tileX(c, r) - camX), y = Math.round(tileY(c, r) - camY);
+    const f = x >= 0 && y >= 0 && x < AW && y < AH ? fbuf[y * AW + x] : 0;
+    return f > 0.5 ? BG : MINT;
+  }
+
+  let layout = [];   // hit areas from the last frame
+  function draw(now) {
+    const prm = currentParams(now);
+    camX = Math.round(prm.camX); camY = Math.round(prm.camY);
+    const othersFade = (view.mode === 'zoomIn' || view.mode === 'section' || view.mode === 'zoomOut') ? prm.others : 1;
+    const sel = view.key ? pieceByKey(view.key) : null;
+
+    const objs = [];
+    for (const p of pieces) {
+      const f = pieceFoot(p, now);
+      let name = p.sprite, fade = othersFade, liftPx = f.lift;
+      if (p === sel) {
+        fade = 1;
+        name = frameAt(p.sprite, selectedAngle(p, now));
+        if (view.mode === 'rise') { const s1 = Math.sin(Math.PI * clamp01((now - view.t0) / T_RISE)); liftPx = 7 * s1 * s1; }
+        if (view.mode === 'section') liftPx = Math.round(secLift);
+      } else if (p.rock) name = frameAt(p.sprite, p.rock.a / DEG);
+      const up = SPR[p.sprite];
+      objs.push({ type: 'piece', p, name, sx: f.x, sy: f.y, fy: f.y - liftPx, fade,
+        shadow: up ? up.w * 0.44 : 0, shadowK: liftPx > 0.5 ? 0.55 : 0.8 });
+    }
+    for (const d of decor) { const f = restFoot(d); objs.push({ type: 'decor', name: d.sprite, sx: f.x, sy: f.y, fy: f.y, fade: othersFade, shadow: 0 }); }
+    objs.push({ type: 'bunny', name: bunny.frame + (bunny.face > 0 ? '_r' : ''), sx: bunny.x, sy: bunny.y, fy: bunny.y - bunny.h,
+      fade: othersFade, shadow: (7 - bunny.h * 0.18) * (othersFade > 0.5 ? 1 : 0), shadowK: 0.85 });
+
+    updateGlows(now, othersFade);
+    drawFloor(prm, objs.filter(o => o.fade > 0.5 || o.type === 'piece' && o.p === sel), now);
+
+    // move hints while dragging a piece
+    const dragging = pieces.find(p => p.drag);
+    if (dragging) {
+      for (const t of dragging.drag.legal) tileShape(t.c, t.r, 13, contrast(t.c, t.r), true);
+      const tt = dragging.drag.target;
+      if (tt && onBoard(tt.c, tt.r) && dragging.drag.legal.some(t => t.c === tt.c && t.r === tt.r)) tileShape(tt.c, tt.r, 2, contrast(tt.c, tt.r), false);
+      tileShape(dragging.c, dragging.r, 15, contrast(dragging.c, dragging.r), false);
+    }
+
+    if (sel && prm.secUI > 0) {
+      const o = objs.find(q => q.p === sel);
+      reflection(o.name, o.sx, o.sy, 0.8 * prm.secUI);
+    }
+
+    // objects back to front; a dragged piece is always on top
+    objs.sort((a, b) => (a.p && a.p.drag ? 1 : 0) - (b.p && b.p.drag ? 1 : 0) || a.sy - b.sy);
+    layout = [];
+    const lit = { lx: prm.lx, ly: prm.ly, LR: prm.LR, LS: prm.LS, SL: prm.SL, min: 0 };
+    const litSel = { ...lit, min: prm.gainK };          // the opened piece is fully lit on its own screen
+    for (const o of objs) {
+      let gain = o.type === 'bunny' ? 1.55 : 1.06;
+      if (o.type === 'piece') {
+        if (hoverKey === o.p.key || o.p.drag) gain *= 1.22;
+        if (o.p === sel) gain = gain + ((o.p.dark ? 2.4 : 1.65) - gain) * prm.gainK;
+      }
+      const puff = o.type === 'bunny' && o.fade > 0.5 && zapAge(now) >= 70 && zapped(now);
+      if (puff) drawPuff(o, now); else sprite(o.name, o.sx, o.fy, gain, o.fade, o.p === sel ? litSel : lit);
+      if (o.type === 'bunny') drawZapFx(o, now);
+      // hit areas: a board piece uses its upright outline, so rocking never flickers the hover on and off
+      const s = o.type === 'piece' && o.p !== sel ? SPR[o.p.sprite] : SPR[o.name];
+      if (s && o.fade > 0.5) layout.push({ o, x: Math.round(o.sx) - s.ax, y: Math.round(o.fy) - s.ay, s });
+    }
+
+    if (othersFade > 0.5) drawBolt(now);
+
+    // board labels above their pieces
+    for (const o of objs) {
+      if (o.type !== 'piece' || o.p === sel) continue;
+      const lbl = LABELS[o.p.key]; if (!lbl) continue;
+      const s = SPR[o.name];
+      let x = Math.round(o.sx - lbl.w / 2);
+      x = Math.max(2, Math.min(AW - lbl.w - 2, x));
+      const y = Math.round(o.fy) - (s ? s.ay : 60) - lbl.h - 1;
+      const ui = view.mode === 'board' || view.mode === 'topple' || view.mode === 'rise' ? 1 : prm.boardUI;
+      // a name shows when its piece is lit
+      const fade = Math.min(ui, clamp01(2.5 * (lightPx(prm, o.sx, s ? o.fy - s.ay + s.h / 2 : o.fy - 30) - 0.08)));
+      if (fade <= 0) continue;
+      label(lbl, x, y, hoverKey === o.p.key, fade);
+      if (fade > 0.5) layout.push({ o, x, y, w: lbl.w, h: lbl.h, isLabel: true });
+    }
+    const uiFade = view.mode === 'board' || view.mode === 'topple' || view.mode === 'rise' ? 1 : prm.boardUI;
+    if (LABELS.__hint) { const h = LABELS.__hint; label(h, Math.round((AW - h.w) / 2), AH - h.h - 20, false, uiFade); }
+    if (LABELS.__name) label(LABELS.__name, 6, AH - LABELS.__name.h - 6, false, uiFade);
+
+    // section screen: "Lift it to go back" over the fallen piece, heading in the right column
+    if (sel && prm.secUI > 0) {
+      const o = objs.find(q => q.p === sel), s = SPR[o.name];
+      const L = secLayout(sel.key);
+      const lift = LABELS.__lift, hd = L.hd;
+      if (lift && s) {
+        const cx = Math.round(o.sx) - s.ax + s.w / 2;
+        const x = Math.round(cx - lift.w / 2), y = Math.round(o.fy) - s.ay - lift.h - 12;
+        label(lift, x, y, secHover, prm.secUI);
+        if (view.mode === 'section') layout.push({ o, x, y, w: lift.w, h: lift.h, isLabel: true, lift: true });
+      }
+      if (hd) label(hd, L.hx, L.hy, false, prm.secUI);
+    }
+
+    ctx.putImageData(image, 0, 0);
+  }
+
+  function hitTest(x, y) {
+    for (let i = layout.length - 1; i >= 0; i--) {
+      const L = layout[i];
+      if (L.isLabel) { if (x >= L.x && y >= L.y && x < L.x + L.w && y < L.y + L.h) return L.o; continue; }
+      const lx = Math.floor(x - L.x), ly = Math.floor(y - L.y);
+      if (lx >= 0 && ly >= 0 && lx < L.s.w && ly < L.s.h && L.s.cov[ly * L.s.w + lx]) {
+        if (L.o.type === 'decor') return null;
+        return L.o;
+      }
+    }
+    return null;
+  }
+
+  // ------------------------------------------------------------ keyboard / buttons
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') goBack(); });
+  backBtn.addEventListener('click', goBack);
+  for (const p of PIECES) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = SECTIONS[p.key].label; b.dataset.key = p.key;
+    b.addEventListener('focus', () => { if (view.mode === 'board') { lightOnPiece(pieceByKey(p.key)); setHover(p.key, -4 * DEG); } });
+    b.addEventListener('blur', () => { if (hoverKey === p.key) setHover(null); });
+    b.addEventListener('click', () => openSection(p.key, true));
+    nav.appendChild(b);
+  }
+
+  // ------------------------------------------------------------ pointer input
+  let ptr = null;
+  const toArt = e => ({ x: e.clientX / P, y: e.clientY / P });
+  function lightOnAt(a) {
+    if (lightAmt < 0.05) { light.x = a.x; light.y = a.y; }   // coming back: the light starts at the cursor
+    lightFollows = true; lightTarget.x = a.x; lightTarget.y = a.y; lightOn = 1; dirty = true;
+  }
+  // shine the light on a piece (keyboard focus, coming back from a section)
+  function lightOnPiece(p) {
+    lightFollows = false; lightOn = 1;
+    lightTarget.x = tileX(p.c, p.r) - boardCamX; lightTarget.y = tileY(p.c, p.r) - boardCamY - 26;
+    dirty = true;
+  }
+  canvas.addEventListener('pointerdown', e => {
+    if (e.button !== undefined && e.button !== 0) return;
+    const a = toArt(e);
+    if (view.mode === 'section') {
+      const hit = hitTest(a.x, a.y);
+      if (hit && hit.type === 'piece') goBack();
+      return;
+    }
+    if (view.mode !== 'board') return;
+    lightOnAt(a);
+    const hit = hitTest(a.x, a.y);
+    canvas.setPointerCapture(e.pointerId);
+    ptr = { id: e.pointerId, sx: a.x, sy: a.y, hit, moved: false, panX0: panX, panY0: panY };
+    dirty = true;
+  });
+  canvas.addEventListener('pointermove', e => {
+    const a = toArt(e);
+    const dtMove = e.pointerType === 'mouse' ? trackMouse(e) : 0;
+    if (view.mode === 'section') {
+      const hit = hitTest(a.x, a.y);
+      const h = !!(hit && hit.type === 'piece');
+      if (h !== secHover) { secHover = h; dirty = true; }
+      canvas.classList.toggle('over-piece', h);
+      return;
+    }
+    if (view.mode !== 'board') return;
+    if (e.pointerType === 'mouse' || ptr) lightOnAt(a);
+    if (!ptr || e.pointerId !== ptr.id) {
+      const hit = hitTest(a.x, a.y);
+      const k = hit && hit.type === 'piece' ? hit.p.key : null;
+      if (k && k === hoverKey && dtMove > 0) {            // keeps pushing while the cursor moves across it
+        const v = push();
+        nudge(hit.p, Math.sign(v) * v * v * 7e-6 * dtMove);
+      }
+      setHover(k);
+      canvas.classList.toggle('over-piece', !!hit && hit.type !== 'decor');
+      return;
+    }
+    const dx = a.x - ptr.sx, dy = a.y - ptr.sy;
+    if (!ptr.moved && Math.hypot(dx, dy) * P > 6) {
+      ptr.moved = true;
+      if (ptr.hit && ptr.hit.type === 'piece') {
+        const p = ptr.hit.p, f = restFoot(p);
+        p.anim = null; p.rock = null;
+        p.drag = { footX: f.x, footY: f.y, fx0: f.x, fy0: f.y, legal: legalTiles(p), target: null, t0: performance.now() };
+        hoverKey = p.key;
+        canvas.classList.add('dragging');
+      } else canvas.classList.add('panning');
+    }
+    if (!ptr.moved) return;
+    if (ptr.hit && ptr.hit.type === 'piece') {
+      const p = ptr.hit.p;
+      p.drag.footX = p.drag.fx0 + dx; p.drag.footY = p.drag.fy0 + dy;
+      p.drag.target = tileAtScreen(p.drag.footX, p.drag.footY);
+      const t = p.drag.target;
+      if (Math.max(Math.abs(t.c - bunny.c), Math.abs(t.r - bunny.r)) <= 1) bunnyFlee(t.c, t.r, performance.now());
+    } else {
+      panX = Math.max(-320, Math.min(320, ptr.panX0 - dx));
+      panY = Math.max(-260, Math.min(260, ptr.panY0 - dy));
+      placeCamera();
+    }
+    dirty = true;
+  });
+  function endPointer(e, cancelled) {
+    if (!ptr || e.pointerId !== ptr.id) return;
+    const now = performance.now();
+    const hit = ptr.hit;
+    canvas.classList.remove('dragging', 'panning');
+    if (!ptr.moved) {
+      ptr = null;
+      if (!cancelled && hit && hit.type === 'piece') { openSection(hit.p.key, false); return; }
+      if (!cancelled && hit && hit.type === 'bunny') zapBunny(now);
+    } else if (hit && hit.type === 'piece') {
+      const p = hit.p, d = p.drag;
+      const t = d.target;
+      const ok = !cancelled && t && d.legal.some(q => q.c === t.c && q.r === t.r);
+      const from = { x: d.footX, y: d.footY }, lift0 = dragLift(p, now);
+      if (ok) { p.c = t.c; p.r = t.r; p.moved = true; }
+      const rest = restFoot(p);
+      p.drag = null;
+      const dist = Math.hypot(from.x - rest.x, from.y - rest.y);
+      p.anim = reduceMotion ? null : { t0: now, dur: Math.min(460, 220 + dist * 1.6), dx: from.x - rest.x, dy: from.y - rest.y, lift: lift0 };
+      if (ok && Math.max(Math.abs(p.c - bunny.c), Math.abs(p.r - bunny.r)) <= 1) bunnyFlee(p.c, p.r, now);
+    }
+    ptr = null;
+    dirty = true;
+  }
+  canvas.addEventListener('pointerup', e => endPointer(e, false));
+  canvas.addEventListener('pointercancel', e => endPointer(e, true));
+  canvas.addEventListener('pointerleave', e => {
+    if (e.pointerType === 'mouse' && !ptr && view.mode === 'board') { lightOn = 0; setHover(null); canvas.classList.remove('over-piece'); dirty = true; }
+    if (view.mode === 'section' && secHover) { secHover = false; dirty = true; }
+  });
+  window.addEventListener('resize', resize);
+
+  // ------------------------------------------------------------ loop
+  function physics(dt) {
+    const H = 1 / 480;                         // fixed sub-steps keep the integration stable and repeatable
+    let active = false;
+    for (let s = 0; s < dt; s += H) {
+      const h = Math.min(H, dt - s);
+      if (view.mode === 'topple' && !view.settled) { stepTopple(h); active = true; }
+      for (const p of pieces) if (p.rock) { stepRock(p, h); active = true; }
+    }
+    return active;
+  }
+  function frame(now) {
+    requestAnimationFrame(frame);
+    const dt = Math.min(0.05, Math.max(0, (now - (lastNow || now)) / 1000));
+    lastNow = now;
+    if (physics(dt)) dirty = true;
+    const liftTarget = view.mode === 'section' && secHover ? 2 : 0;
+    if (Math.abs(secLift - liftTarget) > 0.02) { secLift += (liftTarget - secLift) * (1 - Math.exp(-dt / 0.06)); dirty = true; }
+    else secLift = liftTarget;
+    if (lightAmt !== lightOn) {
+      const la = reduceMotion ? lightOn : lightAmt + (lightOn - lightAmt) * (1 - Math.exp(-dt / 0.16));
+      lightAmt = Math.abs(la - lightOn) < 0.004 ? lightOn : la;
+      dirty = true;
+    }
+    if (view.mode === 'board') {
+      const k = reduceMotion ? 1 : 0.16;
+      if (Math.abs(light.x - lightTarget.x) > 0.05 || Math.abs(light.y - lightTarget.y) > 0.05) {
+        light.x += (lightTarget.x - light.x) * k; light.y += (lightTarget.y - light.y) * k; dirty = true;
+      }
+    }
+    if (advanceView(now)) dirty = true;
+    if (updateBunny(now)) dirty = true;
+    for (const p of pieces) {
+      if (p.anim) { if (now - p.anim.t0 >= p.anim.dur) p.anim = null; dirty = true; }
+      if (p.drag && now - p.drag.t0 < 160) dirty = true;
+    }
+    if (view.mode === 'section' && !reduceMotion) {
+      const step = Math.floor(now / 66.7);
+      if (step !== lastRipple) { lastRipple = step; dirty = true; }
+    }
+    if (!dirty) return;
+    dirty = false;
+    draw(now);
+  }
+
+  if (location.hash === '#test') {   // read-only hook for automated checks
+    window.__world = { pieces, bunny, get pan() { return { x: panX, y: panY }; }, get mode() { return view.mode; }, get open() { return view.key; },
+      get P() { return P; }, get cam() { return { x: camX, y: camY }; }, get light() { return { ...light }; },
+      get topple() { return view.mode === 'topple' ? view.th / DEG : null; }, get bunnyH() { return bunny.h; }, get zapAge() { return zapAge(performance.now()); },
+      get mouseV() { return Math.round(Math.hypot(mouse.vx, mouse.vy)); },
+      get selAngle() { const p = view.key && pieceByKey(view.key); return p ? selectedAngle(p, performance.now()) : null; } };
+  }
+  applyLayout('wide');
+  resize();
+  buildLabels();
+  if (document.fonts && document.fonts.load) {
+    document.fonts.load('700 13px Lora').then(buildLabels, () => {});
+    document.fonts.ready.then(buildLabels);
+  }
+  loadAtlas().then(() => {
+    bunny.next = performance.now() + 1600;
+    dirty = true;
+    requestAnimationFrame(frame);
+  });
+})();
+</script>
 </body>
 </html>
-<li><a href="assets/Jaydon_Chua_Resume.pdf" class="navlink" target="_blank" rel="noreferrer">Resume</a></li>

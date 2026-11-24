@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jaydon Chua — Portfolio</title>
+<meta name="description" content="Jaydon Chua, computer science at UIUC. An interactive chessboard: drag the pieces, or click one to open its section.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2013%2013%22%20shape-rendering%3D%22crispEdges%22%3E%3Crect%20width%3D%2213%22%20height%3D%2213%22%20rx%3D%222%22%20fill%3D%22%230c0c0e%22/%3E%3Cg%20fill%3D%22%23d3fde9%22%3E%3Crect%20x%3D%223%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%226%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%229%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%223%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%224%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%226%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%229%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%223%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%224%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%225%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%226%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%227%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%229%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%222%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2210%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%221%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2211%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%221%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%224%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2211%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%221%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%224%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2211%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%221%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2211%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%221%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%224%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2211%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%222%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%225%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%226%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%227%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%223%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%224%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%225%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%226%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%227%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3Crect%20x%3D%229%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root { --bg: #0c0c0e; --mint: #d3fde9; --mint-dim: #7fb79c; --p: 3px; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; }
+  body { font-family: Lora, Georgia, "Times New Roman", serif; color: var(--mint); -webkit-tap-highlight-color: transparent; }
+  #world {
+    position: fixed; left: 0; top: 0; display: block; touch-action: none; cursor: grab;
+    image-rendering: pixelated; image-rendering: crisp-edges;
+  }
+  #world.panning, #world.dragging { cursor: grabbing; }
+  #world.over-piece { cursor: pointer; }
+  #world.still { cursor: default; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+  nav.sections button { font: inherit; }
+  nav.sections button:focus { outline: none; }
+
+  /* Section text column (the heading and the fallen piece are drawn on the canvas) */
+  .sec {
+    position: fixed; z-index: 5; color: var(--mint); overflow-y: auto;
+    font-size: clamp(16px, 1.45vw, 21px); line-height: 1.75;
+    text-shadow: 0 0 4px var(--bg), 0 0 8px var(--bg);
+    scrollbar-width: thin; scrollbar-color: var(--mint-dim) transparent;
+  }
+  .sec[hidden] { display: none; }
+  .sec.reveal { animation: secIn 0.45s steps(9) both; }
+  @keyframes secIn { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+  .sec p { margin: 0 0 0.9em; }
+  .sec ul { list-style: none; margin: 0; padding: 0; }
+  .sec li { margin: 0 0 1.05em; }
+  #sec-body > :last-child, .sec li:last-child { margin-bottom: 0; }
+  .sec li .t { display: block; font-weight: 700; margin: 0 0 2px; }
+  .sec canvas.pxname { display: block; image-rendering: pixelated; image-rendering: crisp-edges; }
+  .sec li .d { display: block; }
+  .sec a { color: var(--mint); text-decoration: none; border-bottom: 2px solid rgba(211, 253, 233, 0.45); word-break: break-word; }
+  .sec a:hover, .sec a:focus-visible { border-bottom-color: var(--mint); background: rgba(211, 253, 233, 0.12); outline: none; }
+  .sec .ph { color: var(--mint-dim); font-style: italic; }
+  .back {
+    position: fixed; left: 10px; top: 10px; z-index: 6; padding: 8px 12px; cursor: pointer;
+    background: var(--bg); color: var(--mint); border: 2px solid var(--mint); font: 700 15px Lora, Georgia, serif;
+    transform: translateY(-200%);
+  }
+  .back:focus-visible { transform: none; outline: none; }
+  @media (prefers-reduced-motion: reduce) { .sec.reveal { animation: none; } }
+</style>
+</head>
+<body>
+<h1 class="sr-only">Jaydon Chua</h1>
+<canvas id="world" aria-hidden="true"></canvas>
+<nav class="sections sr-only" aria-label="Portfolio sections" id="nav"></nav>
+<section class="sec" id="sec" aria-labelledby="sec-title" hidden>
+  <h2 id="sec-title" class="sr-only"></h2>
+  <div id="sec-body"></div>
+</section>
+<button class="back" id="back" type="button">Back to the board</button>
+
+<script>
+(() => {
+  'use strict';
+
+  // ------------------------------------------------------------ content
+  const SECTIONS = {
+    about: { label: 'About me', body: `
+      <p>Hi, I'm Jaydon. I'm studying computer science at the University of Illinois Urbana-Champaign in the Grainger College of Engineering, and I expect to graduate in May 2029. I like building small tools that fix one specific annoyance.</p>
+      <p class="ph">[PLACEHOLDER: a sentence or two on what you enjoy building, what you're into outside of code, and what you're working toward]</p>
+      <ul>
+        <li><span class="t">Honors</span><span class="d">National Merit Finalist. Exelon $4k scholarship.</span></li>
+      </ul>` },
+    orderbook: { label: 'CME order book', body: `
+      <p>A Java limit order book fed by a zero-allocation decoder for CME's MDP 3.0 market data, tested against packets built from CME's real production schema.</p>
+      <ul>
+        <li><span class="t">Speed</span><span class="d">About 9 ns per market data entry, measured with JMH.</span></li>
+        <li><span class="t">Zero allocation</span><span class="d">Tests read the JVM's allocation counter over 200,000 decodes and require exactly 0 bytes.</span></li>
+        <li><span class="t">Gap recovery</span><span class="d">It detects dropped packets and rebuilds from snapshots, so the book never silently drifts.</span></li>
+      </ul>
+      <p><a href="https://github.com/jaydonchua8/cme-orderbook" target="_blank" rel="noopener">github.com/jaydonchua8/cme-orderbook</a></p>` },
+    x402: { label: 'x402-conform', body: `
+      <p>A conformance test suite for x402, Coinbase's open protocol for payments over HTTP. It is written in TypeScript, covers protocol v1 and v2, and has zero runtime dependencies.</p>
+      <ul>
+        <li><span class="t">Proven checks</span><span class="d">Fault injection against a reference server shows that every check catches the bug it claims to.</span></li>
+        <li><span class="t">Live crawl</span><span class="d">I ran it on 200 listings in Coinbase's Bazaar index. 22% failed a check, and 2 served paid content for free.</span></li>
+      </ul>
+      <p><a href="https://github.com/jaydonchua8/x402-conform" target="_blank" rel="noopener">github.com/jaydonchua8/x402-conform</a></p>` },
+    marketmaker: { label: 'Market maker', body: `
+      <p>A price-time priority matching engine and a market-making backtester with models for queue position and latency, written in pure Python.</p>
+      <ul>
+        <li><span class="t">Queue and latency</span><span class="d">My orders wait behind the size ahead of them, and quote changes take time to reach the book.</span></li>
+        <li><span class="t">Results</span><span class="d">Over 100 seeds per setting, 10 steps of latency cut mean PnL by about 22%.</span></li>
+      </ul>
+      <p><a href="https://github.com/jaydonchua8/quant-mm" target="_blank" rel="noopener">github.com/jaydonchua8/quant-mm</a></p>` },
+    more: { label: 'More projects', body: `
+      <ul>
+        <li><span class="t">trajlint</span><span class="d">Sorts agent traces into keep, repair or drop.</span>
+          <a href="https://github.com/jaydonchua8/trajlint" target="_blank" rel="noopener">github.com/jaydonchua8/trajlint</a></li>
+        <li><span class="t">snapcal</span><span class="d">Turns a schedule screenshot into a calendar event.</span>
+          <a href="https://github.com/jaydonchua8/snapcal" target="_blank" rel="noopener">github.com/jaydonchua8/snapcal</a></li>
+        <li><span class="t">LeetStrat</span><span class="d">Practice choosing an approach before writing code.</span>
+          <a href="https://github.com/jaydonchua8/leetstrat" target="_blank" rel="noopener">github.com/jaydonchua8/leetstrat</a></li>
+        <li><span class="t">layerblame</span><span class="d">Finds which Dockerfile line broke the build cache.</span>
+          <a href="https://github.com/jaydonchua8/layerblame" target="_blank" rel="noopener">github.com/jaydonchua8/layerblame</a></li>
+      </ul>` },
+    experience: { label: 'Experience', body: `
+      <ul>
+        <li><span class="t">Tether</span><span class="d">Cofounder and engineer, 2026 to present. A proximity-based app for meeting people nearby, built through Y Combinator Startup School, where we got $25K in startup credits.</span></li>
+        <li><span class="t">XPerience Coding</span><span class="d">Web Development &amp; Curriculum Intern, since May 2024</span></li>
+        <li><span class="t">VHHS Computer Science Team &amp; D128 STEAM Showcase</span><span class="d">President, Aug 2024 to May 2026</span></li>
+        <li><span class="t">classCalendar</span><span class="d">Software Engineer, 2024</span></li>
+      </ul>` },
+    contact: { label: 'Contact', body: `
+      <p>The fastest way to reach me is by phone.</p>
+      <ul>
+        <li><span class="t" data-icon="phone">Phone</span><a href="tel:+17738499142">773-849-9142</a></li>
+        <li><span class="t" data-icon="mail">Email</span><a href="mailto:jaydonc2@illinois.edu">jaydonc2@illinois.edu</a></li>
+        <li><span class="t" data-icon="code">GitHub</span><a href="https://github.com/jaydonchua8" target="_blank" rel="noopener">github.com/jaydonchua8</a></li>
+        <li><span class="t" data-icon="card">LinkedIn</span><a href="https://www.linkedin.com/in/jaydon-chua/" target="_blank" rel="noopener">linkedin.com/in/jaydon-chua</a></li>
+      </ul>` }
+  };
+
+  // Pieces live on an 8x8 board, tile (c, r).
+  const PIECES = [
+    { key: 'about',       kind: 'king',   sprite: 'king',   dark: false },
+    { key: 'x402',        kind: 'bishop', sprite: 'bishop', dark: false },
+    { key: 'marketmaker', kind: 'knight', sprite: 'knight', dark: true },
+    { key: 'orderbook',   kind: 'rook',   sprite: 'rook',   dark: true },
+    { key: 'more',        kind: 'rook',   sprite: 'rook_w', dark: false },
+    { key: 'contact',     kind: 'pawn',   sprite: 'pawn',   dark: true },
+    { key: 'experience',  kind: 'queen',  sprite: 'queen',  dark: false }
+  ];
+  const DECOR = [{ sprite: 'books' }];
+  // Starting squares. 'wide' follows the reference composition; 'tall' fits a phone in portrait.
+  const LAYOUTS = {
+    wide: {
+      tiles: { about: [4, 3], x402: [1, 3], marketmaker: [4, 0], orderbook: [2, 6], more: [5, 7], contact: [6, 4], experience: [7, 1] },
+      books: [3, 4], bunny: [5, 5],
+      anchor: () => ({ x: 38, y: 133, sx: AW / 2, sy: AH / 2 + 17 }),   // king square at the reference spot
+      light: [-22, -23], radius: [248, 160]
+    },
+    tall: {
+      tiles: { marketmaker: [1, 1], experience: [0, 3], x402: [3, 0], about: [4, 4], orderbook: [4, 7], contact: [7, 4], more: [7, 7] },
+      books: [2, 4], bunny: [4, 2],
+      anchor: () => ({ x: 0, y: 92, sx: AW / 2, sy: AH / 2 }),
+      light: [0, 40], radius: [310, 200]
+    }
+  };
+  let layoutName = 'wide';
+
+  const ATLAS = __ATLAS__;
+
+  // ------------------------------------------------------------ constants
+  const MINT = 0xffe9fdd3 >>> 0;              // RGBA bytes d3 fd e9 ff (little endian)
+  const BG = 0xff0e0c0c >>> 0;                // 0c 0c 0e ff
+  const BAYER = [0, 32, 8, 40, 2, 34, 10, 42, 48, 16, 56, 24, 50, 18, 58, 26, 12, 44, 4, 36, 14, 46, 6, 38,
+    60, 28, 52, 20, 62, 30, 54, 22, 3, 35, 11, 43, 1, 33, 9, 41, 51, 19, 59, 27, 49, 17, 57, 25,
+    15, 47, 7, 39, 13, 45, 5, 37, 63, 31, 55, 23, 61, 29, 53, 21];
+  const TH = new Float32Array(64);
+  for (let i = 0; i < 64; i++) TH[i] = (BAYER[i] + 0.5) / 64;
+  const NOISE = new Float32Array(4096);      // fixed noise for pixel dissolves
+  { let s = 1234567; for (let i = 0; i < 4096; i++) { s = (Math.imul(s, 1103515245) + 12345) >>> 0; NOISE[i] = ((s >>> 9) & 0xffff) / 65536; } }
+  const noiseAt = (x, y) => NOISE[((y & 63) << 6) | (x & 63)];
+  const TW = 38, TH2 = 19;                    // tile half width / half height, art px
+  const LTOP = 0.95;                          // light on lit squares at the centre of the pool
+  const SEC = { LR: 88, LS: 72, TOP: 0.16 };  // the small pool of light under a fallen piece
+  const T_IN = 780, T_OUT = 660, T_RISE = 720;
+  // Rigid-body motion: each piece pivots on its base rim around its own centre of mass.
+  const GRAV = 26;                            // gravity / moment of inertia about the rim, rad/s^2
+  const E_FALL = 0.2;                         // restitution when a toppling piece strikes the board
+  const DEG = Math.PI / 180;
+  const WOB_R = 0.87;                         // hover wobble: share of rocking speed kept each time the base lands flat
+  const WOB_MIN = 3 * DEG;                    // the gentlest push still rocks it visibly
+  const WOB_MAX = 11 * DEG;                   // the furthest a wobbling piece tips
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const canvas = document.getElementById('world');
+  const ctx = canvas.getContext('2d');
+  const secEl = document.getElementById('sec');
+  const secTitle = document.getElementById('sec-title');
+  const secBody = document.getElementById('sec-body');
+  const backBtn = document.getElementById('back');
+  const nav = document.getElementById('nav');
+
+  let P = 3, AW = 0, AH = 0, image = null, buf = null, fbuf = null;
+  let camX = 0, camY = 0, boardCamX = 0, boardCamY = 0, panX = 0, panY = 0;
+  let LR = 248, LS = 160;
+  const light = { x: 0, y: 0 }, lightTarget = { x: 0, y: 0 };
+  let lightFollows = false;
+  let lightOn = 1, lightAmt = 1;              // the board light fades out while the cursor is off the page
+  let dirty = true;
+  const SPR = {}, FR = {};
+  const LABELS = {};
+  let hoverKey = null, secHover = false;
+  let lastRipple = -1, secLift = 0, lastNow = 0;
+  let PHYS = {};
+  const view = { mode: 'board', key: null, t0: 0, dur: 0, from: null, to: null, kb: false };
+
+  // ------------------------------------------------------------ helpers
+  const tileX = (c, r) => (c - r) * TW;
+  const tileY = (c, r) => (c + r) * TH2;
+  const onBoard = (c, r) => c >= 0 && c < 8 && r >= 0 && r < 8;
+  const clamp01 = v => v < 0 ? 0 : v > 1 ? 1 : v;
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  const easeInOut = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const smoother = t => t * t * t * (t * (t * 6 - 15) + 10);   // zero velocity and acceleration at both ends
+  function tileAtScreen(sx, sy) {
+    const wx = sx + camX, wy = sy + camY;
+    return { c: Math.floor((wx + 2 * wy + TW) / (2 * TW)), r: Math.floor((2 * wy - wx + TW) / (2 * TW)) };
+  }
+  function lightAt(d, lr, ls) {
+    let t = (lr - d) / ls;
+    if (t <= 0) return 0;
+    if (t > 1) t = 1;
+    return Math.pow(t * t * (3 - 2 * t), 1.25);
+  }
+
+  function lightPx(prm, x, y) {
+    const dx = x - prm.lx, dy = 2 * (y - prm.ly), d2 = dx * dx + dy * dy;
+    const L = d2 >= prm.LR * prm.LR ? 0 : lightAt(Math.sqrt(d2), prm.LR, prm.LS) * prm.SL;
+    return glows.length ? Math.max(L, glowAt(x, y)) : L;
+  }
+
+  // ------------------------------------------------------------ world state
+  const pieces = PIECES.map(p => ({ ...p, c: 0, r: 0, moved: false, anim: null, drag: null, rock: null }));
+  const decor = DECOR.map(d => ({ ...d }));
+  const bunny = { c: 0, r: 0, face: -1, state: 'sit', t0: 0, from: null, to: null, next: 0, x: 0, y: 0, h: 0, frame: 'bunny_sit', zapT0: 0, bolt: null };
+  const pieceByKey = k => pieces.find(p => p.key === k);
+
+  // ------------------------------------------------------------ sizing / camera
+  function resize() {
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const dpr = window.devicePixelRatio || 1;
+    const tallScreen = vh > vw * 1.1;
+    const ideal = tallScreen ? Math.min(vw / 330, vh / 480) : Math.min(vw / 450, vh / 270);
+    // keep P x dpr whole so every art pixel covers whole device pixels
+    P = Math.max(1, Math.floor(ideal * dpr + 1e-6) / dpr);
+    AW = Math.ceil(vw / P); AH = Math.ceil(vh / P);
+    const want = tallScreen ? 'tall' : 'wide';
+    if (want !== layoutName && !pieces.some(p => p.moved) && view.mode === 'board') applyLayout(want);
+    canvas.width = AW; canvas.height = AH;
+    canvas.style.width = AW * P + 'px'; canvas.style.height = AH * P + 'px';
+    document.documentElement.style.setProperty('--p', P + 'px');
+    image = ctx.createImageData(AW, AH);
+    buf = new Uint32Array(image.data.buffer);
+    fbuf = new Float32Array(AW * AH);
+    placeCamera();
+    if (!lightFollows) { setDefaultLight(); light.x = lightTarget.x; light.y = lightTarget.y; }
+    if (view.mode === 'section') layoutSectionText();
+    dirty = true;
+  }
+  function placeCamera() {
+    const a = LAYOUTS[layoutName].anchor();
+    boardCamX = Math.round(a.x - a.sx + panX);
+    boardCamY = Math.round(a.y - a.sy + panY);
+    if (view.mode === 'board') { camX = boardCamX; camY = boardCamY; }
+  }
+  function setDefaultLight() {
+    const a = LAYOUTS[layoutName].anchor(), o = LAYOUTS[layoutName].light;
+    lightTarget.x = a.x - boardCamX + o[0]; lightTarget.y = a.y - boardCamY + o[1];
+  }
+  function applyLayout(name) {
+    layoutName = name;
+    const L = LAYOUTS[name];
+    [LR, LS] = L.radius;
+    for (const p of pieces) { [p.c, p.r] = L.tiles[p.key]; p.anim = null; p.drag = null; }
+    [decor[0].c, decor[0].r] = L.books;
+    [bunny.c, bunny.r] = L.bunny; bunny.state = 'sit';
+    panX = 0; panY = 0;
+  }
+
+  // ------------------------------------------------------------ assets
+  function loadAtlas() {
+    return new Promise((resolve, reject) => {
+      const im = new Image();
+      im.onload = () => {
+        const c = document.createElement('canvas');
+        c.width = im.width; c.height = im.height;
+        const x = c.getContext('2d');
+        x.drawImage(im, 0, 0);
+        const d = x.getImageData(0, 0, im.width, im.height).data;
+        for (const name in ATLAS.rects) {
+          const [rx, ry, w, h, ax, ay] = ATLAS.rects[name];
+          const shade = new Float32Array(w * h), cov = new Uint8Array(w * h);
+          for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) {
+            const v = d[((ry + j) * im.width + rx + i) * 4];
+            if (v) { cov[j * w + i] = 1; shade[j * w + i] = (v - 1) / 254; }
+          }
+          SPR[name] = { w, h, ax: Math.round(ax), ay: Math.round(ay), shade, cov };
+          if (name.startsWith('bunny')) {   // outlined, plus a mirrored copy for hopping right
+            SPR[name].outline = true;
+            const s2 = new Float32Array(w * h), c2 = new Uint8Array(w * h);
+            for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) { s2[j * w + i] = shade[j * w + (w - 1 - i)]; c2[j * w + i] = cov[j * w + (w - 1 - i)]; }
+            SPR[name + '_r'] = { w, h, ax: Math.round(w - ax), ay: Math.round(ay), shade: s2, cov: c2, outline: true };
+          }
+        }
+        for (const p of PIECES) FR[p.sprite] = [{ name: p.sprite, a: 0 }].concat(ATLAS.frames[p.sprite].map(([n, a]) => ({ name: n, a }))).sort((u, v) => u.a - v.a);
+        PHYS = ATLAS.phys;
+        resolve();
+      };
+      im.onerror = reject;
+      im.src = 'atlas.png';
+    });
+  }
+  const restFrame = sprite => FR[sprite][FR[sprite].length - 1];
+  function frameAt(sprite, deg) {
+    let best = FR[sprite][0], bd = 1e9;
+    for (const f of FR[sprite]) { const d = Math.abs(f.a - deg); if (d < bd) { bd = d; best = f; } }
+    return best.name;
+  }
+
+  // 1-bit text: Lora Bold rasterised at art scale, thresholded. Box metrics follow the reference labels.
+  // Little 1-bit icons, one per section (and a few for contact rows). '#' is a lit pixel.
+  const ICONS = {
+    about: ['..#..#..#..', '..##.#.##..', '..#######..', '.#.......#.', '#.........#', '#..#...#..#', '#..#...#..#', '#.........#', '#..#...#..#', '.#..###..#.', '..#######..'],
+    orderbook: ['.#.........', '.#.......#.', '###......#.', '###.....###', '###..#..#.#', '###..#..#.#', '.#..###.###', '.#..###..#.', '....###..#.', '.....#.....', '.....#.....'],
+    x402: ['###########', '#.........#', '#.......#.#', '#......##.#', '#.#...##..#', '#.##.##...#', '#..###....#', '.#..#....#.', '..#.....#..', '...#...#...', '....###....'],
+    marketmaker: ['.....#.....', '....###....', '.#########.', '.#.......#.', '##.##.##.##', '##.##.##.##', '.#.......#.', '.#.#...#.#.', '.#..###..#.', '.#.......#.', '.#########.'],
+    more: ['.....#.....', '....###....', '...##.##...', '...#...#...', '...#.#.#...', '...#...#...', '..##...##..', '.#.#...#.#.', '.#.#####.#.', '...#.#.#...', '....#.#....'],
+    experience: ['...#####...', '...#...#...', '###########', '#.........#', '#..#...#..#', '#..#...#..#', '#.........#', '#..#...#..#', '#...###...#', '#.........#', '###########'],
+    contact: ['.#########.', '.#..###..#.', '.#.......#.', '.#..#.#..#.', '.#.......#.', '.#.#...#.#.', '.#..###..#.', '.#.......#.', '.#.......#.', '.#...#...#.', '.#########.'],
+    phone: ['.##........', '####.......', '####.......', '.##........', '..##.......', '...##......', '....##..##.', '.....######', '......#####', '.......###.', '...........'],
+    mail: ['...........', '###########', '##.......##', '#.#.....#.#', '#..#...#..#', '#...#.#...#', '#....#....#', '#.........#', '###########', '...........', '...........'],
+    code: ['...........', '.......#...', '..#...#..#.', '.#....#...#', '#....#.....', '#....#.....', '.#..#.....#', '..#.#....#.', '...#.......', '...........', '...........'],
+    card: ['###########', '#.........#', '#..##.....#', '#.####.##.#', '#.####....#', '#..##..##.#', '#.####....#', '#.####.##.#', '#.........#', '###########', '...........'],
+  };
+  // Put an icon in front of a label's text. scale 2 doubles every icon pixel (for headings).
+  function withIcon(lbl, rows, size, scale = 1, gap = 4) {
+    if (!lbl || !rows) return lbl;
+    const iw = rows[0].length * scale, ih = rows.length * scale;
+    const padL = lbl.padL, shift = iw + gap, w = lbl.w + shift, h = Math.max(lbl.h, ih), mask = new Uint8Array(w * h);
+    for (let j = 0; j < lbl.h; j++) for (let i = 0; i < lbl.w; i++) if (lbl.mask[j * lbl.w + i]) mask[j * w + i + (i >= padL ? shift : 0)] = 1;
+    const base = Math.round(size * 1.08), capTop = base - Math.round(size * 0.7);
+    const top = Math.max(0, Math.min(h - ih, Math.round((capTop + base) / 2 - ih / 2)));
+    rows.forEach((row, j) => { for (let i = 0; i < row.length; i++) if (row[i] === '#')
+      for (let v = 0; v < scale; v++) for (let u = 0; u < scale; u++) mask[(top + j * scale + v) * w + padL + i * scale + u] = 1; });
+    return { w, h, mask, padL };
+  }
+  function makeLabel(text, size, padL = 6, padR = 7) {
+    const c = document.createElement('canvas');
+    const x = c.getContext('2d');
+    const font = `700 ${size}px Lora, Georgia, "Times New Roman", serif`;
+    x.font = font;
+    const w = Math.ceil(x.measureText(text).width) + 6;
+    const h = Math.ceil(size * 1.7);
+    c.width = w; c.height = h;
+    x.font = font; x.fillStyle = '#fff'; x.textBaseline = 'alphabetic';
+    const base = Math.round(size * 1.2);
+    x.fillText(text, 3, base);
+    const d = x.getImageData(0, 0, w, h).data;
+    let minX = w, maxX = -1;
+    for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) if (d[(j * w + i) * 4 + 3] >= 128) { if (i < minX) minX = i; if (i > maxX) maxX = i; }
+    if (maxX < 0) { minX = 0; maxX = 0; }
+    const top = base - Math.round(size * 1.08), bottom = base + Math.round(size * 0.46);
+    const inkW = maxX - minX + 1;
+    const bw = inkW + padL + padR, bh = bottom - top + 1;
+    const mask = new Uint8Array(bw * bh);
+    for (let j = 0; j < bh; j++) for (let i = 0; i < inkW; i++) {
+      const sy = top + j, sx = minX + i;
+      if (sy >= 0 && sy < h && d[(sy * w + sx) * 4 + 3] >= 128) mask[j * bw + padL + i] = 1;
+    }
+    return { w: bw, h: bh, mask, padL };
+  }
+  // Item names in the section column, drawn in the same 1-bit Lora as the labels, wrapped to the column width.
+  const DIM = 0xff9cb77f >>> 0;
+  function wrapWords(text, size, maxW) {
+    const x = document.createElement('canvas').getContext('2d');
+    x.font = `700 ${size}px Lora, Georgia, "Times New Roman", serif`;
+    const words = text.split(/\s+/), lines = [];
+    let line = '';
+    for (const w of words) {
+      const next = line ? line + ' ' + w : w;
+      if (line && x.measureText(next).width > maxW) { lines.push(line); line = w; } else line = next;
+    }
+    if (line) lines.push(line);
+    return lines;
+  }
+  function paintNames(widthCss, root = secBody) {
+    const size = Math.max(12, Math.min(16, Math.round(30 / P)));
+    const maxW = Math.max(60, Math.floor(widthCss / P) - 4);
+    for (const el of root.querySelectorAll('.t')) {
+      const text = el.dataset.text || el.textContent.trim();
+      el.dataset.text = text;
+      const icon = ICONS[el.dataset.icon];
+      const parts = wrapWords(text, size, icon ? maxW - 16 : maxW).map(l => makeLabel(l, size, 0, 1));
+      if (icon) parts[0] = withIcon(parts[0], icon, size, 1, 5);
+      const lh = parts[0].h - 3;
+      const w = Math.max(...parts.map(q => q.w)), h = lh * (parts.length - 1) + parts[parts.length - 1].h;
+      const c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      const g = c.getContext('2d'), id = g.createImageData(w, h), d32 = new Uint32Array(id.data.buffer);
+      const col = el.classList.contains('ph') ? DIM : MINT;
+      parts.forEach((q, k) => { for (let j = 0; j < q.h; j++) for (let i = 0; i < q.w; i++) if (q.mask[j * q.w + i]) d32[(k * lh + j) * w + i] = col; });
+      g.putImageData(id, 0, 0);
+      c.className = 'pxname'; c.setAttribute('aria-hidden', 'true');
+      c.style.width = w * P + 'px'; c.style.height = h * P + 'px';
+      const sr = document.createElement('span'); sr.className = 'sr-only'; sr.textContent = text;
+      el.replaceChildren(sr, c);
+    }
+  }
+  // Height (CSS px) a section's text needs at a column width, measured once off screen.
+  const measEl = document.createElement('div');
+  measEl.className = 'sec'; measEl.setAttribute('aria-hidden', 'true');
+  measEl.style.cssText = 'visibility:hidden;left:-10000px;top:0;max-height:none;overflow:visible;pointer-events:none';
+  document.body.appendChild(measEl);
+  const measCache = {};
+  function sectionHeight(key, widthCss) {
+    const id = key + '|' + Math.round(widthCss) + '|' + P;
+    if (measCache[id] === undefined) {
+      measEl.style.width = widthCss + 'px';
+      measEl.innerHTML = SECTIONS[key].body;
+      paintNames(widthCss, measEl);
+      measCache[id] = measEl.scrollHeight;
+      measEl.innerHTML = '';
+    }
+    return measCache[id];
+  }
+  function buildLabels() {
+    for (const k in measCache) delete measCache[k];
+    for (const p of PIECES) {
+      LABELS[p.key] = withIcon(makeLabel(SECTIONS[p.key].label, 13), ICONS[p.key], 13);
+      LABELS['h_' + p.key] = withIcon(makeLabel(SECTIONS[p.key].label, 19), ICONS[p.key], 19, 2, 6);
+      LABELS['ht_' + p.key] = withIcon(makeLabel(SECTIONS[p.key].label, 22), ICONS[p.key], 22, 2, 6);
+    }
+    LABELS.__hint = makeLabel('Drag to move around', 13);
+    LABELS.__name = makeLabel('Jaydon Chua', 13);
+    LABELS.__lift = makeLabel('Lift it to go back', 13);
+    if (view.mode === 'section') layoutSectionText();
+    dirty = true;
+  }
+
+  function restFoot(o) { return { x: tileX(o.c, o.r) - camX, y: tileY(o.c, o.r) - camY }; }
+  function pieceFoot(p, now) {
+    const f = restFoot(p);
+    let lift = 0;
+    if (p.drag) { f.x = p.drag.footX; f.y = p.drag.footY; lift = dragLift(p, now); }
+    else if (p.anim) {
+      const t = Math.min(1, (now - p.anim.t0) / p.anim.dur);
+      const e = easeOut(t);
+      f.x += p.anim.dx * (1 - e); f.y += p.anim.dy * (1 - e);
+      lift = p.anim.lift * (1 - e);              // lowered onto the square, touching down at zero speed
+    }
+    return { x: f.x, y: f.y, lift };
+  }
+  const dragLift = (p, now) => 5 * easeOut(Math.min(1, (now - p.drag.t0) / 140));
+  const occupied = (c, r, except) => pieces.some(q => q !== except && q.c === c && q.r === r) || decor.some(d => d.c === c && d.r === r);
+
+  // ------------------------------------------------------------ hover wobble: rigid rocking pushed by the cursor
+  // The cursor pushes the piece as it passes: the faster it moves, the harder the push. The piece then
+  // rocks back and forth on its base, losing a little energy each swing, until it comes to rest.
+  // Every angle is a separately rendered 3D pose, so the piece keeps its exact shape.
+  // Energy (per unit inertia) of a piece tipped by angle a onto its base rim, zero when upright.
+  function rockPE(ph, a) {
+    const c = (a >= 0 ? ph.critL : ph.critR) * DEG;
+    return GRAV * (Math.cos(c - Math.abs(a)) - Math.cos(c));
+  }
+  // spin that carries a resting piece out to a swing of amp (signed, radians)
+  const kickFor = (ph, amp) => Math.sign(amp) * Math.sqrt(2 * rockPE(ph, amp));
+  function nudge(p, dw) {
+    const ph = PHYS[p.sprite];
+    if (reduceMotion || p.drag || p.anim || view.mode !== 'board' || !ph) return;
+    if (!p.rock) p.rock = { a: 0, w: 0 };
+    const r = p.rock;
+    r.w += dw;
+    // cap the energy rather than the angle, so even the hardest push turns around naturally at WOB_MAX
+    const room = Math.min(rockPE(ph, WOB_MAX), rockPE(ph, -WOB_MAX)) - rockPE(ph, r.a);
+    if (room <= 0) r.w = 0; else if (r.w * r.w > 2 * room) r.w = Math.sign(r.w) * Math.sqrt(2 * room);
+    dirty = true;
+  }
+  // Rocking on the rim: gravity pulls the centre of mass back over the base; each time the base lands flat
+  // the piece rolls onto the opposite rim and loses some speed. Smaller swings come back faster, so it
+  // settles with a quickening little rattle, the way a real piece does.
+  function stepRock(p, dt) {
+    const r = p.rock, ph = PHYS[p.sprite];
+    const side = r.a !== 0 ? Math.sign(r.a) : Math.sign(r.w);
+    if (!side) { p.rock = null; return; }
+    const c = (side > 0 ? ph.critL : ph.critR) * DEG;
+    r.w -= side * GRAV * Math.sin(c - Math.abs(r.a)) * dt;
+    const a = r.a + r.w * dt;
+    if (a * side < 0) {                                        // base lands flat; pivot switches rims
+      r.w *= WOB_R;
+      if (r.w * r.w < 2 * rockPE(ph, -side * 0.4 * DEG)) { p.rock = null; return; }
+    }
+    r.a = a;
+  }
+  // cursor velocity in CSS px/s, measured over the last 80 ms of movement (steady even when events arrive unevenly)
+  const mouse = { t: 0, vx: 0, vy: 0, hist: [] };
+  function trackMouse(e) {
+    const t = e.timeStamp || performance.now(), dt = mouse.t ? (t - mouse.t) / 1000 : 0;
+    mouse.t = t;
+    const h = mouse.hist;
+    h.push({ x: e.clientX, y: e.clientY, t });
+    while (h.length > 2 && t - h[0].t > 80) h.shift();
+    const a = h[0], span = (t - a.t) / 1000;
+    if (span >= 0.012) { mouse.vx = (e.clientX - a.x) / span; mouse.vy = (e.clientY - a.y) / span; }
+    else if (dt > 0.1) { mouse.vx = 0; mouse.vy = 0; }
+    return Math.min(Math.max(dt, 0), 0.05);
+  }
+  // signed push: moving right tips the piece right (negative angle); vertical motion adds a little
+  const push = () => -(mouse.vx + 0.35 * Math.abs(mouse.vy) * (mouse.vx < 0 ? -1 : 1));
+  function setHover(k, kick) {
+    if (k === hoverKey) return;
+    hoverKey = k;
+    const q = k && pieceByKey(k);
+    const now = performance.now();
+    if (q && (!q.kickT || now - q.kickT > 400)) {
+      q.kickT = now;
+      // the swing grows with cursor speed: about 3° for a slow pass, 5° for a normal one, 9-10° for a fast swipe
+      const v = push();
+      let amp = kick !== undefined ? kick : Math.sign(v) * Math.min(WOB_MAX, Math.max(WOB_MIN, 0.108 * DEG * Math.pow(Math.abs(v), 0.61)));
+      if (!amp) amp = (Math.random() < 0.5 ? -1 : 1) * WOB_MIN;
+      if (PHYS[q.sprite]) nudge(q, kickFor(PHYS[q.sprite], amp));
+    }
+    dirty = true;
+  }
+
+  // ------------------------------------------------------------ chess movement
+  function clearPath(p, dc, dr, steps) {
+    const sc = Math.sign(dc), sr = Math.sign(dr);
+    for (let i = 1; i < steps; i++) if (occupied(p.c + sc * i, p.r + sr * i, p)) return false;
+    return true;
+  }
+  function legal(p, c, r) {
+    if (!onBoard(c, r) || occupied(c, r, p)) return false;
+    const dc = c - p.c, dr = r - p.r, adc = Math.abs(dc), adr = Math.abs(dr);
+    if (!adc && !adr) return false;
+    const straight = dc === 0 || dr === 0, diag = adc === adr;
+    switch (p.kind) {
+      case 'king': return Math.max(adc, adr) === 1;
+      case 'knight': return adc * adr === 2;
+      case 'rook': return straight && clearPath(p, dc, dr, Math.max(adc, adr));
+      case 'bishop': return diag && clearPath(p, dc, dr, adc);
+      case 'queen': return (straight || diag) && clearPath(p, dc, dr, Math.max(adc, adr));
+      case 'pawn':                       // forward = toward the back of the board
+        if (dc !== 0) return false;
+        if (dr === -1) return true;
+        if (dr === -2 && !p.moved) return !occupied(p.c, p.r - 1, p);
+        return false;
+    }
+    return false;
+  }
+  function legalTiles(p) {
+    const out = [];
+    for (let c = 0; c < 8; c++) for (let r = 0; r < 8; r++) if (legal(p, c, r)) out.push({ c, r });
+    return out;
+  }
+
+  // ------------------------------------------------------------ bunny
+  // Click the bunny to zap it: a bolt comes down, its fur stands on end, and for a few seconds it glows,
+  // crackles and zips around the board, lighting up the dark squares around it.
+  const ZAP_LIFE = 6000, ZAP_FADE = 700;
+  const glows = [];                                   // extra lights {x, y, LR, LS, R2, k} in screen art px
+  function glowAt(x, y) {
+    let g = 0;
+    for (let n = 0; n < glows.length; n++) {
+      const q = glows[n], dx = x - q.x, dy = 2 * (y - q.y), d2 = dx * dx + dy * dy;
+      if (d2 < q.R2) { const v = q.k * lightAt(Math.sqrt(d2), q.LR, q.LS); if (v > g) g = v; }
+    }
+    return g;
+  }
+  function hash01(n) {
+    n = Math.imul((n ^ 61) ^ (n >>> 16), 9); n ^= n >>> 4; n = Math.imul(n, 0x27d4eb2d); n ^= n >>> 15;
+    return (n >>> 0) / 4294967296;
+  }
+  const zapAge = now => bunny.zapT0 ? now - bunny.zapT0 : Infinity;
+  const zapped = now => { const a = zapAge(now); return a >= 0 && a < ZAP_LIFE; };
+  function zapBunny(now) {
+    if (view.mode !== 'board') return;
+    bunny.zapT0 = now;
+    bunny.bolt = reduceMotion ? null : makeBolt();
+    bunny.next = now + 420;
+    dirty = true;
+  }
+  function makeBolt() {                               // jagged path from above the screen down to the bunny
+    const ex = bunny.x + camX, ey = bunny.y - bunny.h - 12 + camY;
+    let pts = [{ x: ex + (Math.random() - 0.5) * 80, y: camY - 6 }, { x: ex, y: ey }];
+    for (let lvl = 0; lvl < 6; lvl++) {
+      const out = [pts[0]];
+      for (let i = 1; i < pts.length; i++) {
+        const a = pts[i - 1], b = pts[i], len = Math.hypot(b.x - a.x, b.y - a.y);
+        out.push({ x: (a.x + b.x) / 2 + (Math.random() - 0.5) * len * 0.45, y: (a.y + b.y) / 2 + (Math.random() - 0.5) * len * 0.08 }, b);
+      }
+      pts = out;
+    }
+    const s = pts[10 + Math.floor(Math.random() * 18)], dir = Math.random() < 0.5 ? -1 : 1, fork = [s];
+    let fx = s.x, fy = s.y;
+    for (let i = 0; i < 6; i++) { fx += dir * (3 + Math.random() * 5); fy += 4 + Math.random() * 6; fork.push({ x: fx, y: fy }); }
+    return { pts, fork };
+  }
+  function stroke(pts, w, col) {
+    for (let i = 1; i < pts.length; i++) {
+      const x0 = Math.round(pts[i - 1].x - camX), y0 = Math.round(pts[i - 1].y - camY);
+      const x1 = Math.round(pts[i].x - camX), y1 = Math.round(pts[i].y - camY);
+      const n = Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0), 1);
+      for (let k = 0; k <= n; k++) {
+        const x = Math.round(x0 + (x1 - x0) * k / n), y = Math.round(y0 + (y1 - y0) * k / n);
+        for (let v = 0; v < w; v++) for (let u = 0; u < w; u++) px(x + u - (w >> 1), y + v - (w >> 1), col);
+      }
+    }
+  }
+  function drawBolt(now) {
+    const t = zapAge(now);
+    if (!bunny.bolt || t > 220 || (t > 85 && t < 125)) return;      // two quick flickers, then gone
+    stroke(bunny.bolt.pts, 4, BG); stroke(bunny.bolt.fork, 3, BG);
+    stroke(bunny.bolt.pts, 2, MINT); stroke(bunny.bolt.fork, 1, MINT);
+  }
+  function updateGlows(now, fade) {
+    glows.length = 0;
+    const za = zapAge(now);
+    if (za >= ZAP_LIFE + ZAP_FADE || fade <= 0.02) return;
+    const x = bunny.x, y = bunny.y - bunny.h - 8;
+    let k = za < ZAP_LIFE ? 1 : 1 - (za - ZAP_LIFE) / ZAP_FADE;
+    if (!reduceMotion) k *= 0.88 + 0.12 * hash01(Math.floor(now / 85));     // a gentle crackle, never a strobe
+    glows.push({ x, y, LR: 66, LS: 52, R2: 66 * 66, k: 0.72 * k * fade });   // dimmer than the puff, so it stands out
+    if (!reduceMotion && za < 320) { const f = 1 - za / 320; glows.push({ x, y, LR: 170, LS: 140, R2: 170 * 170, k: f * f * fade }); }
+  }
+  const SPARKS = [[[0, 0], [1, 1], [0, 2], [1, 3]], [[0, 0], [-1, 1], [0, 2], [1, 2], [0, 3]], [[0, -1], [-1, 0], [0, 0], [1, 0], [0, 1]]];
+  function spark(x, y, kind) {
+    const pts = SPARKS[kind];
+    for (const [u, v] of pts) { px(x + u + 1, y + v, BG); px(x + u - 1, y + v, BG); px(x + u, y + v + 1, BG); px(x + u, y + v - 1, BG); }
+    for (const [u, v] of pts) px(x + u, y + v, MINT);
+  }
+  // While charged the bunny is a glowing puffball: round, fur standing straight out, ears up, two dot eyes.
+  function drawPuff(o, now) {
+    const step = reduceMotion ? 1 : Math.floor(now / 90), face = bunny.face;
+    const R = 8, cx = Math.round(o.sx), cy = Math.round(o.fy) - R - 2;
+    const W = 40, H = 44, ox = cx - 20, oy = cy - 30, m = new Uint8Array(W * H);
+    const set = (x, y) => { const i = x - ox, j = y - oy; if (i >= 0 && j >= 0 && i < W && j < H) m[j * W + i] = 1; };
+    for (let y = -R; y <= R; y++) for (let x = -R; x <= R; x++) if (x * x + y * y <= R * R + R) set(cx + x, cy + y);
+    for (let k = 0; k < 30; k++) {                     // fur standing straight out, crackling
+      const a = (k + hash01(step * 31 + k) * 0.6) / 30 * Math.PI * 2;
+      if (Math.sin(a) > 0.8) continue;                  // feet stay on the ground
+      const L = 1 + Math.floor(hash01(step * 17 + k * 7 + 3) * 4);
+      for (let q = 0; q <= L; q++) set(Math.round(cx + Math.cos(a) * (R + q)), Math.round(cy + Math.sin(a) * (R + q)));
+    }
+    for (const sgn of [-1, 1]) {                       // ears pointing straight up, a little splayed
+      const ex = cx + sgn * 3 + face;
+      for (let y = 0; y < 11; y++) {
+        const x = Math.round(ex + sgn * 0.22 * y), w = y > 8 ? 0 : 1;
+        for (let u = -w; u <= w; u++) set(x + u, cy - R + 1 - y);
+      }
+      if (hash01(step * 5 + sgn + 9) < 0.6) set(Math.round(ex + sgn * 2.6) + sgn, cy - R - 10);
+    }
+    for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) {          // dark rim, then the glowing body
+      if (m[j * W + i]) continue;
+      if ((i > 0 && m[j * W + i - 1]) || (i < W - 1 && m[j * W + i + 1]) || (j > 0 && m[(j - 1) * W + i]) || (j < H - 1 && m[(j + 1) * W + i])) px(ox + i, oy + j, BG);
+    }
+    for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) if (m[j * W + i]) px(ox + i, oy + j, MINT);
+    const fx = cx + face;                              // eyes look where it is headed
+    for (const d of [-3, 3]) { px(fx + d, cy - 2, BG); px(fx + d, cy - 1, BG); }
+    px(fx, cy + 2, BG); px(fx - 1, cy + 1, BG); px(fx + 1, cy + 1, BG);
+  }
+  function drawZapFx(o, now) {
+    const za = zapAge(now);
+    if (za >= ZAP_LIFE + ZAP_FADE || o.fade <= 0.5) return;
+    const step = reduceMotion ? 1 : Math.floor(now / 90), out = za > ZAP_LIFE;
+    const live = out ? 1 - (za - ZAP_LIFE) / ZAP_FADE : 1;
+    const cx = o.sx, cy = o.fy - 10, n = out ? 8 : 3;     // sparks jump around it, then burst outward when it pops back
+    for (let k = 0; k < n; k++) {
+      const ang = hash01(step * 7 + k * 131 + 1) * Math.PI * 2;
+      const rad = out ? 12 + 28 * (1 - live) : 15 + hash01(step * 13 + k * 71 + 5) * 7;
+      spark(Math.round(cx + Math.cos(ang) * rad), Math.round(cy + Math.sin(ang) * rad * 0.7), (k + step) % 3);
+    }
+  }
+
+  function bunnyFoot() { return { x: tileX(bunny.c, bunny.r) - camX, y: tileY(bunny.c, bunny.r) - camY }; }
+  function bunnyFree(c, r) {
+    if (!onBoard(c, r) || occupied(c, r, null)) return false;
+    const x = tileX(c, r) - camX, y = tileY(c, r) - camY;
+    return x > 18 && x < AW - 18 && y > 40 && y < AH - 34;
+  }
+  function bunnyHop(to, now, fast) {
+    const a = bunnyFoot();
+    const b = { x: tileX(to.c, to.r) - camX, y: tileY(to.c, to.r) - camY };
+    if (b.x !== a.x) bunny.face = b.x < a.x ? -1 : 1;
+    bunny.state = 'hop'; bunny.t0 = now; bunny.dur = zapped(now) ? 320 : fast ? 380 : 540;
+    bunny.from = { c: bunny.c, r: bunny.r }; bunny.to = to;
+  }
+  function bunnyWander(now) {
+    const opts = [];
+    for (let dc = -1; dc <= 1; dc++) for (let dr = -1; dr <= 1; dr++) {
+      if (!dc && !dr) continue;
+      if (bunnyFree(bunny.c + dc, bunny.r + dr)) opts.push({ c: bunny.c + dc, r: bunny.r + dr });
+    }
+    if (!opts.length) { bunny.next = now + 1200; return; }
+    if (!zapped(now) && Math.random() < 0.18) { bunny.face *= -1; bunny.next = now + 700 + Math.random() * 900; dirty = true; return; }
+    bunnyHop(opts[Math.floor(Math.random() * opts.length)], now, false);
+  }
+  function bunnyFlee(fromC, fromR, now) {
+    if (bunny.state === 'hop') return;
+    let best = null, bd = -1;
+    for (let dc = -1; dc <= 1; dc++) for (let dr = -1; dr <= 1; dr++) {
+      const c = bunny.c + dc, r = bunny.r + dr;
+      if ((dc || dr) && bunnyFree(c, r)) {
+        const d = Math.max(Math.abs(c - fromC), Math.abs(r - fromR));
+        if (d > bd) { bd = d; best = { c, r }; }
+      }
+    }
+    if (best) bunnyHop(best, now, true);
+  }
+  function updateBunny(now) {
+    if (zapAge(now) < ZAP_LIFE + ZAP_FADE) dirty = true;
+    if (bunny.state === 'hop') {
+      const t = (now - bunny.t0) / bunny.dur;
+      const a = bunny.from, b = bunny.to;
+      const ax = tileX(a.c, a.r) - camX, ay = tileY(a.c, a.r) - camY;
+      const bx = tileX(b.c, b.r) - camX, by = tileY(b.c, b.r) - camY;
+      if (t < 0.17) { bunny.frame = 'bunny_crouch'; bunny.x = ax; bunny.y = ay; bunny.h = 0; }
+      else if (t < 0.83) {
+        const u = (t - 0.17) / 0.66;
+        bunny.frame = 'bunny_leap';
+        bunny.x = ax + (bx - ax) * u; bunny.y = ay + (by - ay) * u; bunny.h = (zapped(bunny.t0) ? 92 : 60) * u * (1 - u);
+      } else if (t < 1) { bunny.frame = 'bunny_crouch'; bunny.x = bx; bunny.y = by; bunny.h = 0; }
+      else {
+        bunny.c = b.c; bunny.r = b.r; bunny.state = 'sit'; bunny.frame = 'bunny_sit'; bunny.h = 0;
+        bunny.next = now + (zapped(now) ? 120 + Math.random() * 260 : Math.random() < 0.15 ? 3200 + Math.random() * 2400 : 900 + Math.random() * 1700);
+      }
+      return true;
+    }
+    const f = bunnyFoot();
+    bunny.x = f.x; bunny.y = f.y; bunny.frame = 'bunny_sit'; bunny.h = 0;
+    if (view.mode === 'board' && !reduceMotion && now >= bunny.next) bunnyWander(now);
+    if (view.mode === 'board' && occupied(bunny.c, bunny.r, null)) bunnyFlee(bunny.c, bunny.r, now);
+    return false;
+  }
+
+  // ------------------------------------------------------------ view states
+  // board -> topple -> zoomIn -> section -> zoomOut -> rise -> board
+  function boardParams(useDefaultLight) {
+    return {
+      camX: boardCamX, camY: boardCamY,
+      lx: useDefaultLight ? lightTarget.x : light.x, ly: useDefaultLight ? lightTarget.y : light.y,
+      LR, LS, TOP: LTOP * lightAmt, AMB: 0, SL: lightAmt, others: 1, boardUI: 1, secUI: 0, gainK: 0, tiles: 1, rip: 0
+    };
+  }
+  function secLayout(key) {
+    const p = pieceByKey(key);
+    const s = SPR[restFrame(p.sprite).name];
+    const tall = layoutName === 'tall';
+    const hd = LABELS[(tall ? 'ht_' : 'h_') + key];
+    const hh = hd ? hd.h : 24;
+    const tx = Math.round(tall ? AW * 0.27 : AW * 0.21);
+    let ty, hx, hy, textTop, textLeft, textW;
+    // When the text is long, the heading (and a little of the piece) moves up so the text fits on screen.
+    if (tall) {
+      hx = Math.min(Math.round(AW * 0.52), AW - 3 - (hd ? hd.w : 0));
+      textLeft = Math.round(AW * 0.08); textW = AW - 2 * textLeft;
+      const need = sectionHeight(key, textW * P - 6) / P, room = AH - 24 / P;
+      const topFor = y => Math.max(Math.round(y + s.h / 2 + 44), Math.round(y - hh / 2) + hh + 10);
+      ty = Math.round(AH * 0.2);
+      const over = topFor(ty) + need - room;
+      if (over > 0) ty = Math.max(Math.round(AH * 0.12), ty - Math.ceil(over));
+      hy = Math.round(ty - hh / 2);
+      textTop = topFor(ty);
+    } else {
+      hx = Math.round(AW * 0.47);
+      textLeft = hx; textW = Math.min(560 / P, AW * 0.92 - hx);
+      const need = sectionHeight(key, textW * P - 6) / P;
+      const base = Math.round(AH * 0.41) - 5;
+      hy = Math.max(Math.round(AH * 0.06), Math.min(base, Math.floor(AH * 0.9 - need - hh - 6) - 4));
+      textTop = hy + hh + 6;
+      ty = Math.round(AH * 0.44 - Math.min((base - hy) * 0.6, AH * 0.12));
+    }
+    const camx = Math.round(tileX(p.c, p.r) + (s.w / 2 - s.ax) - tx);
+    const camy = Math.round(tileY(p.c, p.r) + (s.h / 2 - s.ay) - ty);
+    return { camx, camy, lx: tx + 8, ly: ty + s.h / 2 - 6, hx, hy, textTop, textLeft, textW, hd };
+  }
+  function secParams(key) {
+    const L = secLayout(key);
+    return { camX: L.camx, camY: L.camy, lx: L.lx, ly: L.ly, LR: SEC.LR, LS: SEC.LS, TOP: SEC.TOP, AMB: 0, SL: 1, others: 0, boardUI: 0, secUI: 1, gainK: 1, tiles: 0.6, rip: 1 };
+  }
+  function lerpParams(a, b, e) {
+    const o = {};
+    for (const k in a) o[k] = a[k] + (b[k] - a[k]) * e;
+    return o;
+  }
+  function currentParams(now) {
+    switch (view.mode) {
+      case 'section': return secParams(view.key);
+      case 'zoomIn': case 'zoomOut': return lerpParams(view.from, view.to, easeInOut(clamp01((now - view.t0) / view.dur)));
+      default: return boardParams(false);
+    }
+  }
+  function selectedAngle(p, now) {
+    const rest = restFrame(p.sprite).a;
+    switch (view.mode) {
+      case 'topple': return view.th / DEG;
+      case 'rise': return rest * (1 - smoother(clamp01((now - view.t0) / T_RISE)));
+      default: return rest;
+    }
+  }
+  // Tipping over: a flick carries the centre of mass past the balance point, then gravity takes over.
+  function stepTopple(dt) {
+    const ph = PHYS[pieceByKey(view.key).sprite];
+    const crit = ph.critL * DEG, rest = ph.rest * DEG;
+    view.w += GRAV * Math.sin(view.th - crit) * dt;
+    view.th += view.w * dt;
+    if (view.th >= rest) {
+      view.th = rest;
+      if (view.w * E_FALL < 0.5) { view.w = 0; view.settled = true; view.tSettle = performance.now(); }
+      else view.w = -view.w * E_FALL;                      // one small rebound off the crown, then rest
+    }
+  }
+
+  function openSection(key, fromKeyboard) {
+    if (view.mode !== 'board' || !SPR.king) return;
+    const p = pieceByKey(key);
+    const now = performance.now();
+    p.anim = null; p.drag = null; p.rock = null;
+    hoverKey = null; lightFollows = false;
+    view.th = 0; view.settled = false;
+    view.w = 1.3 * Math.sqrt(2 * GRAV * (1 - Math.cos(PHYS[p.sprite].critL * DEG)));
+    lightTarget.x = light.x; lightTarget.y = light.y;
+    view.mode = 'topple'; view.key = key; view.t0 = now; view.kb = !!fromKeyboard;
+    canvas.classList.remove('over-piece', 'dragging', 'panning');
+    canvas.classList.add('still');
+    // make room: the bunny hops away if it is where the piece will land
+    if (Math.abs(bunny.r - p.r) <= 2 && Math.abs(bunny.c - p.c) <= 2) bunnyFlee(p.c, p.r, now);
+    if (reduceMotion) { startZoomIn(now); view.t0 -= T_IN; }
+    dirty = true;
+  }
+  function startZoomIn(now) {
+    view.from = boardParams(false); view.to = secParams(view.key);
+    view.mode = 'zoomIn'; view.t0 = now; view.dur = T_IN;
+  }
+  function enterSection() {
+    view.mode = 'section';
+    const s = SECTIONS[view.key];
+    secTitle.textContent = s.label;
+    secBody.innerHTML = s.body;
+    layoutSectionText();
+    secEl.hidden = false;
+    secEl.classList.remove('reveal'); void secEl.offsetWidth; secEl.classList.add('reveal');
+    secEl.scrollTop = 0;
+    if (view.kb) backBtn.focus();
+    dirty = true;
+  }
+  function layoutSectionText() {
+    if (!view.key) return;
+    const L = secLayout(view.key);
+    const tall = layoutName === 'tall';
+    const top = L.textTop * P, left = L.textLeft * P + 6, width = L.textW * P - 6;
+    secEl.style.left = left + 'px'; secEl.style.top = top + 'px';
+    secEl.style.width = width + 'px';
+    secEl.style.maxHeight = Math.max(120, window.innerHeight - top - (tall ? 24 : window.innerHeight * 0.1)) + 'px';
+    paintNames(width);
+  }
+  function goBack() {
+    if (view.mode !== 'section') return;
+    const now = performance.now();
+    secEl.hidden = true;
+    secHover = false;
+    placeCamera(); lightOnPiece(pieceByKey(view.key)); lightAmt = 1;
+    view.from = secParams(view.key); view.to = boardParams(true);
+    view.mode = 'zoomOut'; view.t0 = now; view.dur = T_OUT;
+    if (reduceMotion) view.t0 -= T_OUT;
+    dirty = true;
+  }
+  function advanceView(now) {
+    const t = now - view.t0;
+    if (view.mode === 'topple' && view.settled && now - view.tSettle >= 160) startZoomIn(now);
+    else if (view.mode === 'zoomIn' && t >= view.dur) enterSection();
+    else if (view.mode === 'zoomOut' && t >= view.dur) {
+      light.x = view.to.lx; light.y = view.to.ly;
+      camX = boardCamX; camY = boardCamY;
+      view.mode = 'rise'; view.t0 = reduceMotion ? now - T_RISE : now;
+    } else if (view.mode === 'rise' && t >= T_RISE) {
+      const k = view.key;
+      view.mode = 'board'; view.key = null;
+      canvas.classList.remove('still');
+      if (view.kb) { const b = [...nav.children].find(x => x.dataset.key === k); if (b) b.focus(); }
+    }
+    return view.mode !== 'board' && view.mode !== 'section';
+  }
+
+  // ------------------------------------------------------------ drawing
+  function shadow(cx, cy, rx, strength) {
+    const ry = rx / 2;
+    const x0 = Math.max(0, Math.floor(cx - rx)), x1 = Math.min(AW - 1, Math.ceil(cx + rx));
+    const y0 = Math.max(0, Math.floor(cy - ry)), y1 = Math.min(AH - 1, Math.ceil(cy + ry));
+    for (let y = y0; y <= y1; y++) {
+      const dy = (y - cy) / ry;
+      for (let x = x0; x <= x1; x++) {
+        const dx = (x - cx) / rx, f = dx * dx + dy * dy;
+        if (f < 1) fbuf[y * AW + x] *= 1 - strength * (1 - f);
+      }
+    }
+  }
+  function drawFloor(prm, objs, now) {
+    const lx = prm.lx, ly = prm.ly, lr = prm.LR, ls = prm.LS, amb = prm.AMB, R2 = lr * lr, dark = 1 - prm.tiles;
+    const rip = reduceMotion ? 0 : prm.rip;
+    // time stepped at 15 fps so the rings move like sprite animation rather than video
+    const tq = Math.floor(now / 66.7) * 0.0667;
+    const top = prm.TOP * (rip > 0 ? 1 + 0.35 * rip * Math.sin(tq * 1.9) : 1);
+    const RR = layoutName === 'tall' ? 120 : 150, RR2 = RR * RR, WAVE = 30, SPEED = 24, G = glows.length > 0;
+    for (let sy = 0; sy < AH; sy++) {
+      const wy = sy + camY, dy = 2 * (sy - ly), dy2 = dy * dy, row = sy * AW;
+      for (let sx = 0; sx < AW; sx++) {
+        const wx = sx + camX;
+        const c = Math.floor((wx + 2 * wy + TW) / 76), r = Math.floor((2 * wy - wx + TW) / 76);
+        const lit = (c + r) & 1;
+        const dx = sx - lx, d2 = dx * dx + dy2;
+        let I = 0;
+        if (lit || dark > 0) {
+          I = d2 >= R2 ? amb : amb + (top - amb) * lightAt(Math.sqrt(d2), lr, ls);
+          if (G) { const g = glowAt(sx, sy) * LTOP; if (g > I) I = g; }
+          if (!lit) I *= dark;
+        }
+        if (rip > 0 && d2 < RR2) {
+          const d = Math.sqrt(d2);
+          let ph = (d - tq * SPEED) / WAVE; ph -= Math.floor(ph);
+          let ring = 1 - Math.abs(ph - 0.5) * 2;               // 0..1, peak mid-wave
+          ring *= ring; ring *= ring;                           // thin bright rings
+          const env = Math.pow(1 - d / RR, 1.6) * Math.min(1, d / 18);
+          I += rip * 0.9 * ring * env * (lit ? 1 : 0.42);
+        }
+        fbuf[row + sx] = I;
+      }
+    }
+    for (const o of objs) {
+      if (!o.shadow) continue;
+      const dx = o.sx - lx, dy = (o.sy - ly) * 2, d = Math.hypot(dx, dy) || 1;
+      const k = Math.min(7, d / 22);
+      shadow(o.sx + dx / d * k, o.sy + dy / d * k * 0.5 + 1, o.shadow, o.shadowK);
+    }
+    for (let sy = 0; sy < AH; sy++) {
+      const by = ((sy + camY) & 7) << 3, row = sy * AW;
+      for (let sx = 0; sx < AW; sx++) buf[row + sx] = fbuf[row + sx] > TH[by | ((sx + camX) & 7)] ? MINT : BG;
+    }
+  }
+  function px(x, y, col) { if (x >= 0 && y >= 0 && x < AW && y < AH) buf[y * AW + x] = col; }
+  function rect(x, y, w, h, col, fade) {
+    const x0 = Math.max(0, x), y0 = Math.max(0, y), x1 = Math.min(AW, x + w), y1 = Math.min(AH, y + h);
+    if (fade >= 1) { for (let j = y0; j < y1; j++) buf.fill(col, j * AW + x0, j * AW + x1); return; }
+    for (let j = y0; j < y1; j++) for (let i = x0; i < x1; i++) if (noiseAt(i, j) < fade) buf[j * AW + i] = col;
+  }
+  // Draw a dithered sprite. fade dissolves it pixel by pixel. With lit, every pixel is lit by the pool of
+  // light (never below lit.min), so whatever the light does not reach stays black.
+  function sprite(name, fx, fy, gain, fade, lit) {
+    const s = SPR[name]; if (!s || fade <= 0) return;
+    const lx = lit ? lit.lx : 0, ly = lit ? lit.ly : 0, lr = lit ? lit.LR : 0, ls = lit ? lit.LS : 1;
+    const R2 = lr * lr, lk = lit ? lit.SL : 1, lmin = lit ? lit.min : 1;
+    const x0 = Math.round(fx) - s.ax, y0 = Math.round(fy) - s.ay;
+    if (s.outline) {              // 1px dark rim so a small character separates from the dithered floor
+      for (let j = -1; j <= s.h; j++) for (let i = -1; i <= s.w; i++) {
+        if (i >= 0 && j >= 0 && i < s.w && j < s.h && s.cov[j * s.w + i]) continue;
+        let near = false;
+        for (let k = 0; k < 4 && !near; k++) {
+          const ii = i + (k === 0 ? 1 : k === 1 ? -1 : 0), jj = j + (k === 2 ? 1 : k === 3 ? -1 : 0);
+          near = ii >= 0 && jj >= 0 && ii < s.w && jj < s.h && s.cov[jj * s.w + ii] === 1;
+        }
+        if (near && (fade >= 1 || noiseAt(x0 + i, y0 + j) < fade)) px(x0 + i, y0 + j, BG);
+      }
+    }
+    for (let j = 0; j < s.h; j++) {
+      const y = y0 + j; if (y < 0 || y >= AH) continue;
+      const by = (j & 7) << 3;
+      for (let i = 0; i < s.w; i++) {
+        const k = j * s.w + i; if (!s.cov[k]) continue;
+        const x = x0 + i; if (x < 0 || x >= AW) continue;
+        if (fade < 1 && noiseAt(x, y) >= fade) continue;
+        let g = gain;
+        if (lit && lmin < 1) {
+          const dx = x - lx, dy = 2 * (y - ly), d2 = dx * dx + dy * dy;
+          let L = d2 >= R2 ? 0 : lightAt(Math.sqrt(d2), lr, ls) * lk;
+          if (glows.length) { const gl = glowAt(x, y); if (gl > L) L = gl; }
+          g *= L > lmin ? L : lmin;
+        }
+        buf[y * AW + x] = s.shade[k] * g > TH[by | (i & 7)] ? MINT : BG;
+      }
+    }
+  }
+  // Dim dithered reflection below a sprite (section view floor)
+  function reflection(name, fx, fy, gain) {
+    const s = SPR[name]; if (!s || gain <= 0) return;
+    const x0 = Math.round(fx) - s.ax, y0 = Math.round(fy) - s.ay, base = y0 + s.h, reach = s.h * 0.7;
+    for (let j = 0; j < s.h; j++) {
+      const y = base + (s.h - 1 - j); if (y < 0 || y >= AH) continue;
+      if ((y - base) & 1) continue;                       // every other row: a rippled, striped reflection
+      const fall = 1 - (y - base) / reach; if (fall <= 0) continue;
+      const by = ((y + 3) & 7) << 3;
+      for (let i = 0; i < s.w; i++) {
+        const k = j * s.w + i; if (!s.cov[k]) continue;
+        const x = x0 + i; if (x < 0 || x >= AW) continue;
+        if (s.shade[k] * gain * fall > TH[by | ((x + 5) & 7)]) buf[y * AW + x] = MINT;
+      }
+    }
+  }
+  function label(lbl, x, y, inverted, fade) {
+    if (!lbl || fade <= 0) return;
+    rect(x, y, lbl.w, lbl.h, inverted ? MINT : BG, fade);
+    const col = inverted ? BG : MINT;
+    for (let j = 0; j < lbl.h; j++) for (let i = 0; i < lbl.w; i++) {
+      if (!lbl.mask[j * lbl.w + i]) continue;
+      if (fade < 1 && noiseAt(x + i, y + j) >= fade) continue;
+      px(x + i, y + j, col);
+    }
+  }
+  function tileShape(c, r, inset, col, filled) {
+    const cx = tileX(c, r) - camX, cy = tileY(c, r) - camY;
+    const hh = TH2 - inset;
+    for (let dy = -hh; dy <= hh; dy++) {
+      const hw = 2 * (hh - Math.abs(dy));
+      if (filled) { for (let dx = -hw; dx <= hw; dx++) px(cx + dx, cy + dy, col); }
+      else { px(cx - hw, cy + dy, col); px(cx - hw + 1, cy + dy, col); px(cx + hw, cy + dy, col); px(cx + hw - 1, cy + dy, col); }
+    }
+  }
+  function contrast(c, r) {
+    const x = Math.round(tileX(c, r) - camX), y = Math.round(tileY(c, r) - camY);
+    const f = x >= 0 && y >= 0 && x < AW && y < AH ? fbuf[y * AW + x] : 0;
+    return f > 0.5 ? BG : MINT;
+  }
+
+  let layout = [];   // hit areas from the last frame
+  function draw(now) {
+    const prm = currentParams(now);
+    camX = Math.round(prm.camX); camY = Math.round(prm.camY);
+    const othersFade = (view.mode === 'zoomIn' || view.mode === 'section' || view.mode === 'zoomOut') ? prm.others : 1;
+    const sel = view.key ? pieceByKey(view.key) : null;
+
+    const objs = [];
+    for (const p of pieces) {
+      const f = pieceFoot(p, now);
+      let name = p.sprite, fade = othersFade, liftPx = f.lift;
+      if (p === sel) {
+        fade = 1;
+        name = frameAt(p.sprite, selectedAngle(p, now));
+        if (view.mode === 'rise') { const s1 = Math.sin(Math.PI * clamp01((now - view.t0) / T_RISE)); liftPx = 7 * s1 * s1; }
+        if (view.mode === 'section') liftPx = Math.round(secLift);
+      } else if (p.rock) name = frameAt(p.sprite, p.rock.a / DEG);
+      const up = SPR[p.sprite];
+      objs.push({ type: 'piece', p, name, sx: f.x, sy: f.y, fy: f.y - liftPx, fade,
+        shadow: up ? up.w * 0.44 : 0, shadowK: liftPx > 0.5 ? 0.55 : 0.8 });
+    }
+    for (const d of decor) { const f = restFoot(d); objs.push({ type: 'decor', name: d.sprite, sx: f.x, sy: f.y, fy: f.y, fade: othersFade, shadow: 0 }); }
+    objs.push({ type: 'bunny', name: bunny.frame + (bunny.face > 0 ? '_r' : ''), sx: bunny.x, sy: bunny.y, fy: bunny.y - bunny.h,
+      fade: othersFade, shadow: (7 - bunny.h * 0.18) * (othersFade > 0.5 ? 1 : 0), shadowK: 0.85 });
+
+    updateGlows(now, othersFade);
+    drawFloor(prm, objs.filter(o => o.fade > 0.5 || o.type === 'piece' && o.p === sel), now);
+
+    // move hints while dragging a piece
+    const dragging = pieces.find(p => p.drag);
+    if (dragging) {
+      for (const t of dragging.drag.legal) tileShape(t.c, t.r, 13, contrast(t.c, t.r), true);
+      const tt = dragging.drag.target;
+      if (tt && onBoard(tt.c, tt.r) && dragging.drag.legal.some(t => t.c === tt.c && t.r === tt.r)) tileShape(tt.c, tt.r, 2, contrast(tt.c, tt.r), false);
+      tileShape(dragging.c, dragging.r, 15, contrast(dragging.c, dragging.r), false);
+    }
+
+    if (sel && prm.secUI > 0) {
+      const o = objs.find(q => q.p === sel);
+      reflection(o.name, o.sx, o.sy, 0.8 * prm.secUI);
+    }
+
+    // objects back to front; a dragged piece is always on top
+    objs.sort((a, b) => (a.p && a.p.drag ? 1 : 0) - (b.p && b.p.drag ? 1 : 0) || a.sy - b.sy);
+    layout = [];
+    const lit = { lx: prm.lx, ly: prm.ly, LR: prm.LR, LS: prm.LS, SL: prm.SL, min: 0 };
+    const litSel = { ...lit, min: prm.gainK };          // the opened piece is fully lit on its own screen
+    for (const o of objs) {
+      let gain = o.type === 'bunny' ? 1.55 : 1.06;
+      if (o.type === 'piece') {
+        if (hoverKey === o.p.key || o.p.drag) gain *= 1.22;
+        if (o.p === sel) gain = gain + ((o.p.dark ? 2.4 : 1.65) - gain) * prm.gainK;
+      }
+      const puff = o.type === 'bunny' && o.fade > 0.5 && zapAge(now) >= 70 && zapped(now);
+      if (puff) drawPuff(o, now); else sprite(o.name, o.sx, o.fy, gain, o.fade, o.p === sel ? litSel : lit);
+      if (o.type === 'bunny') drawZapFx(o, now);
+      // hit areas: a board piece uses its upright outline, so rocking never flickers the hover on and off
+      const s = o.type === 'piece' && o.p !== sel ? SPR[o.p.sprite] : SPR[o.name];
+      if (s && o.fade > 0.5) layout.push({ o, x: Math.round(o.sx) - s.ax, y: Math.round(o.fy) - s.ay, s });
+    }
+
+    if (othersFade > 0.5) drawBolt(now);
+
+    // board labels above their pieces
+    for (const o of objs) {
+      if (o.type !== 'piece' || o.p === sel) continue;
+      const lbl = LABELS[o.p.key]; if (!lbl) continue;
+      const s = SPR[o.name];
+      let x = Math.round(o.sx - lbl.w / 2);
+      x = Math.max(2, Math.min(AW - lbl.w - 2, x));
+      const y = Math.round(o.fy) - (s ? s.ay : 60) - lbl.h - 1;
+      const ui = view.mode === 'board' || view.mode === 'topple' || view.mode === 'rise' ? 1 : prm.boardUI;
+      // a name shows when its piece is lit
+      const fade = Math.min(ui, clamp01(2.5 * (lightPx(prm, o.sx, s ? o.fy - s.ay + s.h / 2 : o.fy - 30) - 0.08)));
+      if (fade <= 0) continue;
+      label(lbl, x, y, hoverKey === o.p.key, fade);
+      if (fade > 0.5) layout.push({ o, x, y, w: lbl.w, h: lbl.h, isLabel: true });
+    }
+    const uiFade = view.mode === 'board' || view.mode === 'topple' || view.mode === 'rise' ? 1 : prm.boardUI;
+    if (LABELS.__hint) { const h = LABELS.__hint; label(h, Math.round((AW - h.w) / 2), AH - h.h - 20, false, uiFade); }
+    if (LABELS.__name) label(LABELS.__name, 6, AH - LABELS.__name.h - 6, false, uiFade);
+
+    // section screen: "Lift it to go back" over the fallen piece, heading in the right column
+    if (sel && prm.secUI > 0) {
+      const o = objs.find(q => q.p === sel), s = SPR[o.name];
+      const L = secLayout(sel.key);
+      const lift = LABELS.__lift, hd = L.hd;
+      if (lift && s) {
+        const cx = Math.round(o.sx) - s.ax + s.w / 2;
+        const x = Math.round(cx - lift.w / 2), y = Math.round(o.fy) - s.ay - lift.h - 12;
+        label(lift, x, y, secHover, prm.secUI);
+        if (view.mode === 'section') layout.push({ o, x, y, w: lift.w, h: lift.h, isLabel: true, lift: true });
+      }
+      if (hd) label(hd, L.hx, L.hy, false, prm.secUI);
+    }
+
+    ctx.putImageData(image, 0, 0);
+  }
+
+  function hitTest(x, y) {
+    for (let i = layout.length - 1; i >= 0; i--) {
+      const L = layout[i];
+      if (L.isLabel) { if (x >= L.x && y >= L.y && x < L.x + L.w && y < L.y + L.h) return L.o; continue; }
+      const lx = Math.floor(x - L.x), ly = Math.floor(y - L.y);
+      if (lx >= 0 && ly >= 0 && lx < L.s.w && ly < L.s.h && L.s.cov[ly * L.s.w + lx]) {
+        if (L.o.type === 'decor') return null;
+        return L.o;
+      }
+    }
+    return null;
+  }
+
+  // ------------------------------------------------------------ keyboard / buttons
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') goBack(); });
+  backBtn.addEventListener('click', goBack);
+  for (const p of PIECES) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = SECTIONS[p.key].label; b.dataset.key = p.key;
+    b.addEventListener('focus', () => { if (view.mode === 'board') { lightOnPiece(pieceByKey(p.key)); setHover(p.key, -4 * DEG); } });
+    b.addEventListener('blur', () => { if (hoverKey === p.key) setHover(null); });
+    b.addEventListener('click', () => openSection(p.key, true));
+    nav.appendChild(b);
+  }
+
+  // ------------------------------------------------------------ pointer input
+  let ptr = null;
+  const toArt = e => ({ x: e.clientX / P, y: e.clientY / P });
+  function lightOnAt(a) {
+    if (lightAmt < 0.05) { light.x = a.x; light.y = a.y; }   // coming back: the light starts at the cursor
+    lightFollows = true; lightTarget.x = a.x; lightTarget.y = a.y; lightOn = 1; dirty = true;
+  }
+  // shine the light on a piece (keyboard focus, coming back from a section)
+  function lightOnPiece(p) {
+    lightFollows = false; lightOn = 1;
+    lightTarget.x = tileX(p.c, p.r) - boardCamX; lightTarget.y = tileY(p.c, p.r) - boardCamY - 26;
+    dirty = true;
+  }
+  canvas.addEventListener('pointerdown', e => {
+    if (e.button !== undefined && e.button !== 0) return;
+    const a = toArt(e);
+    if (view.mode === 'section') {
+      const hit = hitTest(a.x, a.y);
+      if (hit && hit.type === 'piece') goBack();
+      return;
+    }
+    if (view.mode !== 'board') return;
+    lightOnAt(a);
+    const hit = hitTest(a.x, a.y);
+    canvas.setPointerCapture(e.pointerId);
+    ptr = { id: e.pointerId, sx: a.x, sy: a.y, hit, moved: false, panX0: panX, panY0: panY };
+    dirty = true;
+  });
+  canvas.addEventListener('pointermove', e => {
+    const a = toArt(e);
+    const dtMove = e.pointerType === 'mouse' ? trackMouse(e) : 0;
+    if (view.mode === 'section') {
+      const hit = hitTest(a.x, a.y);
+      const h = !!(hit && hit.type === 'piece');
+      if (h !== secHover) { secHover = h; dirty = true; }
+      canvas.classList.toggle('over-piece', h);
+      return;
+    }
+    if (view.mode !== 'board') return;
+    if (e.pointerType === 'mouse' || ptr) lightOnAt(a);
+    if (!ptr || e.pointerId !== ptr.id) {
+      const hit = hitTest(a.x, a.y);
+      const k = hit && hit.type === 'piece' ? hit.p.key : null;
+      if (k && k === hoverKey && dtMove > 0) {            // keeps pushing while the cursor moves across it
+        const v = push();
+        nudge(hit.p, Math.sign(v) * v * v * 7e-6 * dtMove);
+      }
+      setHover(k);
+      canvas.classList.toggle('over-piece', !!hit && hit.type !== 'decor');
+      return;
+    }
+    const dx = a.x - ptr.sx, dy = a.y - ptr.sy;
+    if (!ptr.moved && Math.hypot(dx, dy) * P > 6) {
+      ptr.moved = true;
+      if (ptr.hit && ptr.hit.type === 'piece') {
+        const p = ptr.hit.p, f = restFoot(p);
+        p.anim = null; p.rock = null;
+        p.drag = { footX: f.x, footY: f.y, fx0: f.x, fy0: f.y, legal: legalTiles(p), target: null, t0: performance.now() };
+        hoverKey = p.key;
+        canvas.classList.add('dragging');
+      } else canvas.classList.add('panning');
+    }
+    if (!ptr.moved) return;
+    if (ptr.hit && ptr.hit.type === 'piece') {
+      const p = ptr.hit.p;
+      p.drag.footX = p.drag.fx0 + dx; p.drag.footY = p.drag.fy0 + dy;
+      p.drag.target = tileAtScreen(p.drag.footX, p.drag.footY);
+      const t = p.drag.target;
+      if (Math.max(Math.abs(t.c - bunny.c), Math.abs(t.r - bunny.r)) <= 1) bunnyFlee(t.c, t.r, performance.now());
+    } else {
+      panX = Math.max(-320, Math.min(320, ptr.panX0 - dx));
+      panY = Math.max(-260, Math.min(260, ptr.panY0 - dy));
+      placeCamera();
+    }
+    dirty = true;
+  });
+  function endPointer(e, cancelled) {
+    if (!ptr || e.pointerId !== ptr.id) return;
+    const now = performance.now();
+    const hit = ptr.hit;
+    canvas.classList.remove('dragging', 'panning');
+    if (!ptr.moved) {
+      ptr = null;
+      if (!cancelled && hit && hit.type === 'piece') { openSection(hit.p.key, false); return; }
+      if (!cancelled && hit && hit.type === 'bunny') zapBunny(now);
+    } else if (hit && hit.type === 'piece') {
+      const p = hit.p, d = p.drag;
+      const t = d.target;
+      const ok = !cancelled && t && d.legal.some(q => q.c === t.c && q.r === t.r);
+      const from = { x: d.footX, y: d.footY }, lift0 = dragLift(p, now);
+      if (ok) { p.c = t.c; p.r = t.r; p.moved = true; }
+      const rest = restFoot(p);
+      p.drag = null;
+      const dist = Math.hypot(from.x - rest.x, from.y - rest.y);
+      p.anim = reduceMotion ? null : { t0: now, dur: Math.min(460, 220 + dist * 1.6), dx: from.x - rest.x, dy: from.y - rest.y, lift: lift0 };
+      if (ok && Math.max(Math.abs(p.c - bunny.c), Math.abs(p.r - bunny.r)) <= 1) bunnyFlee(p.c, p.r, now);
+    }
+    ptr = null;
+    dirty = true;
+  }
+  canvas.addEventListener('pointerup', e => endPointer(e, false));
+  canvas.addEventListener('pointercancel', e => endPointer(e, true));
+  canvas.addEventListener('pointerleave', e => {
+    if (e.pointerType === 'mouse' && !ptr && view.mode === 'board') { lightOn = 0; setHover(null); canvas.classList.remove('over-piece'); dirty = true; }
+    if (view.mode === 'section' && secHover) { secHover = false; dirty = true; }
+  });
+  window.addEventListener('resize', resize);
+
+  // ------------------------------------------------------------ loop
+  function physics(dt) {
+    const H = 1 / 480;                         // fixed sub-steps keep the integration stable and repeatable
+    let active = false;
+    for (let s = 0; s < dt; s += H) {
+      const h = Math.min(H, dt - s);
+      if (view.mode === 'topple' && !view.settled) { stepTopple(h); active = true; }
+      for (const p of pieces) if (p.rock) { stepRock(p, h); active = true; }
+    }
+    return active;
+  }
+  function frame(now) {
+    requestAnimationFrame(frame);
+    const dt = Math.min(0.05, Math.max(0, (now - (lastNow || now)) / 1000));
+    lastNow = now;
+    if (physics(dt)) dirty = true;
+    const liftTarget = view.mode === 'section' && secHover ? 2 : 0;
+    if (Math.abs(secLift - liftTarget) > 0.02) { secLift += (liftTarget - secLift) * (1 - Math.exp(-dt / 0.06)); dirty = true; }
+    else secLift = liftTarget;
+    if (lightAmt !== lightOn) {
+      const la = reduceMotion ? lightOn : lightAmt + (lightOn - lightAmt) * (1 - Math.exp(-dt / 0.16));
+      lightAmt = Math.abs(la - lightOn) < 0.004 ? lightOn : la;
+      dirty = true;
+    }
+    if (view.mode === 'board') {
+      const k = reduceMotion ? 1 : 0.16;
+      if (Math.abs(light.x - lightTarget.x) > 0.05 || Math.abs(light.y - lightTarget.y) > 0.05) {
+        light.x += (lightTarget.x - light.x) * k; light.y += (lightTarget.y - light.y) * k; dirty = true;
+      }
+    }
+    if (advanceView(now)) dirty = true;
+    if (updateBunny(now)) dirty = true;
+    for (const p of pieces) {
+      if (p.anim) { if (now - p.anim.t0 >= p.anim.dur) p.anim = null; dirty = true; }
+      if (p.drag && now - p.drag.t0 < 160) dirty = true;
+    }
+    if (view.mode === 'section' && !reduceMotion) {
+      const step = Math.floor(now / 66.7);
+      if (step !== lastRipple) { lastRipple = step; dirty = true; }
+    }
+    if (!dirty) return;
+    dirty = false;
+    draw(now);
+  }
+
+  if (location.hash === '#test') {   // read-only hook for automated checks
+    window.__world = { pieces, bunny, get pan() { return { x: panX, y: panY }; }, get mode() { return view.mode; }, get open() { return view.key; },
+      get P() { return P; }, get cam() { return { x: camX, y: camY }; }, get light() { return { ...light }; },
+      get topple() { return view.mode === 'topple' ? view.th / DEG : null; }, get bunnyH() { return bunny.h; }, get zapAge() { return zapAge(performance.now()); },
+      get mouseV() { return Math.round(Math.hypot(mouse.vx, mouse.vy)); },
+      get selAngle() { const p = view.key && pieceByKey(view.key); return p ? selectedAngle(p, performance.now()) : null; } };
+  }
+  applyLayout('wide');
+  resize();
+  buildLabels();
+  if (document.fonts && document.fonts.load) {
+    document.fonts.load('700 13px Lora').then(buildLabels, () => {});
+    document.fonts.ready.then(buildLabels);
+  }
+  loadAtlas().then(() => {
+    bunny.next = performance.now() + 1600;
+    dirty = true;
+    requestAnimationFrame(frame);
+  });
+})();
+</script>
+</body>
+</html>
