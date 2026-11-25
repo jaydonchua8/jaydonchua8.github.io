@@ -8,10 +8,11 @@ them with rigid-body physics, so frames are finer where the motion is slow.
 import json, math, os, sys, time
 import numpy as np
 from PIL import Image
-sys.path.insert(0, '/home/claude/portfolio/build')
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
 import pieces as P
 
-OUT = '/home/claude/portfolio/build/out'
+OUT = os.path.join(HERE, 'out')
 os.makedirs(OUT, exist_ok=True)
 
 PIECES = [
@@ -48,7 +49,7 @@ for name, fac, mat, az in PIECES:
     t0 = time.time()
     f0, h, r = fac()
     f = P.with_azimuth(f0, az)
-    results[name] = P.render(f, h, r, material=mat)
+    results[name] = P.render(f, h, r, material=mat, albedo_fn=P.piece_texture)
     pts = P.point_cloud(f, h, r)
     base = pts[pts[:, 2] < 0.2]
     pivL, pivR = float(base[:, 0].min()), float(base[:, 0].max())
@@ -69,7 +70,7 @@ for name, fac, mat, az in PIECES:
         sy = ys * P.SE + wz * P.CE
         bounds = (float(wx.min()) - 0.2, float(wx.max()) + 0.2, float(sy.min()) - 0.2, float(sy.max()) + 0.2)
         nm = f'{name}_r{k}'
-        results[nm] = P.render(g, h, r, material=mat, ss=3, bounds=bounds)
+        results[nm] = P.render(g, h, r, material=mat, ss=3, bounds=bounds, albedo_fn=P.piece_texture)
         seq.append([nm, round(float(deg), 2)])
     frames[name] = seq
     phys[name] = {'rest': round(rest, 2), 'critL': round(critL, 2), 'critR': round(critR, 2)}

@@ -400,7 +400,8 @@ def render(sdf, height, radius, *, scale=SCALE, ss=4, azim=0.0, material='white'
         rim = np.clip(1.0 - np.abs(nrm @ VIEW), 0.0, 1.0)
         s = 0.03 + 0.34 * diff * ao + 0.12 * top * ao + 0.34 * rim ** 2.0 + 0.75 * spec ** 22
     if albedo_fn is not None:
-        s = s * albedo_fn(p)
+        to_local = getattr(sdf, 'to_local', None)
+        s = s * albedo_fn(to_local(p) if to_local else p)
     shade_ss = np.zeros(n); shade_ss[idx] = np.clip(s, 0.0, 1.0)
     cov_ss = np.zeros(n); cov_ss[idx] = 1.0
     shade_ss = shade_ss.reshape(Hh, ss, W, ss)
@@ -441,11 +442,49 @@ def bunny_albedo(pose):
 
 
 # ---------------------------------------------------------------- toppling
+def _local(sdf):
+    return getattr(sdf, 'to_local', lambda p: p)
+
+
+# ---------------------------------------------------------------- surface texture
+def _hash3(ix, iy, iz):
+    h = (ix * 73856093) ^ (iy * 19349663) ^ (iz * 83492791)
+    h = (h ^ (h >> 13)) * 1274126177
+    return ((h ^ (h >> 16)) & 0xFFFF) / 65535.0
+
+
+def value_noise(p, freq):
+    q = p * freq
+    i = np.floor(q).astype(np.int64)
+    f = q - i
+    f = f * f * (3.0 - 2.0 * f)
+    out = 0.0
+    for dz in (0, 1):
+        for dy in (0, 1):
+            for dx in (0, 1):
+                w = ((f[:, 0] if dx else 1 - f[:, 0]) * (f[:, 1] if dy else 1 - f[:, 1])
+                     * (f[:, 2] if dz else 1 - f[:, 2]))
+                out = out + w * _hash3(i[:, 0] + dx, i[:, 1] + dy, i[:, 2] + dz)
+    return out
+
+
+def piece_texture(p):
+    """Surface mottling for the pieces: layered value noise in the piece's own frame, plus a fine grain."""
+    n = (0.55 * value_noise(p, 7.0) + 0.30 * value_noise(p, 17.0) + 0.15 * value_noise(p, 41.0))
+    grain = value_noise(p, 95.0)
+    k = 0.72 + 0.9 * (n - 0.5) + 0.22 * (grain - 0.5)
+    return np.clip(k, 0.25, 1.25)
+
+
 def with_azimuth(sdf, azim):
     ca, sa = math.cos(azim), math.sin(azim)
     def f(p):
         q = np.stack([ca * p[:, 0] + sa * p[:, 1], -sa * p[:, 0] + ca * p[:, 1], p[:, 2]], axis=-1)
         return sdf(q)
+    def to_local(p):
+        q = np.stack([ca * p[:, 0] + sa * p[:, 1], -sa * p[:, 0] + ca * p[:, 1], p[:, 2]], axis=-1)
+        return _local(sdf)(q)
+    f.to_local = to_local
     return f
 
 
@@ -487,4 +526,11 @@ def toppled(sdf, theta, pivot_x, lift):
         lx = x * c + z * s
         lz = -x * s + z * c
         return sdf(np.stack([lx + pivot_x, p[:, 1], lz], axis=-1))
+    def to_local(p):
+        x = p[:, 0] - pivot_x
+        z = p[:, 2] - lift
+        lx = x * c + z * s
+        lz = -x * s + z * c
+        return _local(sdf)(np.stack([lx + pivot_x, p[:, 1], lz], axis=-1))
+    f.to_local = to_local
     return f
