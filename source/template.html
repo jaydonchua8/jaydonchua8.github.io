@@ -168,7 +168,7 @@
   const TW = 38, TH2 = 19;                    // tile half width / half height, art px
   const LTOP = 0.95;                          // light on lit squares at the centre of the pool
   const SEC = { LR: 88, LS: 72, TOP: 0.16 };  // the small pool of light under a fallen piece
-  const T_IN = 580, T_OUT = 475, T_RISE = 515;
+  const T_IN = 580, T_OUT = 475, T_RISE = 541;
   // Rigid-body motion: each piece pivots on its base rim around its own centre of mass.
   const GRAV = 26;                            // gravity / moment of inertia about the rim, rad/s^2
   const E_FALL = 0.2;                         // restitution when a toppling piece strikes the board
@@ -785,7 +785,7 @@
     }
   }
   // one rock: right (negative) first, then left, starting and ending at rest; v runs 0..1 over the swing
-  const swingAngle = v => -13 * Math.sin(2 * Math.PI * v) * Math.sin(Math.PI * v);
+  const swingAngle = v => -10 * Math.sin(2 * Math.PI * v) * Math.sin(Math.PI * v);
   function selectedAngle(p, now) {
     const rest = restFrame(p.sprite).a;
     switch (view.mode) {
