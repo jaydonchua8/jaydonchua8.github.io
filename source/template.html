@@ -168,11 +168,11 @@
   const TW = 38, TH2 = 19;                    // tile half width / half height, art px
   const LTOP = 0.95;                          // light on lit squares at the centre of the pool
   const SEC = { LR: 88, LS: 72, TOP: 0.16 };  // the small pool of light under a fallen piece
-  const T_IN = 520, T_OUT = 430, T_RISE = 440;
+  const T_IN = 580, T_OUT = 475, T_RISE = 490;
   // Rigid-body motion: each piece pivots on its base rim around its own centre of mass.
   const GRAV = 26;                            // gravity / moment of inertia about the rim, rad/s^2
   const E_FALL = 0.2;                         // restitution when a toppling piece strikes the board
-  const TOPPLE_G = 62;                        // the click topple falls faster than the hover rocking swings
+  const TOPPLE_G = 52;                        // the click topple falls faster than the hover rocking swings
   const DEG = Math.PI / 180;
   const WOB_R = 0.87;                         // hover wobble: share of rocking speed kept each time the base lands flat
   const WOB_MIN = 3 * DEG;                    // the gentlest push still rocks it visibly
@@ -896,7 +896,7 @@
   }
   function advanceView(now) {
     const t = now - view.t0;
-    if (view.mode === 'topple' && view.settled && now - view.tSettle >= 70) startZoomIn(now);
+    if (view.mode === 'topple' && view.settled && now - view.tSettle >= 90) startZoomIn(now);
     else if (view.mode === 'zoomIn' && t >= view.dur) enterSection();
     else if (view.mode === 'zoomOut' && t >= view.dur) {
       light.x = view.to.lx; light.y = view.to.ly;
