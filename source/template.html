@@ -623,35 +623,52 @@
     for (const [u, v] of pts) { px(x + u + 1, y + v, BG); px(x + u - 1, y + v, BG); px(x + u, y + v + 1, BG); px(x + u, y + v - 1, BG); }
     for (const [u, v] of pts) px(x + u, y + v, MINT);
   }
-  // While charged the bunny is a glowing puffball: round, fur standing straight out, ears up, two dot eyes.
-  function drawPuff(o, now) {
+  // While charged the bunny turns into Hoppy: a round, glowing little bolt-mouse with long pointed ears,
+  // dark ear tips, red-dot cheeks (drawn as dark dots in the two-colour palette) and a zigzag lightning tail.
+  function drawHoppy(o, now) {
     const step = reduceMotion ? 1 : Math.floor(now / 90), face = bunny.face;
-    const R = 8, cx = Math.round(o.sx), cy = Math.round(o.fy) - R - 2;
-    const W = 40, H = 44, ox = cx - 20, oy = cy - 30, m = new Uint8Array(W * H);
+    const cx = Math.round(o.sx), fy = Math.round(o.fy);       // fy is the ground line under the feet
+    const W = 40, H = 40, ox = cx - 20, oy = fy - 34, m = new Uint8Array(W * H);
     const set = (x, y) => { const i = x - ox, j = y - oy; if (i >= 0 && j >= 0 && i < W && j < H) m[j * W + i] = 1; };
-    for (let y = -R; y <= R; y++) for (let x = -R; x <= R; x++) if (x * x + y * y <= R * R + R) set(cx + x, cy + y);
-    for (let k = 0; k < 30; k++) {                     // fur standing straight out, crackling
-      const a = (k + hash01(step * 31 + k) * 0.6) / 30 * Math.PI * 2;
-      if (Math.sin(a) > 0.8) continue;                  // feet stay on the ground
-      const L = 1 + Math.floor(hash01(step * 17 + k * 7 + 3) * 4);
-      for (let q = 0; q <= L; q++) set(Math.round(cx + Math.cos(a) * (R + q)), Math.round(cy + Math.sin(a) * (R + q)));
-    }
-    for (const sgn of [-1, 1]) {                       // ears pointing straight up, a little splayed
-      const ex = cx + sgn * 3 + face;
-      for (let y = 0; y < 11; y++) {
-        const x = Math.round(ex + sgn * 0.22 * y), w = y > 8 ? 0 : 1;
-        for (let u = -w; u <= w; u++) set(x + u, cy - R + 1 - y);
+    const ell = (x0, y0, rx, ry) => {
+      for (let y = -ry; y <= ry; y++) for (let x = -rx; x <= rx; x++) if ((x * x) / (rx * rx) + (y * y) / (ry * ry) <= 1) set(x0 + x, y0 + y);
+    };
+    const line = (x0, y0, x1, y1, w = 1) => {
+      const n = Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0), 1);
+      for (let k = 0; k <= n; k++) {
+        const x = Math.round(x0 + (x1 - x0) * k / n), y = Math.round(y0 + (y1 - y0) * k / n);
+        for (let u = 0; u < w; u++) set(x + u, y);
       }
-      if (hash01(step * 5 + sgn + 9) < 0.6) set(Math.round(ex + sgn * 2.6) + sgn, cy - R - 10);
+    };
+    ell(cx, fy - 7, 9, 7);                                    // body
+    ell(cx, fy - 16, 10, 8);                                  // oversized head
+    ell(cx - 4, fy - 1, 3, 1); ell(cx + 4, fy - 1, 3, 1);     // feet
+    for (const s of [-1, 1]) {                                 // long pointed ears, lifting with the bounce
+      const bx = cx + s * 5, by = fy - 23, tx = cx + s * 6 + face, ty = fy - 34;
+      for (let u = -1; u <= 1; u++) line(bx + u, by, tx + u, ty);
     }
-    for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) {          // dark rim, then the glowing body
+    const tb = cx - face * 8;                                  // lightning-bolt tail, flicks on each frame
+    const flick = step % 2 ? 1 : 0;
+    line(tb, fy - 9, tb - face * 5, fy - 13, 2);
+    line(tb - face * 5, fy - 13, tb - face * (2 + flick), fy - 14, 2);
+    line(tb - face * (2 + flick), fy - 14, tb - face * 8, fy - 19, 2);
+    for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) {  // dark rim, then the glowing body
       if (m[j * W + i]) continue;
       if ((i > 0 && m[j * W + i - 1]) || (i < W - 1 && m[j * W + i + 1]) || (j > 0 && m[(j - 1) * W + i]) || (j < H - 1 && m[(j + 1) * W + i])) px(ox + i, oy + j, BG);
     }
     for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) if (m[j * W + i]) px(ox + i, oy + j, MINT);
-    const fx = cx + face;                              // eyes look where it is headed
-    for (const d of [-3, 3]) { px(fx + d, cy - 2, BG); px(fx + d, cy - 1, BG); }
-    px(fx, cy + 2, BG); px(fx - 1, cy + 1, BG); px(fx + 1, cy + 1, BG);
+    for (const s of [-1, 1]) {                                 // dark ear tips
+      const tx = cx + s * 6 + face, ty = fy - 34;
+      for (let y = ty; y <= ty + 2; y++) for (let x = tx - 1; x <= tx + 1; x++) if (m[(y - oy) * W + (x - ox)]) px(x, y, BG);
+    }
+    const ex = cx + face;                                      // eyes look where it is headed
+    const blink = hash01(step * 3 + 1) < 0.04;
+    for (const d of [-4, 3]) {
+      if (blink) px(ex + d, fy - 16, BG), px(ex + d + 1, fy - 16, BG);
+      else { px(ex + d, fy - 17, BG); px(ex + d + 1, fy - 17, BG); px(ex + d, fy - 16, BG); px(ex + d + 1, fy - 16, BG); }
+    }
+    px(cx - 7, fy - 13, BG); px(cx + 6, fy - 13, BG);          // cheeks
+    px(ex - 1, fy - 10, BG); px(ex, fy - 9, BG); px(ex + 1, fy - 10, BG);   // smile
   }
   function drawZapFx(o, now) {
     const za = zapAge(now);
@@ -1116,7 +1133,7 @@
         if (o.p === sel) gain = gain + ((o.p.dark ? 2.4 : 1.65) - gain) * prm.gainK;
       }
       const puff = o.type === 'bunny' && o.fade > 0.5 && zapAge(now) >= 70 && zapped(now);
-      if (puff) drawPuff(o, now); else sprite(o.name, o.sx, o.fy, gain, o.fade, o.p === sel ? litSel : lit);
+      if (puff) drawHoppy(o, now); else sprite(o.name, o.sx, o.fy, gain, o.fade, o.p === sel ? litSel : lit);
       if (o.type === 'bunny') drawZapFx(o, now);
       // hit areas: a board piece uses its upright outline, so rocking never flickers the hover on and off
       const s = o.type === 'piece' && o.p !== sel ? SPR[o.p.sprite] : SPR[o.name];
