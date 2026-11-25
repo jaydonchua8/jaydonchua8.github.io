@@ -8,11 +8,10 @@ them with rigid-body physics, so frames are finer where the motion is slow.
 import json, math, os, sys, time
 import numpy as np
 from PIL import Image
-HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, HERE)
+sys.path.insert(0, '/home/claude/portfolio/build')
 import pieces as P
 
-OUT = os.path.join(HERE, 'out')
+OUT = '/home/claude/portfolio/build/out'
 os.makedirs(OUT, exist_ok=True)
 
 PIECES = [
@@ -25,9 +24,9 @@ PIECES = [
     ('rook_w', P.make_rook, 'white', math.radians(-24)),
     ('pawn', P.make_pawn, 'black', 0.0),
 ]
-SLOW = list(range(2, 21, 2))      # the slow start of a tip, and rocking
+SLOW = list(range(1, 21, 1))      # the slow start of a tip, and rocking (1 degree steps so motion stays smooth)
 MID = list(range(24, 61, 4))
-RIGHT = [-2, -4, -6, -8, -10, -12]
+RIGHT = [-x for x in range(12, 0, -1)]   # 1 degree steps to the right, for the swing
 BUNNY = [('bunny_sit', 'sit'), ('bunny_crouch', 'crouch'), ('bunny_leap', 'leap')]
 BUNNY_SCALE = 21.0
 
@@ -58,7 +57,7 @@ for name, fac, mat, az in PIECES:
     critR = math.degrees(math.atan2(pivR - com[0], com[2]))
     rest = P.rest_angle(pts, pivL)
     big = list(np.arange(66.0, rest - 2.5, 6.0))
-    angles = RIGHT + [a for a in SLOW + MID + big if a < rest - 3.5] + [round(rest - 2, 2), rest]
+    angles = RIGHT + [0.0] + [a for a in SLOW + MID + big if a < rest - 3.5] + [round(rest - 2, 2), rest]
     seq = []
     for k, deg in enumerate(angles):
         pivot = pivL if deg > 0 else pivR
