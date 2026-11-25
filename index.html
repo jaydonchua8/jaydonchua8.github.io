@@ -627,48 +627,55 @@
   // dark ear tips, red-dot cheeks (drawn as dark dots in the two-colour palette) and a zigzag lightning tail.
   function drawHoppy(o, now) {
     const step = reduceMotion ? 1 : Math.floor(now / 90), face = bunny.face;
+    const YELLOW = 0xff3ad8ff >>> 0, INK = 0xff0e0c0c >>> 0, WHITE = 0xffffffff >>> 0, RED = 0xff4b4bff >>> 0;
     const cx = Math.round(o.sx), fy = Math.round(o.fy);       // fy is the ground line under the feet
-    const W = 40, H = 40, ox = cx - 20, oy = fy - 34, m = new Uint8Array(W * H);
-    const set = (x, y) => { const i = x - ox, j = y - oy; if (i >= 0 && j >= 0 && i < W && j < H) m[j * W + i] = 1; };
+    const W = 44, H = 44, ox = cx - 22, oy = fy - 36;
+    const body = new Uint8Array(W * H), tail = new Uint8Array(W * H), bolt = new Uint8Array(W * H);
+    const put = (m, x, y) => { const i = x - ox, j = y - oy; if (i >= 0 && j >= 0 && i < W && j < H) m[j * W + i] = 1; };
+    const at = (m, x, y) => { const i = x - ox, j = y - oy; return i >= 0 && j >= 0 && i < W && j < H && m[j * W + i] === 1; };
     const ell = (x0, y0, rx, ry) => {
-      for (let y = -ry; y <= ry; y++) for (let x = -rx; x <= rx; x++) if ((x * x) / (rx * rx) + (y * y) / (ry * ry) <= 1) set(x0 + x, y0 + y);
+      for (let y = -ry; y <= ry; y++) for (let x = -rx; x <= rx; x++) if ((x * x) / (rx * rx) + (y * y) / (ry * ry) <= 1) put(body, x0 + x, y0 + y);
     };
-    const line = (x0, y0, x1, y1, w = 1) => {
+    const stamp = (m, x, y, r) => {
+      for (let dy = -r; dy <= r; dy++) for (let dx = -r; dx <= r; dx++) if (dx * dx + dy * dy <= r * r + r) put(m, x + dx, y + dy);
+    };
+    const seg = (m, x0, y0, x1, y1, r) => {
       const n = Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0), 1);
-      for (let k = 0; k <= n; k++) {
-        const x = Math.round(x0 + (x1 - x0) * k / n), y = Math.round(y0 + (y1 - y0) * k / n);
-        for (let u = 0; u < w; u++) set(x + u, y);
-      }
+      for (let k = 0; k <= n; k++) stamp(m, Math.round(x0 + (x1 - x0) * k / n), Math.round(y0 + (y1 - y0) * k / n), r);
     };
     ell(cx, fy - 7, 9, 7);                                    // body
     ell(cx, fy - 16, 10, 8);                                  // oversized head
     ell(cx - 4, fy - 1, 3, 1); ell(cx + 4, fy - 1, 3, 1);     // feet
-    for (const s of [-1, 1]) {                                 // long pointed ears, lifting with the bounce
-      const bx = cx + s * 5, by = fy - 23, tx = cx + s * 6 + face, ty = fy - 34;
-      for (let u = -1; u <= 1; u++) line(bx + u, by, tx + u, ty);
+    for (const s of [-1, 1]) seg(body, cx + s * 5, fy - 22, cx + s * 6 + face, fy - 34, 1);   // long pointed ears
+    // big lightning-bolt tail: a thick yellow zigzag with a black bolt running down its middle
+    const tb = cx - face * 8;
+    const zig = [[tb, fy - 9], [tb - face * 6, fy - 12], [tb - face * 2, fy - 16], [tb - face * 11, fy - 23]];
+    for (let k = 1; k < zig.length; k++) {
+      seg(tail, zig[k - 1][0], zig[k - 1][1], zig[k][0], zig[k][1], 2);
+      seg(bolt, zig[k - 1][0], zig[k - 1][1], zig[k][0], zig[k][1], 0);
     }
-    const tb = cx - face * 8;                                  // lightning-bolt tail, flicks on each frame
-    const flick = step % 2 ? 1 : 0;
-    line(tb, fy - 9, tb - face * 5, fy - 13, 2);
-    line(tb - face * 5, fy - 13, tb - face * (2 + flick), fy - 14, 2);
-    line(tb - face * (2 + flick), fy - 14, tb - face * 8, fy - 19, 2);
-    for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) {  // dark rim, then the glowing body
-      if (m[j * W + i]) continue;
-      if ((i > 0 && m[j * W + i - 1]) || (i < W - 1 && m[j * W + i + 1]) || (j > 0 && m[(j - 1) * W + i]) || (j < H - 1 && m[(j + 1) * W + i])) px(ox + i, oy + j, BG);
+    const inside = (x, y) => at(body, x, y) || at(tail, x, y);
+    for (let y = oy; y < oy + H; y++) for (let x = ox; x < ox + W; x++) {   // dark outline around everything
+      if (inside(x, y)) continue;
+      if (inside(x - 1, y) || inside(x + 1, y) || inside(x, y - 1) || inside(x, y + 1)) px(x, y, INK);
     }
-    for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) if (m[j * W + i]) px(ox + i, oy + j, MINT);
-    for (const s of [-1, 1]) {                                 // dark ear tips
+    for (let y = oy; y < oy + H; y++) for (let x = ox; x < ox + W; x++) if (inside(x, y)) px(x, y, YELLOW);
+    for (let y = oy; y < oy + H; y++) for (let x = ox; x < ox + W; x++) if (at(bolt, x, y) && at(tail, x, y)) px(x, y, INK);
+    for (const s of [-1, 1]) {                                 // black ear tips
       const tx = cx + s * 6 + face, ty = fy - 34;
-      for (let y = ty; y <= ty + 2; y++) for (let x = tx - 1; x <= tx + 1; x++) if (m[(y - oy) * W + (x - ox)]) px(x, y, BG);
+      for (let y = ty; y <= ty + 2; y++) for (let x = tx - 1; x <= tx + 1; x++) if (at(body, x, y)) px(x, y, INK);
     }
-    const ex = cx + face;                                      // eyes look where it is headed
+    // features: bigger eyes with a highlight, red cheeks, a nose and a clear smile
+    const ex = cx + face;
     const blink = hash01(step * 3 + 1) < 0.04;
-    for (const d of [-4, 3]) {
-      if (blink) px(ex + d, fy - 16, BG), px(ex + d + 1, fy - 16, BG);
-      else { px(ex + d, fy - 17, BG); px(ex + d + 1, fy - 17, BG); px(ex + d, fy - 16, BG); px(ex + d + 1, fy - 16, BG); }
+    for (const d of [-5, 3]) {
+      if (blink) { px(ex + d, fy - 17, INK); px(ex + d + 1, fy - 17, INK); px(ex + d + 2, fy - 17, INK); continue; }
+      for (let y = fy - 20; y <= fy - 17; y++) for (let x = ex + d; x <= ex + d + 1; x++) px(x, y, INK);
+      px(ex + d, fy - 20, WHITE);                              // highlight
     }
-    px(cx - 7, fy - 13, BG); px(cx + 6, fy - 13, BG);          // cheeks
-    px(ex - 1, fy - 10, BG); px(ex, fy - 9, BG); px(ex + 1, fy - 10, BG);   // smile
+    for (const x of [cx - 8, cx + 6]) for (let y = fy - 13; y <= fy - 12; y++) for (let dx = 0; dx < 2; dx++) px(x + dx, y, RED);
+    px(ex, fy - 14, INK); px(ex + 1, fy - 14, INK);            // nose
+    px(ex - 2, fy - 11, INK); px(ex - 1, fy - 10, INK); px(ex, fy - 10, INK); px(ex + 1, fy - 10, INK); px(ex + 2, fy - 11, INK);   // smile
   }
   function drawZapFx(o, now) {
     const za = zapAge(now);
