@@ -909,6 +909,9 @@
     } else if (view.mode === 'rise' && t >= T_RISE) {
       const k = view.key;
       view.mode = 'board'; view.key = null;
+      // back on the board it gets a small rock, since the cursor is already over it and no hover kick would fire
+      const back = k && pieceByKey(k);
+      if (back && PHYS[back.sprite]) { back.kickT = performance.now(); nudge(back, kickFor(PHYS[back.sprite], 5 * DEG)); }
       canvas.classList.remove('still');
       if (view.kb) { const b = [...nav.children].find(x => x.dataset.key === k); if (b) b.focus(); }
     }
