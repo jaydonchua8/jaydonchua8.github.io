@@ -172,7 +172,7 @@
   // Rigid-body motion: each piece pivots on its base rim around its own centre of mass.
   const GRAV = 26;                            // gravity / moment of inertia about the rim, rad/s^2
   const E_FALL = 0.2;                         // restitution when a toppling piece strikes the board
-  const TOPPLE_G = 47;                       // the click topple falls faster than the hover rocking swings
+  const TOPPLE_G = 45;                       // the click topple falls faster than the hover rocking swings
   const DEG = Math.PI / 180;
   const WOB_R = 0.87;                         // hover wobble: share of rocking speed kept each time the base lands flat
   const WOB_MIN = 3 * DEG;                    // the gentlest push still rocks it visibly
@@ -911,7 +911,7 @@
       view.mode = 'board'; view.key = null;
       // back on the board it gets a small rock, since the cursor is already over it and no hover kick would fire
       const back = k && pieceByKey(k);
-      if (back && PHYS[back.sprite]) { back.kickT = performance.now(); nudge(back, kickFor(PHYS[back.sprite], 5 * DEG)); }
+      if (back) back.sway = { t0: performance.now() };
       canvas.classList.remove('still');
       if (view.kb) { const b = [...nav.children].find(x => x.dataset.key === k); if (b) b.focus(); }
     }
@@ -1072,6 +1072,10 @@
         name = frameAt(p.sprite, selectedAngle(p, now));
         if (view.mode === 'rise') { const s1 = Math.sin(Math.PI * clamp01((now - view.t0) / T_RISE)); liftPx = 7 * s1 * s1; }
         if (view.mode === 'section') liftPx = Math.round(secLift);
+      } else if (p.sway) {
+        // same swing as the lift-back, one back-and-forth over the same time
+        const u = clamp01((now - p.sway.t0) / T_RISE);
+        name = frameAt(p.sprite, 12 * Math.sin(2 * Math.PI * u) * (1 - smoother(u)));
       } else if (p.rock) name = frameAt(p.sprite, p.rock.a / DEG);
       const up = SPR[p.sprite];
       objs.push({ type: 'piece', p, name, sx: f.x, sy: f.y, fy: f.y - liftPx, fade,
@@ -1296,6 +1300,7 @@
       const h = Math.min(H, dt - s);
       if (view.mode === 'topple' && !view.settled) { stepTopple(h); active = true; }
       for (const p of pieces) if (p.rock) { stepRock(p, h); active = true; }
+      for (const p of pieces) if (p.sway) { if (performance.now() - p.sway.t0 < T_RISE) active = true; else { p.sway = null; dirty = true; } }
     }
     return active;
   }
