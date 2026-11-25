@@ -37,8 +37,8 @@
     scrollbar-width: thin; scrollbar-color: var(--mint-dim) transparent;
   }
   .sec[hidden] { display: none; }
-  .sec.reveal { animation: secIn 0.45s steps(9) both; }
-  @keyframes secIn { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+  .sec .ch { opacity: 0; }
+  .sec .ch.on { opacity: 1; }
   .sec p { margin: 0 0 0.9em; }
   .sec ul { list-style: none; margin: 0; padding: 0; }
   .sec li { margin: 0 0 1.05em; }
@@ -55,7 +55,6 @@
     transform: translateY(-200%);
   }
   .back:focus-visible { transform: none; outline: none; }
-  @media (prefers-reduced-motion: reduce) { .sec.reveal { animation: none; } }
 </style>
 </head>
 <body>
@@ -76,10 +75,7 @@
   const SECTIONS = {
     about: { label: 'About me', body: `
       <p>Hi, I'm Jaydon. I'm studying computer science at the University of Illinois Urbana-Champaign in the Grainger College of Engineering, and I expect to graduate in May 2029. I like building small tools that fix one specific annoyance.</p>
-      <p class="ph">[PLACEHOLDER: a sentence or two on what you enjoy building, what you're into outside of code, and what you're working toward]</p>
-      <ul>
-        <li><span class="t">Honors</span><span class="d">National Merit Finalist. Exelon $4k scholarship.</span></li>
-      </ul>` },
+      <p>Outside of code I play pickleball and Brawl Stars. Chess is my latest craze, and I'm trying to get better at it.</p>` },
     orderbook: { label: 'CME order book', body: `
       <p>A Java limit order book fed by a zero-allocation decoder for CME's MDP 3.0 market data, tested against packets built from CME's real production schema.</p>
       <ul>
@@ -125,8 +121,6 @@
       <ul>
         <li><span class="t" data-icon="phone">Phone</span><a href="tel:+17738499142">773-849-9142</a></li>
         <li><span class="t" data-icon="mail">Email</span><a href="mailto:jaydonc2@illinois.edu">jaydonc2@illinois.edu</a></li>
-        <li><span class="t" data-icon="code">GitHub</span><a href="https://github.com/jaydonchua8" target="_blank" rel="noopener">github.com/jaydonchua8</a></li>
-        <li><span class="t" data-icon="card">LinkedIn</span><a href="https://www.linkedin.com/in/jaydon-chua/" target="_blank" rel="noopener">linkedin.com/in/jaydon-chua</a></li>
       </ul>` }
   };
 
@@ -174,10 +168,11 @@
   const TW = 38, TH2 = 19;                    // tile half width / half height, art px
   const LTOP = 0.95;                          // light on lit squares at the centre of the pool
   const SEC = { LR: 88, LS: 72, TOP: 0.16 };  // the small pool of light under a fallen piece
-  const T_IN = 780, T_OUT = 660, T_RISE = 720;
+  const T_IN = 520, T_OUT = 430, T_RISE = 440;
   // Rigid-body motion: each piece pivots on its base rim around its own centre of mass.
   const GRAV = 26;                            // gravity / moment of inertia about the rim, rad/s^2
   const E_FALL = 0.2;                         // restitution when a toppling piece strikes the board
+  const TOPPLE_G = 62;                        // the click topple falls faster than the hover rocking swings
   const DEG = Math.PI / 180;
   const WOB_R = 0.87;                         // hover wobble: share of rocking speed kept each time the base lands flat
   const WOB_MIN = 3 * DEG;                    // the gentlest push still rocks it visibly
@@ -331,8 +326,6 @@
     contact: ['.#########.', '.#..###..#.', '.#.......#.', '.#..#.#..#.', '.#.......#.', '.#.#...#.#.', '.#..###..#.', '.#.......#.', '.#.......#.', '.#...#...#.', '.#########.'],
     phone: ['.##........', '####.......', '####.......', '.##........', '..##.......', '...##......', '....##..##.', '.....######', '......#####', '.......###.', '...........'],
     mail: ['...........', '###########', '##.......##', '#.#.....#.#', '#..#...#..#', '#...#.#...#', '#....#....#', '#.........#', '###########', '...........', '...........'],
-    code: ['...........', '.......#...', '..#...#..#.', '.#....#...#', '#....#.....', '#....#.....', '.#..#.....#', '..#.#....#.', '...#.......', '...........', '...........'],
-    card: ['###########', '#.........#', '#..##.....#', '#.####.##.#', '#.####....#', '#..##..##.#', '#.####....#', '#.####.##.#', '#.........#', '###########', '...........'],
   };
   // Put an icon in front of a label's text. scale 2 doubles every icon pixel (for headings).
   function withIcon(lbl, rows, size, scale = 1, gap = 4) {
@@ -803,11 +796,11 @@
   function stepTopple(dt) {
     const ph = PHYS[pieceByKey(view.key).sprite];
     const crit = ph.critL * DEG, rest = ph.rest * DEG;
-    view.w += GRAV * Math.sin(view.th - crit) * dt;
+    view.w += TOPPLE_G * Math.sin(view.th - crit) * dt;
     view.th += view.w * dt;
     if (view.th >= rest) {
       view.th = rest;
-      if (view.w * E_FALL < 0.5) { view.w = 0; view.settled = true; view.tSettle = performance.now(); }
+      if (view.w * E_FALL < 0.8) { view.w = 0; view.settled = true; view.tSettle = performance.now(); }
       else view.w = -view.w * E_FALL;                      // one small rebound off the crown, then rest
     }
   }
@@ -819,7 +812,7 @@
     p.anim = null; p.drag = null; p.rock = null;
     hoverKey = null; lightFollows = false;
     view.th = 0; view.settled = false;
-    view.w = 1.3 * Math.sqrt(2 * GRAV * (1 - Math.cos(PHYS[p.sprite].critL * DEG)));
+    view.w = 1.3 * Math.sqrt(2 * TOPPLE_G * (1 - Math.cos(PHYS[p.sprite].critL * DEG)));
     lightTarget.x = light.x; lightTarget.y = light.y;
     view.mode = 'topple'; view.key = key; view.t0 = now; view.kb = !!fromKeyboard;
     canvas.classList.remove('over-piece', 'dragging', 'panning');
@@ -840,10 +833,44 @@
     secBody.innerHTML = s.body;
     layoutSectionText();
     secEl.hidden = false;
-    secEl.classList.remove('reveal'); void secEl.offsetWidth; secEl.classList.add('reveal');
+    typeSection();
     secEl.scrollTop = 0;
     if (view.kb) backBtn.focus();
     dirty = true;
+  }
+  // Type the text out in reading order: the top line first, left to right, then the next line down.
+  // Every character is in the page from the start (screen readers get it all); only its visibility changes.
+  let typer = null;
+  function typeSection() {
+    if (typer) { cancelAnimationFrame(typer.raf); typer = null; }
+    const units = [];
+    const walk = node => {
+      for (const n of [...node.childNodes]) {
+        if (n.nodeType === 3) {
+          if (!n.nodeValue.trim()) continue;
+          const frag = document.createDocumentFragment();
+          for (const ch of n.nodeValue) {
+            const sp = document.createElement('span'); sp.className = 'ch'; sp.textContent = ch;
+            frag.appendChild(sp); units.push(sp);
+          }
+          n.replaceWith(frag);
+        } else if (n.nodeType === 1) {
+          if (n.classList.contains('t')) { n.classList.add('ch'); units.push(n); }   // pixel names appear whole
+          else walk(n);
+        }
+      }
+    };
+    walk(secBody);
+    if (reduceMotion || !units.length) { for (const u of units) u.classList.add('on'); return; }
+    const rate = Math.max(560, units.length / 1.25), t0 = performance.now();   // chars per second
+    typer = { raf: 0, i: 0 };
+    const tick = now => {
+      if (!typer) return;
+      const n = Math.min(units.length, Math.floor((now - t0) / 1000 * rate) + 1);
+      for (; typer.i < n; typer.i++) units[typer.i].classList.add('on');
+      if (typer.i < units.length) typer.raf = requestAnimationFrame(tick); else typer = null;
+    };
+    typer.raf = requestAnimationFrame(tick);
   }
   function layoutSectionText() {
     if (!view.key) return;
@@ -860,6 +887,7 @@
     const now = performance.now();
     secEl.hidden = true;
     secHover = false;
+    if (typer) { cancelAnimationFrame(typer.raf); typer = null; }
     placeCamera(); lightOnPiece(pieceByKey(view.key)); lightAmt = 1;
     view.from = secParams(view.key); view.to = boardParams(true);
     view.mode = 'zoomOut'; view.t0 = now; view.dur = T_OUT;
@@ -868,7 +896,7 @@
   }
   function advanceView(now) {
     const t = now - view.t0;
-    if (view.mode === 'topple' && view.settled && now - view.tSettle >= 160) startZoomIn(now);
+    if (view.mode === 'topple' && view.settled && now - view.tSettle >= 70) startZoomIn(now);
     else if (view.mode === 'zoomIn' && t >= view.dur) enterSection();
     else if (view.mode === 'zoomOut' && t >= view.dur) {
       light.x = view.to.lx; light.y = view.to.ly;
