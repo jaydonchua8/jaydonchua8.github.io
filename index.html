@@ -784,14 +784,17 @@
       default: return boardParams(false);
     }
   }
+  // one rock: right (negative) first, then left, starting and ending at rest; v runs 0..1 over the swing
+  const swingAngle = v => -13 * Math.sin(2 * Math.PI * v) * Math.sin(Math.PI * v);
   function selectedAngle(p, now) {
     const rest = restFrame(p.sprite).a;
     switch (view.mode) {
       case 'topple': return view.th / DEG;
       case 'rise': {
-        // Picked back up: it sways side to side on the way to upright, the swing dying out as it lands.
-        const u = clamp01((now - view.t0) / T_RISE), s = smoother(u);
-        return rest * (1 - s) + -12 * Math.sin(2 * Math.PI * u) * (1 - s);
+        // Picked back up: it lifts upright first, then rocks once, right then left, and comes to rest.
+        const u = clamp01((now - view.t0) / T_RISE);
+        const lift = rest * (1 - smoother(clamp01(u / 0.55)));
+        return lift + (u > 0.45 ? swingAngle(clamp01((u - 0.45) / 0.55)) : 0);
       }
       default: return rest;
     }
@@ -1074,8 +1077,7 @@
         if (view.mode === 'section') liftPx = Math.round(secLift);
       } else if (p.sway) {
         // same swing as the lift-back, one back-and-forth over the same time
-        const u = clamp01((now - p.sway.t0) / T_RISE);
-        name = frameAt(p.sprite, -12 * Math.sin(2 * Math.PI * u) * (1 - smoother(u)));
+        name = frameAt(p.sprite, swingAngle(clamp01((now - p.sway.t0) / T_RISE)));
       } else if (p.rock) name = frameAt(p.sprite, p.rock.a / DEG);
       const up = SPR[p.sprite];
       objs.push({ type: 'piece', p, name, sx: f.x, sy: f.y, fy: f.y - liftPx, fade,
