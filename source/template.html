@@ -788,7 +788,11 @@
     const rest = restFrame(p.sprite).a;
     switch (view.mode) {
       case 'topple': return view.th / DEG;
-      case 'rise': return rest * (1 - smoother(clamp01((now - view.t0) / T_RISE)));
+      case 'rise': {
+        // Picked back up: it sways side to side on the way to upright, the swing dying out as it lands.
+        const u = clamp01((now - view.t0) / T_RISE), s = smoother(u);
+        return rest * (1 - s) + 12 * Math.sin(2 * Math.PI * 2 * u) * (1 - s);
+      }
       default: return rest;
     }
   }
